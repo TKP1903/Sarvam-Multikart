@@ -1,0 +1,70 @@
+
+.Award__para{
+    color: black;
+    text-align: center;
+    font-size: 23px;
+    padding-bottom: 25px;
+}
+.carousel-wrapper{
+    margin-bottom: 2.3rem;
+}
+.award__cardContainer{
+    height: 280px;
+    cursor: pointer;
+    width: 230px;
+}
+.award__img{
+    width: 100%;
+    height: 100%;
+    transition: 0.4s;
+}
+.award__img:hover {
+    transform: scale(1.1);
+}
+
+.sc-gKsewC{
+    background-color: #FFF !important;
+    box-shadow:none;
+}
+.rec-dot_active{
+     box-shadow:none;
+     box-shadow: 0 0 1px 3px rgb(0 0 0) !important;
+    background-color: #95c12b !important;
+}
+.counter__container{
+    margin: 10px 25px;
+}
+
+
+
+/* round buttons on hover */
+.rec.rec-arrow {
+    border-radius: 50%;
+    background-color: #95c12b !important;
+}
+/* hide disabled buttons */
+.rec.rec-arrow:disabled {
+    visibility: hidden;
+}
+/* disable default outline on focused items */
+/* add custom outline on focused items */
+.rec-carousel-item:focus {
+    outline: none;
+    box-shadow: inset 0 0 1px 1px lightgrey;
+}
+
+.Award__MainHeading{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.Award__MainHeading>h1{
+    font-size: 40px;
+}
+@media only screen and (max-width: 934px){
+    .Award__para{
+    font-size: 1.2rem;
+ } 
+}

@@ -1,0 +1,11 @@
+{
+    "firebase": {
+        "apiKey": "YourapiKey",
+        "authDomain": "YourauthDomain",
+        "projectId": "YourprojectId",
+        "storageBucket": "YourstorageBucket",
+        "messagingSenderId": "YourmessagingSenderId",
+        "appId": "YourappId",
+        "measurementId": "YourmeasurementId"
+    }
+}
