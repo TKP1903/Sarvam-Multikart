@@ -1,4 +1,4 @@
-import styled from "styled-components";
+// import styled from "styled-components";
 
 // export default styled.div`
 //   display: flex;
@@ -10,9 +10,9 @@ import styled from "styled-components";
 //   font-size: 4em;
 // `;
 
-export default function () {
+export default function({ children }) {
   return (
-    <div 
+    <div
       style={{
         display: "flex",
         justifyContent: "center",
@@ -20,9 +20,10 @@ export default function () {
         height: "250px",
         width: "100%",
         margin: "15px",
-        fontSize: "4em"
+        fontSize: "4em",
       }}
-    />
+    >
+      {children}
+    </div>
   );
 }
-

@@ -64,6 +64,7 @@
     "reactstrap": "^8.10.0",
     "responsive-loader": "^3.0.4",
     "rxjs-compat": "^6.6.7",
-    "sass": "^1.52.3"
+    "sass": "^1.52.3",
+    "styled-components": "^5.3.6"
   }
 }
