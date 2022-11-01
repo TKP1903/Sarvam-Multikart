@@ -21,7 +21,7 @@ const Parallax = () => {
         </div>
       </section> */}
       <MasterParallaxBanner
-        bg="parallax-banner1"
+        bg="parallax-banner15"
         parallaxClass="text-center p-left"
         title="2022"
         subTitle1="Sarvam"

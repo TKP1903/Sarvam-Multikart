@@ -3,40 +3,33 @@ import Slider from "react-slick";
 import Link from "next/link";
 import { Container, Row, Col } from "reactstrap";
 import MasterBanner from "./MasterBanner";
-import Img from 'next/image';
+import img from 'next/image';
 
 // image 
-import homeimg from "../../../../Assets/hero-image/fire-fighters trans.png";
-import homeimg2 from "../../../../Assets/hero-image/fire-fighters-1006924_1280.jpg";
-import homeimg3 from "../../../../Assets/hero-image/firefighter-4324587_1280.jpg";
-import homeimg4 from "../../../../Assets/hero-image/website022.jpg";
+import banner1 from "../../../../Assets/hero-image/website022.jpg";
+import banner2 from "../../../../Assets/hero-image/firefighter-4324587_1280.jpg";
+import banner3 from "../../../../Assets/hero-image/fire-fighters-1006924_1280.jpg";
 
 
 const Data = [
   {
-    img: homeimg,
+    img: banner1,
     title: "welcome to Sarvam",
     // desc: "Fire Safety ",
     link: "",
   },
   {
-    img: homeimg2,
+    img: banner2,
     title: "welcome to Sarvam",
     desc: "Fire Safety",
     link: "",
   },
   {
-    img: homeimg3,
+    img: banner3,
     title: "welcome to Sarvam",
     desc: "Fire Safety",
     link: "",
-  },
-  {
-    img: homeimg4,
-    title: "welcome to Sarvam",
-    desc: "Fire Safety",
-    link: "",
-  },
+  }
 ];
 
 

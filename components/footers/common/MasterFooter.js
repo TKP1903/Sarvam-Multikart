@@ -56,7 +56,7 @@ const MasterFooter = ({
                       <div>
                         <h4>KNOW IT ALL FIRST!</h4>
                         <p>
-                          Never Miss Anything From Multikart By Signing Up To
+                          Never Miss Anything From Sarvam By Signing Up To
                           Our Newsletter.
                         </p>
                       </div>

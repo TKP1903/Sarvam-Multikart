@@ -2,17 +2,17 @@ import React from "react";
 import Banner from "./layouts/Fashion/Components/Banner";
 import CollectionBanner from "./layouts/Fashion/Components/Collection-Banner";
 import Parallax from "./layouts/Fashion/Components/Parallax";
-import SpecialProducts from "../components/common/Collections/TabCollection2";
+// import SpecialProducts from "../components/common/Collections/TabCollection11";
 import LogoBlock from "../components/common/logo-block";
 import HeaderOne from "../components/headers/header-one";
 import ServiceLayout from "../components/common/Service/service1";
-import { Product4 } from "../services/script";
+// import { Product4 } from "../services/script";
 import ModalComponent from "../components/common/Modal";
 import Helmet from "react-helmet";
 import MasterFooter from "../components/footers/common/MasterFooter";
 import Award from "./Awards/Award";
 import { Testimonials } from "./Testimonial/Testimonial";
-
+import Featured from "../pages/Featured Product/Featured";
 
 const Fashion = () => {
   return (
@@ -30,7 +30,8 @@ const Fashion = () => {
         inner="title-inner1"
         hrClass={false}
       /> */}
-      <SpecialProducts
+      <Featured />
+      {/* <SpecialProducts
         type="fashion"
         backImage={true}
         productSlider={Product4}
@@ -40,7 +41,7 @@ const Fashion = () => {
         designClass="section-b-space p-t-0 ratio_asos"
         noSlider="true"
         cartClass="cart-info cart-wrap"
-      />
+      /> */}
       <Parallax />
       <ServiceLayout sectionClass="border-section small-section" />
       <Award />

@@ -11,9 +11,10 @@ const MasterBanner = ({ img, title, desc, link, classes, btn, btnClass }) => {
             <Col>
               <div className="slider-contain">
                 <div>
-                  <h4>{title}</h4>
-                  <h1>{desc}</h1>
-                  <Link href={link}>
+                  <Img src={img} zindex={-8888} />
+                  <h4 zindex={1}>{title}</h4>
+                  <h1 zindex={1}>{desc}</h1>
+                  <Link href={link} zindex={1}>
                     <a className={`btn ${btnClass ? btnClass : "btn-solid"}`}>
                       {btn ? btn : "Shop Now"}{" "}
                     </a>

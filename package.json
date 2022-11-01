@@ -31,6 +31,7 @@
     "i18next-browser-languagedetector": "^6.1.4",
     "isomorphic-unfetch": "^3.1.0",
     "jimp": "^0.16.1",
+    "mdb-react-ui-kit": "^5.0.0",
     "next": "^12.1.6",
     "next-compose-plugins": "^2.2.1",
     "next-fonts": "^1.5.1",
