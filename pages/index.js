@@ -11,7 +11,7 @@ import ModalComponent from "../components/common/Modal";
 import Helmet from "react-helmet";
 import MasterFooter from "../components/footers/common/MasterFooter";
 import Award from "./Awards/Award";
-import { Testimonials } from "./Testimonial/Testimonial";
+import Testimonials from "./Testimonial/Testimonial";
 import Featured from "../pages/Featured Product/Featured";
 
 const Fashion = () => {
