@@ -5,6 +5,8 @@ import award1 from '../../Assets/wall of frame/award1.png';
 import award2 from '../../Assets/wall of frame/award2.png';
 import award3 from '../../Assets/wall of frame/award3.png';
 import award4 from '../../Assets/wall of frame/award4.png';
+import award5 from '../../Assets/wall of frame/award5.png';
+
 
 
 const breakPoints = [
@@ -28,7 +30,7 @@ const images = [
         imgPath: award4
     },
     {
-        imgPath: award1
+        imgPath: award5
     },
     {
         imgPath: award2
