@@ -36,7 +36,7 @@ const images = [
         imgPath: award2
     },
     {
-        imgPath: award3
+        imgPath: award1
     },
     {
         imgPath: award4
