@@ -46,7 +46,6 @@ const Banner = () => {
                 desc={data.desc}
                 title={data.title}
                 link={data.link}
-               
               />
             );
           })}
