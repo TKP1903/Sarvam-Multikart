@@ -6,7 +6,7 @@ export const MENUITEMS = [
    },
    {
       title: 'About', type: 'sub', children: [
-         { path: '/shop/left_sidebar', title: 'Left Sidebar', type: 'link' },
+         
         
       ],
    },
