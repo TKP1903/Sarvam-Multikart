@@ -1,6 +1,8 @@
 import Carousel from "react-elastic-carousel";
 import Item from "./Item";
-import Img from "next/image";
+
+import Img from "../../components/custom/MediaImage"
+
 import award1 from "../../Assets/wall of frame/award1.webp";
 import award2 from "../../Assets/wall of frame/award2.webp";
 import award3 from "../../Assets/wall of frame/award3.webp";
@@ -16,28 +18,28 @@ const breakPoints = [
 
 const images = [
   {
-    imgPath: award1,
+    img: award1,
   },
   {
-    imgPath: award2,
+    img: award2,
   },
   {
-    imgPath: award3,
+    img: award3,
   },
   {
-    imgPath: award4,
+    img: award4,
   },
   {
-    imgPath: award5,
+    img: award5,
   },
   {
-    imgPath: award2,
+    img: award2,
   },
   {
-    imgPath: award1,
+    img: award1,
   },
   {
-    imgPath: award4,
+    img: award4,
   },
 ];
 function Award() {
@@ -64,7 +66,7 @@ function Award() {
             {images.map((item, indx) => (
               <Item key={indx}>
                 <div className="award__cardContainer">
-                  <Img className="award__img" src={item.imgPath} alt={indx} />
+                  <Img className="award__img" src={item.img.src} alt={"Award " + indx} />
                 </div>
               </Item>
             ))}
