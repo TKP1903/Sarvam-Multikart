@@ -1,78 +1,45 @@
 export const MENUITEMS = [
   {
-    title: "Home",
-    type: "",
-    children: [],
+    path:'/', title: 'Home', type:"link"
+  },
+  { path: '../../pages/page/about-us.js', title: 'About Us', type: 'link' },
+  {
+     title: 'Products', type: 'sub', children: [
+        {
+           title: 'Head Protection', type: 'sub'
+        },
+        {
+           title: 'Eye Protection', type: 'sub'
+        },
+        {
+           title: 'Hand Protection', type: 'sub'
+        },
+        {
+           title: 'Feet Protection', type: 'sub'
+        },
+        {
+           title: 'Fire Protection', type: 'sub'
+        },
+        {
+           title: 'Road safety', type: 'sub'
+        },
+     ]
   },
   {
-    title: "About",
-    type: "",
-    children: [],
+     title: 'Business Partners',type: 'sub', children: [
+        {
+           title: 'Regional Channel Partners', type: 'sub'
+        },
+        {
+           title: 'international Channel Partners', type: 'sub'
+        },         
+     ]
   },
   {
-    title: "Products",
-    megaMenu: true,
-    megaMenuType: "small",
-    type: "sub",
-    children: [
-      {
-        title: "Head Protection",
-        type: "sub",
-        children: [],
-      },
-      {
-        title: "Eye Protection",
-        type: "sub",
-        children: [],
-      },
-      {
-        title: "Hand Protection",
-        type: "sub",
-        children: [],
-      },
-      {
-        title: " Feet Protection",
-        type: "sub",
-        children: [],
-      },
-      {
-        title: "Fire Protection",
-        type: "sub",
-        children: [],
-      },
-      {
-        title: "General Protection",
-        type: "sub",
-        children: [],
-      },
-      {
-        title: "Road Safety",
-        type: "sub",
-        children: [],
-      },
-    ],
+     title: 'Contact', type: 'sub', children: [
+        
+     ]
   },
-  {
-    title: "Business Partners",
-    megaMenu: true,
-    megaMenuType: "small",
-    type: "sub",
-    children: [
-      {
-        title: "Regional Channel Partners",
-        type: "sub",
-        children: [],
-      },
-      {
-        title: "international Channel Partners",
-        type: "sub",
-        children: [],
-      },
-    ],
-  },
-  {
-    title: "Contact",
-    type: "",
-    children: [],
-  },
-];
+  
+]
+
