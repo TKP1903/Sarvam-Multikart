@@ -1,7 +1,7 @@
 import React from "react";
 import CommonLayout from "../../components/shop/common-layout";
 import { Container, Row, Col, Media } from "reactstrap";
-import aboutus from "../../public/assets/images/about/about-us.jpg";
+import aboutus from "../../public/assets/images/about/aboutus.jpg";
 // import avtar from "../../public/assets/images/avtar.jpg";
 // import two from "../../public/assets/images/2.jpg";
 import Slider from "react-slick";
@@ -53,48 +53,19 @@ const Team = ({ img, name, post }) => {
 };
 
 const TeamDetailData = [
-  {
-    img: '/assets/images/avtar.jpg',
-    name: "mark jenco",
-    post: "designer",
+  { 
+    name: "Vision",
+    post: "",
     about:
-      "you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings.",
+      "SARVAM SAFETY is your one stop solution provider for in lifeand industrial safety equipment by catering to various segments.",
   },
   {
-    img: '/assets/images/2.jpg',
-    name: "mark jenco",
-    post: "designer",
+    name: "Mission",
+    post: "",
     about:
-      "you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings.",
+      "SARVAM SAFETY is your one stop solution provider for in lifeand industrial safety equipment by catering to various segments .",
   },
-  {
-    img: '/assets/images/avtar.jpg',
-    name: "mark jenco",
-    post: "designer",
-    about:
-      "you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings.",
-  },
-  {
-    img: '/assets/images/avtar.jpg',
-    name: "mark jenco",
-    post: "designer",
-    about:
-      "you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings.",
-  },
-  {
-    img: '/assets/images/avtar.jpg',
-    name: "mark jenco",
-    post: "designer",
-    about:
-      "you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings.",
-  },
-  {
-    img: '/assets/images/avtar.jpg',
-    name: "mark jenco",
-    post: "designer",
-    about:
-      "you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings.",
-  },
+  
 ];
 
 const TeamDetail = ({ img, name, post, about }) => {
@@ -132,32 +103,12 @@ const AboutUs = () => {
               </Col>
               <Col sm="12">
                 <h4>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium
+                Who we are
                 </h4>
                 <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium,
+                  The word 'SARVAM' a Sanskrit word that stands for "Everything" or "Complete", represents to the totality of our strengths as a company - Infrastructure, Man power, Rich Experience, Extensive Product Range, Quality and undying passion to remain ahead of the times. All backed by our capable and experienced sales, Marketing, Back end Supporting, Service and Logistics team.SARVAM SAFETY Equipment (P) ltd is a Channel partner for reputed National and International Life Saving Equipment Manufacturers, catering the safety needs of various Industrial segments such as Automobiles, Chemical, Engineering, Pharmaceuticals, Refineries, Construction, power sectors , Fire service, Government sectors, IT , Hotels and various Institutions.
                 </p>
-                <p>
-                  On the other hand, we denounce with righteous indignation and
-                  dislike men who are so beguiled and demoralized by the charms
-                  of pleasure of the moment, so blinded by desire, that they
-                  cannot foresee the pain and trouble that are bound to ensue;
-                  and equal blame belongs to those who fail in their duty
-                  through weakness of will, which is the same as saying through
-                  shrinking from toil and pain. These cases are perfectly simple
-                  and easy to distinguish. In a free hour, when our power of
-                  choice is untrammelled and when nothing prevents our being
-                  able to do what we like best, every pleasure is to be welcomed
-                  and every pain avoided. But in certain circumstances and owing
-                  to the claims of duty or the obligations of business it will
-                  frequently occur that pleasures have to be repudiated and
-                  annoyances accepted. The wise man therefore always holds in
-                  these matters to this principle of selection: he rejects
-                  pleasures to secure other greater pleasures, or else he
-                  endures pains to avoid worse pains.
-                </p>
+                
               </Col>
             </Row>
           </Container>
@@ -215,9 +166,9 @@ const AboutUs = () => {
         {/* <!--Team ends--> */}
 
         <div className="section-b-space">
-          <ServiceLayout
+          {/* <ServiceLayout
             sectionClass={"service border-section small-section"}
-          />
+          /> */}
         </div>
       </CommonLayout>
     </>
