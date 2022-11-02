@@ -26,7 +26,7 @@ const HeaderOne = ({
      Pre loader
      ==========================*/
   useEffect(() => {
-    setTimeout(function () {
+    setTimeout(function() {
       document.querySelectorAll(".loader-wrapper").style = "display:none";
     }, 2000);
 
@@ -48,8 +48,7 @@ const HeaderOne = ({
       if (window.innerWidth < 581)
         document.getElementById("sticky").classList.remove("fixed");
       else document.getElementById("sticky").classList.add("fixed");
-    }
-    else document.getElementById("sticky").classList.remove("fixed");
+    } else document.getElementById("sticky").classList.remove("fixed");
   };
 
   const openNav = () => {
@@ -101,7 +100,7 @@ const HeaderOne = ({
                 </div>
                 <div className="menu-right pull-right">
                   {/*Top Navigation Bar Component*/}
-                   <NavBar />
+                  <NavBar />
 
                   <div>
                     <div className="icon-nav">

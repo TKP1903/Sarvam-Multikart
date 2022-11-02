@@ -1,11 +1,11 @@
 import Carousel from "react-elastic-carousel";
 import Item from "./Item";
 import Img from "next/image";
-import award1 from "../../Assets/wall of frame/award1.png";
-import award2 from "../../Assets/wall of frame/award2.png";
-import award3 from "../../Assets/wall of frame/award3.png";
-import award4 from "../../Assets/wall of frame/award4.png";
-import award5 from "../../Assets/wall of frame/award5.png";
+import award1 from "../../Assets/wall of frame/award1.webp";
+import award2 from "../../Assets/wall of frame/award2.webp";
+import award3 from "../../Assets/wall of frame/award3.webp";
+import award4 from "../../Assets/wall of frame/award4.webp";
+import award5 from "../../Assets/wall of frame/award5.webp";
 
 const breakPoints = [
   { width: 1, itemsToShow: 1, itemsToScroll: 1, pagination: false },
@@ -47,8 +47,8 @@ function Award() {
         <div className="Award__MainHeading">
           <h1>Wall Of Fame</h1>
           <p className="Award__para">
-            All Roads That to succes have to pass through hard work boulevard,at
-            some point of time.
+            All Roads That to success have to pass through hard work
+            boulevard,at some point of time.
           </p>
         </div>
         <div className="carousel-wrapper">

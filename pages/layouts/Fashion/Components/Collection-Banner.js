@@ -4,25 +4,22 @@ import { Container, Row, Col, Media } from "reactstrap";
 import banner1 from "../../../../Assets/shoe/KARAM FS 210.png";
 import banner2 from "../../../../Assets/head protection/561.png";
 
-
-
 const Data = [
   {
     img: banner1,
-    about: "shoe",
+    about: "Shoes",
     offer: "20% off",
     link: "",
     class: "p-right text-center",
   },
   {
     img: banner2,
-    about: "Helmat",
+    about: "Helmet",
     offer: "10% off",
     link: "",
     class: "p-right text-center",
   },
 ];
-
 
 const MasterCollectionBanner = ({ img, about, offer, link, classes }) => {
   return (
@@ -30,7 +27,12 @@ const MasterCollectionBanner = ({ img, about, offer, link, classes }) => {
       <Link href={link}>
         <a>
           <div className={`collection-banner ${classes}`}>
-            <Media src={img} className="img-fluid" alt=""  style={{width:"30%"}}/>
+            <Media
+              src={img}
+              className="img-fluid"
+              alt=""
+              style={{ width: "30%" }}
+            />
             <div className="contain-banner">
               <div>
                 <h4>{offer}</h4>

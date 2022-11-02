@@ -44,7 +44,7 @@ const NavBar = () => {
         "opensubmegamenu"
       );
     else {
-      document.querySelectorAll(".menu-content").forEach(function (value) {
+      document.querySelectorAll(".menu-content").forEach(function(value) {
         value.classList.remove("opensubmegamenu");
       });
       event.target.parentNode.nextElementSibling.classList.add(
@@ -117,7 +117,7 @@ const NavBar = () => {
     if (event.target.nextElementSibling.classList.contains("opensubmenu"))
       event.target.nextElementSibling.classList.remove("opensubmenu");
     else {
-      document.querySelectorAll(".nav-submenu").forEach(function (value) {
+      document.querySelectorAll(".nav-submenu").forEach(function(value) {
         value.classList.remove("opensubmenu");
       });
       document
@@ -147,10 +147,13 @@ const NavBar = () => {
                   key={i}
                   className={` ${menuItem.megaMenu ? "mega-menu" : ""}`}
                 >
-                  <a className="nav-link" onClick={(e) => openMblNav(e)}>
+                  <a
+                    className="nav-link"
+                    onClick={menuItem.type === "sub" ? (e) => openMblNav(e) : () => {}}
+                  >
                     {" "}
                     {t(menuItem.title)}
-                    <span className="sub-arrow"></span>
+                    {menuItem.type === "sub" && <span className="sub-arrow"></span>}
                   </a>
                   {menuItem.children && !menuItem.megaMenu ? (
                     <ul className="nav-submenu">
@@ -158,8 +161,9 @@ const NavBar = () => {
                         return (
                           <li
                             key={index}
-                            className={`${childrenItem.children ? "sub-menu " : ""
-                              }`}
+                            className={`${
+                              childrenItem.children ? "sub-menu " : ""
+                            }`}
                           >
                             {childrenItem.type === "sub" ? (
                               <a
@@ -193,8 +197,9 @@ const NavBar = () => {
                             )}
                             {childrenItem.children ? (
                               <ul
-                                className={`nav-sub-childmenu ${childrenItem.active ? "menu-open " : "active"
-                                  }`}
+                                className={`nav-sub-childmenu ${
+                                  childrenItem.active ? "menu-open " : "active"
+                                }`}
                               >
                                 {childrenItem.children.map(
                                   (childrenSubItem, key) => (
@@ -228,8 +233,9 @@ const NavBar = () => {
                     </ul>
                   ) : (
                     <div
-                      className={`mega-menu-container  ${menuItem.megaMenu ? "" : "opensubmenu"
-                        }`}
+                      className={`mega-menu-container  ${
+                        menuItem.megaMenu ? "" : "opensubmenu"
+                      }`}
                     >
                       {menuItem.megaMenu === true ? (
                         <Container>
@@ -237,14 +243,15 @@ const NavBar = () => {
                             {menuItem.children.map((megaMenuItem, i) => {
                               return (
                                 <div
-                                  className={`${menuItem.megaMenuType == "small"
-                                    ? "col mega-box"
-                                    : menuItem.megaMenuType == "medium"
+                                  className={`${
+                                    menuItem.megaMenuType == "small"
+                                      ? "col mega-box"
+                                      : menuItem.megaMenuType == "medium"
                                       ? "col-lg-3"
                                       : menuItem.megaMenuType == "large"
-                                        ? "col"
-                                        : ""
-                                    } `}
+                                      ? "col"
+                                      : ""
+                                  } `}
                                   key={i}
                                 >
                                   <div className="link-section">
@@ -257,30 +264,40 @@ const NavBar = () => {
                                       <ul>
                                         {menuItem.title === "Elements"
                                           ? megaMenuItem.children.map(
-                                            (subMegaMenuItem, i) => {
-                                              return (
-                                                <li key={i}>
-                                                  <Link href={subMegaMenuItem.path}>
-                                                    <>
-                                                      <i className={`icon-${subMegaMenuItem.icon}`}></i>
-                                                      {subMegaMenuItem.title}
-                                                    </>
-                                                  </Link>
-                                                </li>
-                                              );
-                                            }
-                                          )
+                                              (subMegaMenuItem, i) => {
+                                                return (
+                                                  <li key={i}>
+                                                    <Link
+                                                      href={
+                                                        subMegaMenuItem.path
+                                                      }
+                                                    >
+                                                      <>
+                                                        <i
+                                                          className={`icon-${subMegaMenuItem.icon}`}
+                                                        ></i>
+                                                        {subMegaMenuItem.title}
+                                                      </>
+                                                    </Link>
+                                                  </li>
+                                                );
+                                              }
+                                            )
                                           : megaMenuItem.children.map(
-                                            (subMegaMenuItem, i) => {
-                                              return (
-                                                <li key={i}>
-                                                  <Link href={subMegaMenuItem.path}>
-                                                    {subMegaMenuItem.title}
-                                                  </Link>
-                                                </li>
-                                              );
-                                            }
-                                          )}
+                                              (subMegaMenuItem, i) => {
+                                                return (
+                                                  <li key={i}>
+                                                    <Link
+                                                      href={
+                                                        subMegaMenuItem.path
+                                                      }
+                                                    >
+                                                      {subMegaMenuItem.title}
+                                                    </Link>
+                                                  </li>
+                                                );
+                                              }
+                                            )}
                                       </ul>
                                     </div>
                                   </div>
