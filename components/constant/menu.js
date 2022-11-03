@@ -51,7 +51,5 @@ export const MENUITEMS = [
   },
   {
     title: "Contact",
-    type: "sub",
-    children: [],
   },
 ];

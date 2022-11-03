@@ -12,14 +12,13 @@ const LogoBlock = ({ designClass }) => {
     "/assets/images/logos/5.png",
     "/assets/images/logos/6.png",
     "/assets/images/logos/7.png",
-    "/assets/images/logos/8.png",
   ];
   return (
     <section className={designClass}>
       <Container>
         <Row>
           <Col md="12">
-          <h1 style={{textAlign:"center",fontSize:"14px"}}>Parter Logos will Updated soon</h1>
+          <h1 style={{textAlign:"center",fontSize:"14px"}}>Partner Logos</h1>
             <Slider {...Slider6} className="slide-6 no-arrow">
               {imgData.map((imgSrc, i) => {
                 return (
