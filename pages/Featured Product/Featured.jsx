@@ -1,6 +1,6 @@
 import React from "react";
 
-import Img from "../../components/custom/MediaImage";
+import { useState, useEffect } from "react";
 
 // product Images
 import Img1 from "../../Assets/head protection/Untitled-1.png";
@@ -12,6 +12,9 @@ import Img6 from "../../Assets/head protection/Untitled-1.png";
 import Img7 from "../../Assets/head protection/Untitled-1.png";
 import Img8 from "../../Assets/head protection/Untitled-1.png";
 
+import Img from "../../components/custom/MediaImage";
+import FeaturedItem from "../../components/custom/FeaturedItemCard";
+
 const img1 = Img1.src;
 const img2 = Img2.src;
 const img3 = Img3.src;
@@ -22,6 +25,35 @@ const img7 = Img7.src;
 const img8 = Img8.src;
 
 export default function Featured() {
+  // TODO:: Implement featured products filter
+  /**
+   * featured item
+   * {
+   *  id: number,
+   *  name: string,
+   *  price: number,
+   *  img: string,
+   *  link: string,
+   *  handleAddToCart: () => {},
+   *  handleRetweet: () => {},
+   *  handleHeart: () => {},
+   * }
+   */
+  const [featuredItems, setFeaturedItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [filterSelected, setFilterSelected] = useState("all");
+
+  useEffect(() => {
+    const getFeaturedItems = async () => {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
+      const data = await response.json();
+      setFeaturedItems(data);
+    };
+    getFeaturedItems();
+  }, [filterSelected]);
+
   return (
     <div>
       <section className="featured spad">
@@ -37,7 +69,7 @@ export default function Featured() {
                     All
                   </li>
                   <li data-filter=".oranges">Head Protection</li>
-                  <li data-filter=".fresh-meat">Head Protection</li>
+                  <li data-filter=".fresh-meat">Eye Protection</li>
                   <li data-filter=".vegetables">Feet Protection</li>
                   <li data-filter=".fastfood">Fire Protection</li>
                 </ul>
@@ -48,11 +80,11 @@ export default function Featured() {
             <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
               <div className="featured__item">
                 <div className="featured__item__pic set-bg">
-                  <Img 
-                    src={img1} 
-                    alt="" 
-                    // style={{ width: "35%" }} 
-                />
+                  <Img
+                    src={img1}
+                    alt=""
+                    // style={{ width: "35%" }}
+                  />
                   <ul className="featured__item__pic__hover">
                     <li>
                       <a href="#">
