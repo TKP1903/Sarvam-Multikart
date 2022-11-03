@@ -14,6 +14,7 @@ import Img8 from "../../Assets/head protection/Untitled-1.png";
 
 import Img from "../../components/custom/MediaImage";
 import FeaturedItem from "../../components/custom/FeaturedItemCard";
+import getProductsByCategory from "./apiCallers/getProductsByCategory";
 
 const img1 = Img1.src;
 const img2 = Img2.src;
@@ -24,7 +25,16 @@ const img6 = Img6.src;
 const img7 = Img7.src;
 const img8 = Img8.src;
 
-export default function Featured() {
+const productCategories = [
+  "Head Protection",
+  "Foot Protection",
+  "Hand Protection",
+  "Eye Protection",
+  "Respiratory Protection",
+  "Hearing Protection",
+];
+
+const Featured = () => {
   // TODO:: Implement featured products filter
   /**
    * featured item
@@ -44,12 +54,11 @@ export default function Featured() {
   const [filterSelected, setFilterSelected] = useState("all");
 
   useEffect(() => {
+    setLoading(true);
     const getFeaturedItems = async () => {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/posts"
-      );
-      const data = await response.json();
-      setFeaturedItems(data);
+      const data = await getProductsByCategory(filterSelected || "all");
+      setFeaturedItems(data || []);
+      setLoading(false);
     };
     getFeaturedItems();
   }, [filterSelected]);
@@ -61,28 +70,55 @@ export default function Featured() {
           <div className="row">
             <div className="col-lg-12">
               <div className="section-title">
-                <h2>Featured Product</h2>
+                <h2>Featured Products</h2>
               </div>
               <div className="featured__controls">
                 <ul>
-                  <li className="active" data-filter="*">
+                  <li
+                    className={filterSelected === "all" ? "active" : ""}
+                    data-filter="*"
+                    onClick={() => {
+                      setFilterSelected("all");
+                    }}
+                  >
                     All
                   </li>
-                  <li data-filter=".oranges">Head Protection</li>
-                  <li data-filter=".fresh-meat">Eye Protection</li>
-                  <li data-filter=".vegetables">Feet Protection</li>
-                  <li data-filter=".fastfood">Fire Protection</li>
+                  {productCategories.map((category) => (
+                    <li
+                      className={filterSelected === category ? "active" : ""}
+                      onClick={() => setFilterSelected(category)}
+                      data-filter={"." + category}
+                    >
+                      {category}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
           </div>
           <div className="row featured__filter">
-            <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+            {loading ? (
+              <div className="col-lg-12">
+                <div className="loading">Loading...</div>
+              </div>
+            ) : (
+              featuredItems.map((item) => (
+                <FeaturedItem
+                  key={"featured-item-"+item.id}
+                  item={{
+                    ...item,
+                    "img"  : (item.img || Img1.src),
+                    "link" :  "/product/" + item.id,
+                  }}
+                />
+              ))
+            )}
+            {/* <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
               <div className="featured__item">
                 <div className="featured__item__pic set-bg">
                   <Img
                     src={img1}
-                    alt=""
+                    alt= ""
                     // style={{ width: "35%" }}
                   />
                   <ul className="featured__item__pic__hover">
@@ -341,10 +377,12 @@ export default function Featured() {
                   <h5>Rs:1500</h5>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
     </div>
   );
-}
+};
+
+export default Featured;

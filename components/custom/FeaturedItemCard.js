@@ -1,3 +1,5 @@
+import Img from "../custom/MediaImage";
+
 const emptyItem = {
   id : 0,
   name: '',
