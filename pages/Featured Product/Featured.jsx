@@ -1,6 +1,13 @@
 import React from "react";
 
 import { useState, useEffect } from "react";
+import {
+  Carousel,
+  CarouselItem,
+  CarouselControl,
+  CarouselIndicators,
+  CarouselCaption,
+} from "reactstrap";
 
 // product Images
 import Img1 from "../../Assets/head protection/Untitled-1.png";
@@ -104,11 +111,11 @@ const Featured = () => {
             ) : (
               featuredItems.map((item) => (
                 <FeaturedItem
-                  key={"featured-item-"+item.id}
+                  key={"featured-item-" + item.id}
                   item={{
                     ...item,
-                    "img"  : (item.img || Img1.src),
-                    "link" :  "/product/" + item.id,
+                    img: item.img || Img1.src,
+                    link: "/product/" + item.id,
                   }}
                 />
               ))

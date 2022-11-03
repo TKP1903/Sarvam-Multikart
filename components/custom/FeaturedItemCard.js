@@ -1,11 +1,11 @@
 import Img from "../custom/MediaImage";
 
 const emptyItem = {
-  id : 0,
-  name: '',
+  id: 0,
+  name: "",
   price: 0,
-  img: '',
-  link: '',
+  img: "",
+  link: "",
   handleAddToCart: () => {},
   handleRetweet: () => {},
   handleHeart: () => {},
@@ -30,7 +30,7 @@ const FeaturedItem = ({ item = emptyItem }) => {
     <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
       <div className="featured__item" id={`featured-item-${id}`}>
         <div className="featured__item__pic set-bg">
-          <Img src={img} alt="" />
+          <Img src={img} alt={name} height={736} width={1000} />
           <ul className="featured__item__pic__hover">
             <li>
               <a href="" onClick={handleHeart}>

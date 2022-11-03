@@ -4,7 +4,11 @@ export const MENUITEMS = [
     title: "Home",
     type: "link",
   },
-  { path: "../../pages/page/about-us.js", title: "About Us", type: "link" },
+  {
+    path: "../../pages/page/about-us.js",
+    title: "About Us",
+    type: "link",
+  },
   {
     title: "Products",
     type: "sub",
@@ -51,5 +55,6 @@ export const MENUITEMS = [
   },
   {
     title: "Contact",
+    type: "link",
   },
 ];

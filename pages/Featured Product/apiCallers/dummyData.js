@@ -164,7 +164,7 @@ const allProducts = [
 // put random image id in the img url
 for (let i = 0; i < allProducts.length; i++) {
     const random = Math.floor(Math.random() * 1000);
-    allProducts[i].img = `https://picsum.photos/id/${random}/1000`;
+    allProducts[i].img = `https://picsum.photos/id/${random}/736/1000`;
 }
 
 const makeCachedProducts = (allProducts) => {
