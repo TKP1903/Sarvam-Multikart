@@ -15,14 +15,16 @@ import {visionimg} from "../../Assets/head protection/561.png"
 
 const TeamData = [
   {
-    img: '/assets/images/team/1.jpg',
-    name: "Hileri Keol",
-    post: "CEo & Founder At Company",
+    img: '/assets/images/team/1.png',
   },
   {
-    img: '/assets/images/team/2.jpg',
-    name: "Hileri Keol",
-    post: "CEo & Founder At Company",
+    img: '/assets/images/team/2.png',
+  },
+  {
+    img: '/assets/images/team/3.png',
+  },
+  {
+    img: '/assets/images/team/4.png',
   },
  
 ];
@@ -31,7 +33,7 @@ const Team = ({ img, name, post }) => {
   return (
     <div>
       <div>
-        <Media src={img} className="img-fluid blur-up lazyload bg-img" alt="" />
+        <Media src={img} style={{objectFit:"cover"}} className="img-fluid blur-up lazyload bg-img " alt="" />
       </div>
       <h4>{name}</h4>
       <h6>{post}</h6>
@@ -132,7 +134,8 @@ const AboutUs = () => {
           <Container>
             <Row>
               <Col sm="12">
-                <h2>Our Team</h2>
+                <h2>People  behind the scene</h2>
+                <p>Good teams incorporate teamwork into their culture, creating the building blocks for success.</p>
                 <Slider className="team-4" {...Slider4}>
                   {TeamData.map((data, i) => {
                     return (
