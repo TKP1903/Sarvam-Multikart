@@ -6,6 +6,7 @@ import aboutus from "../../public/assets/images/about/aboutus.jpg";
 // import two from "../../public/assets/images/2.jpg";
 import Slider from "react-slick";
 import { Slider2, Slider4 } from "../../services/script";
+import {visionimg} from "../../Assets/head protection/561.png"
 // import team1 from "../../public/assets/images/team/1.jpg";
 // import team2 from "../../public/assets/images/team/2.jpg";
 // import team3 from "../../public/assets/images/team/3.jpg";
@@ -23,21 +24,7 @@ const TeamData = [
     name: "Hileri Keol",
     post: "CEo & Founder At Company",
   },
-  {
-    img: '/assets/images/team/3.jpg',
-    name: "Hileri Keol",
-    post: "CEo & Founder At Company",
-  },
-  {
-    img: '/assets/images/team/4.jpg',
-    name: "Hileri Keol",
-    post: "CEo & Founder At Company",
-  },
-  {
-    img: '/assets/images/team/1.jpg',
-    name: "Hileri Keol",
-    post: "CEo & Founder At Company",
-  },
+ 
 ];
 
 const Team = ({ img, name, post }) => {
@@ -108,7 +95,6 @@ const AboutUs = () => {
                 <p>
                   The word 'SARVAM' a Sanskrit word that stands for "Everything" or "Complete", represents to the totality of our strengths as a company - Infrastructure, Man power, Rich Experience, Extensive Product Range, Quality and undying passion to remain ahead of the times. All backed by our capable and experienced sales, Marketing, Back end Supporting, Service and Logistics team.SARVAM SAFETY Equipment (P) ltd is a Channel partner for reputed National and International Life Saving Equipment Manufacturers, catering the safety needs of various Industrial segments such as Automobiles, Chemical, Engineering, Pharmaceuticals, Refineries, Construction, power sectors , Fire service, Government sectors, IT , Hotels and various Institutions.
                 </p>
-                
               </Col>
             </Row>
           </Container>
