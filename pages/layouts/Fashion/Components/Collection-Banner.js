@@ -5,8 +5,8 @@ import { Container, Row, Col, Media } from "reactstrap";
 // import banner1 from "../../../../Assets/shoe/KARAM FS 210.png";
 // import banner2 from "../../../../Assets/head protection/561.png";
 
-import banner1 from "../../../../Assets/collection banner/collection_banner_shoes.jpg";
-import banner2 from "../../../../Assets/collection banner/collection_banner_helmet.jpg";
+import banner1 from "../../../../Assets/collection banner/ad banner small.png";
+import banner2 from "../../../../Assets/collection banner/ad banner small2.png";
 
 
 const Data = [
