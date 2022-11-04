@@ -1,0 +1,46 @@
+.brand-name {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    gap : 10px;
+}
+
+#logo-registered-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    justify-self:flex-start;
+    vertical-align: super!important;
+}
+
+@media screen and (max-width: 768px) {
+    .brand-logo {
+        display: block;
+    }
+    .brand-name {
+        display: none;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .brand-name-mobile {
+        display: block;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Path: pages\index.css */
