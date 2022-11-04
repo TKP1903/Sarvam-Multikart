@@ -78,7 +78,7 @@ const Fashion = () => {
       /> */}
       <Parallax />
       <ServiceLayout sectionClass="border-section small-section" />
-      <Award />
+      {/* <Award /> */}
       <Testimonials />
       {/* <Blog type="fashion" title="title1" inner="title-inner1" /> */}
       {/* <Instagram type="fashion" /> */}

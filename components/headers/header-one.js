@@ -93,7 +93,7 @@ const HeaderOne = ({
                       </div>
                     </a>
                     {/*SideBar Navigation Component*/}
-                    <SideBar />
+                    {/* <SideBar /> */}
                   </div>
                   <div className="brand-logo">
                     
