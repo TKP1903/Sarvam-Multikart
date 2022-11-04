@@ -22,7 +22,41 @@ const Fashion = () => {
         <link rel="icon" type="image/x-icon" href={"#"} />
       </Helmet>
       <ModalComponent />
-      <HeaderOne logoName={""} topClass="top-header" />
+      <HeaderOne
+        logoName={""}
+        brandName={
+          <span
+            style={{
+              fontSize: "1.5rem",
+              fontWeight: "300rem",
+              marginLeft: "1rem",
+            }}
+          >
+            <span
+              id="logo-sarvam-text"
+              style={{
+                fontSize: "1.5rem",
+                fontWeight: "300",
+              }}
+            >
+              SARVAM{" "}
+            </span>
+            {/* <span className="logo-safety-text"> SAFETY </span> */}
+            <span
+              id="logo-registred-text"
+              style={{
+                fontSize: "1.1rem",
+                fontWeight: "400",
+                verticalAlign: "super",
+              }}
+            >
+              {" "}
+              &#174;{" "}
+            </span>
+          </span>
+        }
+        topClass="top-header"
+      />
       <Banner />
       <CollectionBanner />
       {/* <Paragraph
@@ -61,6 +95,6 @@ const Fashion = () => {
       />
     </>
   );
-}
+};
 
 export default Fashion;

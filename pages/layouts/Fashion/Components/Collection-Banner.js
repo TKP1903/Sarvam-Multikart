@@ -1,8 +1,13 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
 import { Container, Row, Col, Media } from "reactstrap";
-import banner1 from "../../../../Assets/shoe/KARAM FS 210.png";
-import banner2 from "../../../../Assets/head protection/561.png";
+
+// import banner1 from "../../../../Assets/shoe/KARAM FS 210.png";
+// import banner2 from "../../../../Assets/head protection/561.png";
+
+import banner1 from "../../../../Assets/collection banner/collection_banner_shoes.jpg";
+import banner2 from "../../../../Assets/collection banner/collection_banner_helmet.jpg";
+
 
 const Data = [
   {
@@ -31,7 +36,6 @@ const MasterCollectionBanner = ({ img, about, offer, link, classes }) => {
               src={img}
               className="img-fluid"
               alt=""
-              style={{ width: "30%" }}
             />
             <div className="contain-banner">
               <div>

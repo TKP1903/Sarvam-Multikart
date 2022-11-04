@@ -18,6 +18,7 @@ const HeaderOne = ({
   headerClass,
   topClass,
   noTopBar,
+  brandName = "",
   direction,
 }) => {
   const router = useRouter();
@@ -95,7 +96,11 @@ const HeaderOne = ({
                     <SideBar />
                   </div>
                   <div className="brand-logo">
+                    
                     <LogoImage logo={logoName} />
+                  </div>
+                  <div className="brand-name">
+                    {brandName}
                   </div>
                 </div>
                 <div className="menu-right pull-right">
