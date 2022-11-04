@@ -36,12 +36,21 @@ const Fashion = () => {
               id="logo-sarvam-text"
               style={{
                 fontSize: "1.5rem",
-                fontWeight: "300",
+                fontWeight: "700",
               }}
             >
               SARVAM{" "}
             </span>
-            {/* <span className="logo-safety-text"> SAFETY </span> */}
+            <span
+              id="logo-safety-text"
+              style={{
+                fontSize: "1.5rem",
+                fontWeight: "700",
+              }}
+            >
+              {" "}
+              SAFETY{" "}
+            </span>
             <span
               id="logo-registred-text"
               style={{

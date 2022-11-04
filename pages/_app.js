@@ -52,7 +52,7 @@ export default function MyApp({ Component, pageProps }) {
             {/* <Head>
               <link rel="icon" type="image/x-icon" href={favicon} />
             </Head> */}
-            <title>Sarvam</title>
+            <title>Sarvam Safety</title>
           </Helmet>
           <div>
             <>
