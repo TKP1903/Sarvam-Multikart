@@ -1,15 +1,15 @@
 
-import Img1 from "../../../Assets/head protection/Untitled-1.png";
-import Img2 from "../../../Assets/head protection/Untitled-1.png";
-import Img3 from "../../../Assets/head protection/Untitled-1.png";
-import Img4 from "../../../Assets/head protection/Untitled-1.png";
-import Img5 from "../../../Assets/head protection/Untitled-1.png";
-import Img6 from "../../../Assets/head protection/Untitled-1.png";
-import Img7 from "../../../Assets/head protection/Untitled-1.png";
-import Img8 from "../../../Assets/head protection/Untitled-1.png";
+// import Img1 from "../../../Assets/head protection/Untitled-1.png";
+// import Img2 from "../../../Assets/head protection/Untitled-1.png";
+// import Img3 from "../../../Assets/head protection/Untitled-1.png";
+// import Img4 from "../../../Assets/head protection/Untitled-1.png";
+// import Img5 from "../../../Assets/head protection/Untitled-1.png";
+// import Img6 from "../../../Assets/head protection/Untitled-1.png";
+// import Img7 from "../../../Assets/head protection/Untitled-1.png";
+// import Img8 from "../../../Assets/head protection/Untitled-1.png";
 
 
-const img1 = require("../../../Assets/head protection/Untitled-1.png");
+// const img1 = require("../../../Assets/head protection/Untitled-1.png");
 
 /**
  * categories

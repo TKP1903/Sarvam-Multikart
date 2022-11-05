@@ -21,7 +21,8 @@ import Img8 from "../../Assets/head protection/Untitled-1.png";
 
 import Img from "../../components/custom/MediaImage";
 import FeaturedItem from "../../components/custom/FeaturedItemCard";
-import getProductsByCategory from "./apiCallers/getProductsByCategory";
+
+import getProductsByCategory from "../../helpers/custom/apiCallers/featuredProducts/getProductsByCategory";
 
 const img1 = Img1.src;
 const img2 = Img2.src;
