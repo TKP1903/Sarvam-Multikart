@@ -1,57 +1,60 @@
 .brand-title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .brand-name {
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #000;
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-    line-height: 1.5;
-    gap : 10px;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  gap: 10px;
 }
 
 #logo-registered-text {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #000;
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-    line-height: 1.5;
-    justify-self:flex-start;
-    vertical-align: super!important;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  justify-self: flex-start;
+  vertical-align: super !important;
 }
 
 .full-banner.parallax-banner-sarvam {
-    background-image: url("/public/assets/images/parallax/sarvam.jpg")!important;
+  background-image: url("/public/assets/images/parallax/sarvam.jpg") !important;
+}
+
+.carousel .control-dots .dot {
+  margin: -2.1% 8px !important;
 }
 
 @media screen and (max-width: 575px) {
-
-    .brand-name {
-        display: none;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-    .brand-name-mobile {
-        display: block;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
+  .brand-name {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .brand-name-mobile {
+    display: block;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 /* Path: pages\index.css */
