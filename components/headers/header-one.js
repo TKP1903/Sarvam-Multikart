@@ -27,7 +27,7 @@ const HeaderOne = ({
      Pre loader
      ==========================*/
   useEffect(() => {
-    setTimeout(function() {
+    setTimeout(function () {
       document.querySelectorAll(".loader-wrapper").style = "display:none";
     }, 2000);
 
@@ -95,12 +95,11 @@ const HeaderOne = ({
                     SideBar Navigation Component
                     <SideBar />
                   </div> */}
-                  <div className="brand-logo">
-                    
-                    <LogoImage logo={logoName} />
-                  </div>
-                  <div className="brand-name">
-                    {brandName}
+                  <div className="brand-title">
+                    <div className="brand-logo">
+                      <LogoImage logo={logoName} />
+                    </div>
+                    <div className="brand-name">{brandName}</div>
                   </div>
                 </div>
                 <div className="menu-right pull-right">

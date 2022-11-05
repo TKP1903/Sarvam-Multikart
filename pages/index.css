@@ -1,3 +1,12 @@
+.brand-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
 .brand-name {
     display: inline-flex;
     flex-direction: row;
@@ -25,10 +34,12 @@
     vertical-align: super!important;
 }
 
-@media screen and (max-width: 768px) {
-    .brand-logo {
-        display: block;
-    }
+.full-banner.parallax-banner-sarvam {
+    background-image: url("/public/assets/images/parallax/sarvam.jpg")!important;
+}
+
+@media screen and (max-width: 575px) {
+
     .brand-name {
         display: none;
         flex-direction: row;

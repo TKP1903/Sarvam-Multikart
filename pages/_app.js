@@ -12,6 +12,8 @@ import Helmet from "react-helmet";
 import { ApolloProvider } from "@apollo/client";
 import { useApollo } from '../helpers/apollo';
 
+import "./index.css";
+
 export default function MyApp({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(true);
   const [url, setUrl] = useState();

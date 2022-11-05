@@ -20,9 +20,14 @@ import Img7 from "../../Assets/head protection/Untitled-1.png";
 import Img8 from "../../Assets/head protection/Untitled-1.png";
 
 import Img from "../../components/custom/MediaImage";
+
 import FeaturedItem from "../../components/custom/FeaturedItemCard";
 
-import getProductsByCategory from "../../helpers/custom/apiCallers/featuredProducts/getProductsByCategory";
+import {
+  getProductsByCategory,
+  getProductCategories,
+  clearCachedProducts,
+} from "../../helpers/custom/apiCallers/featuredProducts/apiCaller";
 
 const img1 = Img1.src;
 const img2 = Img2.src;
@@ -33,14 +38,14 @@ const img6 = Img6.src;
 const img7 = Img7.src;
 const img8 = Img8.src;
 
-const productCategories = [
-  "Head Protection",
-  "Foot Protection",
-  "Hand Protection",
-  "Eye Protection",
-  "Respiratory Protection",
-  "Hearing Protection",
-];
+// const productCategories = [
+//   "Head Protection",
+//   "Foot Protection",
+//   "Hand Protection",
+//   "Eye Protection",
+//   "Respiratory Protection",
+//   "Hearing Protection",
+// ];
 
 const Featured = () => {
   // TODO:: Implement featured products filter
@@ -57,14 +62,20 @@ const Featured = () => {
    *  handleHeart: () => {},
    * }
    */
-  const [featuredItems, setFeaturedItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [productCategories, setProductCategories] = useState([]);
+  const [featuredItems, setFeaturedItems] = useState([]);
   const [filterSelected, setFilterSelected] = useState("all");
 
   useEffect(() => {
     setLoading(true);
     const getFeaturedItems = async () => {
       const data = await getProductsByCategory(filterSelected || "all");
+      let categories = productCategories;
+      if (filterSelected === "all") {
+        categories = await getProductCategories();
+      }
+      setProductCategories(categories);
       setFeaturedItems(data || []);
       setLoading(false);
     };
@@ -72,6 +83,7 @@ const Featured = () => {
   }, [filterSelected]);
 
   return (
+
     <div>
       <section className="featured spad">
         <div className="container">

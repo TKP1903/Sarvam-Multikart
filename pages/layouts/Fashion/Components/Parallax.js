@@ -2,6 +2,8 @@ import React, { Fragment } from "react";
 import { Container, Row, Col } from "reactstrap";
 import MasterParallaxBanner from "./MasterParallaxBanner";
 
+import "../../../styles/parallax.module.css";
+
 const Parallax = () => {
   return (
     <Fragment>
@@ -21,10 +23,10 @@ const Parallax = () => {
         </div>
       </section> */}
       <MasterParallaxBanner
-        bg="parallax-banner15"
+        bg="parallax-banner-sarvam"
         parallaxClass="text-center p-left"
         title="2022"
-        subTitle1="Sarvam"
+        subTitle1="Best safety products"
         subTitle2="special offer"
       />
     </Fragment>
