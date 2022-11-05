@@ -6,7 +6,7 @@ import MasterBanner from "./MasterBanner";
 import img from 'next/image';
 
 // image 
-import banner1 from "../../../../Assets/hero-image/website022.jpg";
+import banner1 from "../../../../Assets/hero-image/BANNER2.png";
 import banner2 from "../../../../Assets/hero-image/BANNER.png";
 
 const Data = [
