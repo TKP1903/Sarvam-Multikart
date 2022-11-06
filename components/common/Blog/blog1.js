@@ -114,7 +114,7 @@ const BlogSection = ({
                           <p>{item.desc} </p>
                         </Link>
                         <hr className="style1" />
-                        <h6>by: {item.date}</h6>
+                        {/* <h6>till: {item.date}</h6> */}
                       </div>
                     </Col>
                   ))}

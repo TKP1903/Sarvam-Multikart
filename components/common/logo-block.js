@@ -18,7 +18,7 @@ const LogoBlock = ({ designClass }) => {
       <Container>
         <Row>
           <Col md="12">
-          <h1 style={{textAlign:"center",fontSize:"14px"}}>Partner Logos</h1>
+          <h1 style={{textAlign:"center",fontSize:"14px"}}>Our Proud Partners</h1>
             <Slider {...Slider6} className="slide-6 no-arrow">
               {imgData.map((imgSrc, i) => {
                 return (
