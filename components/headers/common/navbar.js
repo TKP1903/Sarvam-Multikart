@@ -149,9 +149,9 @@ const NavBar = () => {
                 >
                   <a
                     className="nav-link"
-                    onClick={
-                      menuItem.type === "sub" ? (e) => openMblNav(e) : () => {}
-                    }
+                    onClick={(e) => {
+                      if (menuItem.type === "sub") return (e) => openMblNav(e);
+                    }}
                   >
                     {" "}
                     {translation(menuItem.title)}

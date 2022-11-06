@@ -31304,6 +31304,7 @@ header .main-navbar .nav-menu > li > a {
   padding-left: 0;
   letter-spacing: 0.07em;
   position: relative;
+  cursor: pointer;
 }
 header .main-navbar .nav-menu > li > a .sub-arrow {
   position: absolute;
