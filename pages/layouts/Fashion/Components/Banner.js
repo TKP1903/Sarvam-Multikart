@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 import Slider from "react-slick";
+import MasterBanner from "./MasterBanner";
+
 import Link from "next/link";
 import { Container, Row, Col } from "reactstrap";
-import MasterBanner from "./MasterBanner";
-import img from 'next/image';
 
 // image 
 import banner1 from "../../../../Assets/hero-image/BANNER2.png";
@@ -11,15 +11,15 @@ import banner2 from "../../../../Assets/hero-image/BANNER.png";
 
 const Data = [
   {
-    img: banner1,
-    title: "",
-    // desc: "Fire Safety ",
+    img: "home1",
+    title: "Welcome to Safety",
+    desc: "Sarvam Safety",
     link: "",
   },
   {
-    img: banner2,
-    title: "",
-    desc: "",
+    img: "home2",
+    // title: "Welcome to safety",
+    // desc: "Fire Safety",
     link: "",
   }
 ];

@@ -53,10 +53,10 @@ const Testimonials = () => {
                 <div className="testimonial__cardImage">
                   <img src={testimonial.img} alt="testimonial" /> 
                 </div>
-                <div className="testimonial__cardContent">
+                <div className="testimonial__cardContent" style={{padding: "1.5rem"}}>
                   <h3>{testimonial.name}</h3> 
-                  <p>{testimonial.title}</p>
-                  <p>{testimonial.description}</p>
+                  <h4>{testimonial.title}</h4>
+                  <h4 style={{color: "black"}}>{testimonial.description}</h4>
                 </div>
               </div>
             </div>

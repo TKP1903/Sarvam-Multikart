@@ -25,7 +25,7 @@ export default function MyApp({ Component, pageProps }) {
 
     let timer=setTimeout(function () {
       setIsLoading(false)
-    }, 1000);
+    }, 900);
     return () => { clearTimeout(timer)}
   }, []);
 

@@ -1,7 +1,7 @@
-import Img from 'next/image';
+import Img from "next/image";
 import { Col, Container, Row } from "reactstrap";
 
-const MasterBanner = ({ img,classes }) => {
+const MasterBanner = ({ img, title, desc, link = "", classes, btn, btnClass }) => {
   return (
     <div>
       <div className={`home ${img} ${classes ? classes : "text-center"}`}>
@@ -9,7 +9,15 @@ const MasterBanner = ({ img,classes }) => {
           <Row>
             <Col>
               <div className="slider-contain">
-                  <Img src={img} />
+                <div>
+                  <h4>{title}</h4>
+                  <h1>{desc}</h1>
+                  {/* <Link href={link || ""}>
+                    <a className={`btn ${btnClass ? btnClass : "btn-solid"}`}>
+                      {btn ? btn : "Shop Now"}{" "}
+                    </a>
+                  </Link> */}
+                </div>
               </div>
             </Col>
           </Row>
