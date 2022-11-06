@@ -14,6 +14,8 @@ import Award from "./Awards/Award";
 import Testimonials from "./Testimonial/Testimonial";
 import Featured from "../pages/Featured Product/Featured";
 
+import Blog from "../components/common/Blog/blog1";
+
 const Fashion = () => {
   return (
     <>
@@ -89,7 +91,13 @@ const Fashion = () => {
       <ServiceLayout sectionClass="border-section small-section" />
       {/* <Award /> */}
       <Testimonials />
-      {/* <Blog type="fashion" title="title1" inner="title-inner1" /> */}
+      <Blog
+        type="fashion"
+        titleClass="title1"
+        inner="title-inner1"
+        smallHeading="Our Clients"
+        bigHeading="TOP CLIENTS"
+      />
       {/* <Instagram type="fashion" /> */}
       <div className="section-b-space">
         <LogoBlock />

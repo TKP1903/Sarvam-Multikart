@@ -227,7 +227,7 @@ export const Slider3 = {
   slidesToShow: 3,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 5000,
+  autoplaySpeed: 2000,
   responsive: [
     {
       breakpoint: 1200,
@@ -245,6 +245,7 @@ export const Slider3 = {
     },
   ],
 };
+
 export const Slider4 = {
   infinite: false,
   speed: 300,
