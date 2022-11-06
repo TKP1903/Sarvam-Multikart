@@ -1,3 +1,7 @@
+a {
+  cursor: pointer!important;
+}
+
 .brand-title {
   display: flex;
   flex-direction: row;
