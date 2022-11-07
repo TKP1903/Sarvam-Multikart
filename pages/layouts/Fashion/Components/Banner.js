@@ -12,8 +12,8 @@ import banner2 from "../../../../Assets/hero-image/BANNER.png";
 const Data = [
   {
     img: "home1",
-    title: "Welcome to Safety",
-    desc: "Sarvam Safety",
+    // title: "Welcome to Safety",
+    // desc: "Sarvam Safety",
     link: "",
   },
   {
