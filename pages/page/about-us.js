@@ -34,7 +34,7 @@ const Team = ({ img, name, post }) => {
       <Row>
         <Col>
           <Media
-            src={"/assets/images/team/4.png"}
+            src={img}
             style={{ objectFit: "cover" }}
             className="img-fluid blur-up lazyload bg-img "
             alt="Can't load image"
