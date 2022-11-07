@@ -149,9 +149,19 @@ const NavBar = () => {
                 >
                   <a
                     className="nav-link"
-                    onClick={(e) => {
-                      if (menuItem.type === "sub") return (e) => openMblNav(e);
-                    }}
+                    onClick={(() => {
+                      switch (menuItem.type) {
+                        case "sub":
+                          return (e) => openMblNav(e);
+                        case "link":
+                          return () => {
+                            router.push({
+                              pathname: menuItem.path,
+                            });
+                          };
+                      }
+                      console.log({ menuItem });
+                    })()}
                   >
                     {" "}
                     {translation(menuItem.title)}

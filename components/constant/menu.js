@@ -5,7 +5,7 @@ export const MENUITEMS = [
     type: "link",
   },
   {
-    path: "../../pages/page/about-us.js",
+    path: "/page/about-us",
     title: "About Us",
     type: "link",
   },

@@ -5,13 +5,15 @@ import Helmet from "react-helmet";
 import MasterFooter from "../footers/common/MasterFooter";
 import favicon from "../../public/assets/images/favicon/favicon.ico";
 
+import Head from "next/head";
+
 const CommonLayout = ({ children, title, parent, subTitle }) => {
   return (
     <>
-      <Helmet>
+      <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/x-icon" href={favicon ? favicon : ""} />
-      </Helmet>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+      </Head>
       <HeaderOne topClass="top-header" logoName="logo.png" />
       <Breadcrubs title={title} parent={parent} subTitle={subTitle} />
       <>{children}</>
