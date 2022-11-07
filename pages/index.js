@@ -10,7 +10,7 @@ import ServiceLayout from "../components/common/Service/service1";
 import ModalComponent from "../components/common/Modal";
 import Helmet from "react-helmet";
 import MasterFooter from "../components/footers/common/MasterFooter";
-import Award from "./Awards/Award";
+
 import Testimonials from "./Testimonial/Testimonial";
 import Featured from "../pages/Featured Product/Featured";
 
@@ -59,7 +59,7 @@ const Fashion = () => {
                 fontSize: "1.1rem",
                 fontWeight: "400",
                 verticalAlign: "super",
-              }}
+              }} 
             >
               {" "}
               &#174;{" "}
@@ -89,7 +89,7 @@ const Fashion = () => {
       /> */}
       <Parallax />
       <ServiceLayout sectionClass="border-section small-section" />
-      {/* <Award /> */}
+      
       <Testimonials />
       <Blog
         type="fashion"

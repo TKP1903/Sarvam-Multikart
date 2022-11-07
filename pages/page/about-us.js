@@ -1,14 +1,14 @@
 import React from "react";
 import CommonLayout from "../../components/shop/common-layout";
 import { Container, Row, Col, Media } from "reactstrap";
-import aboutus from "../../public/assets/images/about/aboutus.jpg";
+import aboutus from "../../public/assets/images/about/aboutus.png";
 // import avtar from "../../public/assets/images/avtar.jpg";
 // import two from "../../public/assets/images/2.jpg";
 import Slider from "react-slick";
 import { Slider2, Slider4 } from "../../services/script";
-
+import ServiceLayout from "../../components/common/Service/service1";
 import { visionimg } from "../../Assets/head protection/561.png";
-
+import Award from "../Awards/Award";
 import CustomCarsousel from "../../components/custom/CustomCarousel";
 
 // import ServiceLayout from "../../components/common/Service/service1.js";
@@ -149,6 +149,8 @@ const AboutUs = () => {
         </section>
         {/* <!--Testimonial ends--> */}
 
+        <Award />
+
         {/* <!--Team start--> */}
         <section id="team" className="team section-b-space ratio_asos">
           <Container>
@@ -201,9 +203,9 @@ const AboutUs = () => {
         {/* <!--Team ends--> */}
 
         <div className="section-b-space">
-          {/* <ServiceLayout
+          <ServiceLayout
             sectionClass={"service border-section small-section"}
-          /> */}
+          />
         </div>
       </CommonLayout>
     </>
