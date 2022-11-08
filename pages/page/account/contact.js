@@ -1,6 +1,7 @@
 import React from "react";
 import CommonLayout from "../../../components/shop/common-layout";
 import { Container, Row, Col, Media, Form, Label, Input } from "reactstrap";
+import Blog from "../../../components/common/Blog/blog1";
 
 const Data = [
   {
@@ -129,6 +130,13 @@ const Contact = () => {
             </Col>
           </Row>
         </Container>
+        <Blog
+        type="fashion"
+        titleClass="title1"
+        inner="title-inner1"
+        smallHeading="Our Clients"
+        bigHeading="TOP CLIENTS"
+        />
       </section>
     </CommonLayout>
   );

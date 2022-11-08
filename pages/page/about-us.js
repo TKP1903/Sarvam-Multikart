@@ -5,7 +5,6 @@ import aboutus from "../../public/assets/images/about/aboutus.png";
 import Slider from "react-slick";
 import { Slider2, Slider4 } from "../../services/script";
 import ServiceLayout from "../../components/common/Service/service1";
-import { visionimg } from "../../Assets/head protection/561.png";
 import Award from "../Awards/Award";
 import CustomCarsousel from "../../components/custom/CustomCarousel";
 
@@ -92,7 +91,7 @@ const AboutUs = () => {
                 </div>
               </Col>
               <Col sm="12">
-                <h4>Who we are?</h4>
+                <h4 className="aboutus-title">Who we are?</h4>
                 <p
                   style={{
                     display: "flex",
