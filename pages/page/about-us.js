@@ -95,7 +95,7 @@ const AboutUs = () => {
                 <p
                   style={{
                     display: "flex",
-                    fontSize: "1rem",
+                    fontSize: "1.3rem",textAlign:"center"
                   }}
                 >
                   The word "SARVAM" a Sanskrit word that stands for "Everything"
@@ -151,10 +151,10 @@ const AboutUs = () => {
           <Container>
             <Row>
               <Col sm="12">
-                <h2 style={{ textTransform: "none", fontSize: "2rem" }}>
-                  People behind the scene
+                <h2 style={{ textTransform: "none", fontSize: "2rem", textAlign:"center",color:"#7fad39" }}>
+                  PEOPLE BEHIND THE SCENE
                 </h2>
-                <h4>
+                <h4 style={{color:"grey",fontWeight:"100"}}>
                   Good teams incorporate teamwork into their culture, creating
                   the building blocks for success.
                 </h4>

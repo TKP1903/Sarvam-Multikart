@@ -85,6 +85,7 @@
 }
 .Award__MainHeading>h1{
   font-size: 40px;
+  color: #7FAD39;
 }
 @media only screen and (max-width: 934px){
   .Award__para{
@@ -94,9 +95,7 @@
 
 // testimonal 
 
-.testimonial__container{
-  // background-color: #95c12b;
-}
+
 .Testimonial__MainHeading{
     display: flex;
     justify-content: center;
@@ -403,11 +402,13 @@
   justify-content: center;
   color: #7FAD39;
 }
+
 .aboutus-title{
-  font-size: 25px;
+  font-size: 45px;
   font-weight: bold;
   text-align: center !important;
   padding: 10px;
   justify-content: center;
   color: #7FAD39;
+  padding: 15px;
 }
