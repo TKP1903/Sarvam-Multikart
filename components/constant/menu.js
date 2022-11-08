@@ -53,7 +53,8 @@ export const MENUITEMS = [
       },
     ],
   },
-  {
+  { 
+    path: "/page/account/contact",
     title: "Contact",
     type: "link",
   },

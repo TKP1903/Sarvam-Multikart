@@ -2,16 +2,12 @@ import React from "react";
 import CommonLayout from "../../components/shop/common-layout";
 import { Container, Row, Col, Media } from "reactstrap";
 import aboutus from "../../public/assets/images/about/aboutus.png";
-// import avtar from "../../public/assets/images/avtar.jpg";
-// import two from "../../public/assets/images/2.jpg";
 import Slider from "react-slick";
 import { Slider2, Slider4 } from "../../services/script";
 import ServiceLayout from "../../components/common/Service/service1";
 import { visionimg } from "../../Assets/head protection/561.png";
 import Award from "../Awards/Award";
 import CustomCarsousel from "../../components/custom/CustomCarousel";
-
-// import ServiceLayout from "../../components/common/Service/service1.js";
 
 const TeamData = [
   {
@@ -193,9 +189,7 @@ const AboutUs = () => {
                     })}
                   </Slider> */}
                 </section>
-                {/* <Slider className="team-4" {...Slider4}>
-                 
-                </Slider> */}
+                
               </Col>
             </Row>
           </Container>
