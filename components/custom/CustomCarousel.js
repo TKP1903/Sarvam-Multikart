@@ -36,6 +36,9 @@ const CustomCarousel = ({ items }) => {
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
         key={item.name || "item" + index}
+        style = {{
+          display: "none",
+        }}
       >
         {item}
 

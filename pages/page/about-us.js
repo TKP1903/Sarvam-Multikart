@@ -35,9 +35,12 @@ const Team = ({ img, name, post }) => {
         <Col>
           <Media
             src={img}
-            style={{ objectFit: "cover" }}
             className="img-fluid blur-up lazyload bg-img "
             alt="Can't load image"
+            style={{
+              objectFit: "cover",
+              height: "400px",
+            }}
           />
           <h4>{name}</h4>
           <h6>{post}</h6>
@@ -162,7 +165,7 @@ const AboutUs = () => {
                   the building blocks for success.
                 </h4>
                 <section className="p-4">
-                  <CustomCarsousel
+                  {/* <CustomCarsousel
                     items={TeamData.map((data, i) => {
                       return (
                         <Team
@@ -173,8 +176,8 @@ const AboutUs = () => {
                         />
                       );
                     })}
-                  />
-                  {/* <Slider
+                  /> */}
+                  <Slider
                     className="slide-1 home-slider"
                     autoplay={true}
                     accessibility={true}
@@ -189,7 +192,7 @@ const AboutUs = () => {
                         />
                       );
                     })}
-                  </Slider> */}
+                  </Slider>
                 </section>
                 {/* <Slider className="team-4" {...Slider4}>
                  

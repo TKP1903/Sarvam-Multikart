@@ -24,7 +24,7 @@ const LeftSidebar = () => {
               />
               <ProductList
                 colClass="col-xl-3 col-6 col-grid-box"
-                layoutList=""
+                layoutList={""}
                 openSidebar={() => openCloseSidebar(sidebarView)}
               />
             </Row>
