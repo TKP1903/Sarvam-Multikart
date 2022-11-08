@@ -1,17 +1,12 @@
 import React from "react";
 import CommonLayout from "../../components/shop/common-layout";
 import { Container, Row, Col, Media } from "reactstrap";
-import aboutus from "../../public/assets/images/about/aboutus.jpg";
-// import avtar from "../../public/assets/images/avtar.jpg";
-// import two from "../../public/assets/images/2.jpg";
+import aboutus from "../../public/assets/images/about/aboutus.png";
 import Slider from "react-slick";
 import { Slider2, Slider4 } from "../../services/script";
-
-import { visionimg } from "../../Assets/head protection/561.png";
-
+import ServiceLayout from "../../components/common/Service/service1";
+import Award from "../Awards/Award";
 import CustomCarsousel from "../../components/custom/CustomCarousel";
-
-// import ServiceLayout from "../../components/common/Service/service1.js";
 
 const TeamData = [
   {
@@ -99,11 +94,11 @@ const AboutUs = () => {
                 </div>
               </Col>
               <Col sm="12">
-                <h4>Who we are?</h4>
+                <h4 className="aboutus-title">Who we are?</h4>
                 <p
                   style={{
                     display: "flex",
-                    fontSize: "1rem",
+                    fontSize: "1.3rem",textAlign:"center"
                   }}
                 >
                   The word "SARVAM" a Sanskrit word that stands for "Everything"
@@ -152,15 +147,17 @@ const AboutUs = () => {
         </section>
         {/* <!--Testimonial ends--> */}
 
+        <Award />
+
         {/* <!--Team start--> */}
         <section id="team" className="team section-b-space ratio_asos">
           <Container>
             <Row>
               <Col sm="12">
-                <h2 style={{ textTransform: "none", fontSize: "2rem" }}>
-                  People behind the scene
+                <h2 style={{ textTransform: "none", fontSize: "2rem", textAlign:"center",color:"#7fad39" }}>
+                  PEOPLE BEHIND THE SCENE
                 </h2>
-                <h4>
+                <h4 style={{color:"grey",fontWeight:"100"}}>
                   Good teams incorporate teamwork into their culture, creating
                   the building blocks for success.
                 </h4>
@@ -194,9 +191,7 @@ const AboutUs = () => {
                     })}
                   </Slider>
                 </section>
-                {/* <Slider className="team-4" {...Slider4}>
-                 
-                </Slider> */}
+                
               </Col>
             </Row>
           </Container>
@@ -204,9 +199,9 @@ const AboutUs = () => {
         {/* <!--Team ends--> */}
 
         <div className="section-b-space">
-          {/* <ServiceLayout
+          <ServiceLayout
             sectionClass={"service border-section small-section"}
-          /> */}
+          />
         </div>
       </CommonLayout>
     </>

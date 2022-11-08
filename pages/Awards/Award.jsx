@@ -49,7 +49,7 @@ function Award() {
         <div className="Award__MainHeading">
           <h1>Wall Of Fame</h1>
           <p className="Award__para" style={{
-            fontSize: "1.5rem",
+            fontSize: "0.8rem",
           }}>
             All Roads That to success have to pass through hard work
             boulevard,at some point of time.

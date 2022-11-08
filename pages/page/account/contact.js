@@ -1,32 +1,27 @@
 import React from "react";
 import CommonLayout from "../../../components/shop/common-layout";
 import { Container, Row, Col, Media, Form, Label, Input } from "reactstrap";
+import Blog from "../../../components/common/Blog/blog1";
 
 const Data = [
   {
     img: "fa-phone",
     title: "Contact us",
-    desc1: "+91 123 - 456 - 7890",
-    desc2: "+86 163 - 451 - 7894",
+    desc1: "044 – 4555 3337",
+    desc2: "044 – 4555 2227",
   },
   {
     img: "fa-map-marker",
     title: "ADDRESS",
-    desc1: "ABC Complex,Near xyz, New York",
-    desc2: "USA 123456",
+    desc1: "Address :#A6, SIDCO Industrial Estate, Villivakkam,Chennai – 600 049",
+    desc2: "TamilNadu",
   },
   {
     img: "fa-envelope-o",
     title: "ADDRESS",
-    desc1: "Support@Shopcart.com",
-    desc2: "info@shopcart.com",
+    desc1: "sarvam@sarvamsafety.com",
   },
-  {
-    img: "fa-fax",
-    title: "fax",
-    desc1: "Support@Shopcart.com",
-    desc2: "info@shopcart.com",
-  },
+  
 ];
 
 const ContactDetail = ({ img, title, desc1, desc2 }) => {
@@ -50,10 +45,8 @@ const Contact = () => {
         <Container>
           <Row className="section-b-space">
             <Col lg="7" className="map">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1605.811957341231!2d25.45976406005396!3d36.3940974010114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1550912388321"
-                allowFullScreen
-              ></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9331.67176431221!2d80.19904277619314!3d13.105880752778257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xadd2786bcce9a4be!2sSarvam%20Safety%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1667865878644!5m2!1sen!2sin">
+            </iframe>
             </Col>
             <Col lg="5">
               <div className="contact-right">
@@ -74,6 +67,7 @@ const Contact = () => {
             </Col>
           </Row>
           <Row>
+            <h1 className="request_form_tittle">Request Form </h1>
             <Col sm="12">
               <Form className="theme-form">
                 <Row>
@@ -136,6 +130,13 @@ const Contact = () => {
             </Col>
           </Row>
         </Container>
+        <Blog
+        type="fashion"
+        titleClass="title1"
+        inner="title-inner1"
+        smallHeading="Our Clients"
+        bigHeading="TOP CLIENTS"
+        />
       </section>
     </CommonLayout>
   );
