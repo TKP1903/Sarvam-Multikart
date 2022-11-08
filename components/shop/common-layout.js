@@ -14,7 +14,50 @@ const CommonLayout = ({ children, title, parent, subTitle }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
       </Head>
-      <HeaderOne topClass="top-header" logoName="logo.png" />
+      <HeaderOne
+        topClass="top-header"
+        logoName="logo.png"
+        brandName={
+          <span
+            style={{
+              fontSize: "1.5rem",
+              fontWeight: "300rem",
+              marginLeft: "1rem",
+            }}
+          >
+            <span
+              id="logo-sarvam-text"
+              style={{
+                fontSize: "1.5rem",
+                fontWeight: "700",
+              }}
+            >
+              SARVAM{" "}
+            </span>
+            <span
+              id="logo-safety-text"
+              style={{
+                fontSize: "1.5rem",
+                fontWeight: "700",
+              }}
+            >
+              {" "}
+              SAFETY{" "}
+            </span>
+            <span
+              id="logo-registred-text"
+              style={{
+                fontSize: "1.1rem",
+                fontWeight: "400",
+                verticalAlign: "super",
+              }}
+            >
+              {" "}
+              &#174;{" "}
+            </span>
+          </span>
+        }
+      />
       <Breadcrubs title={title} parent={parent} subTitle={subTitle} />
       <>{children}</>
       <MasterFooter
