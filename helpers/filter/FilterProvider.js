@@ -12,6 +12,7 @@ const FilterProvider = (props) => {
   const max = router.query.max;
   let sizeParam = size ? size.split(",") : null;
   let param = brand ? brand.split(",") : [];
+  
   const [selectedCategory, setSelectedCategory] = useState(
     category ? category : "fashion"
   );

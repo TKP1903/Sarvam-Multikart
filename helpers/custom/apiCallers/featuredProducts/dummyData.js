@@ -200,6 +200,8 @@ const _allProducts = [
     title: "Gloves Neoprene - HD 27 NEO",
     description: "Product 5 description",
     price: 130,
+    img: "https://sarvamsafety.com/image/cache/catalog/products/82%20Gloves%20Neoprene%20-%20HD%2027%20NEO-270x270.jpg",
+    category: "Hand Protection",
   },
   {
     id: 6,

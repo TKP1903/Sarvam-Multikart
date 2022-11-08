@@ -149,19 +149,17 @@ const NavBar = () => {
                 >
                   <a
                     className="nav-link"
-                    onClick={(() => {
+                    onClick={(e) => {
                       switch (menuItem.type) {
                         case "sub":
-                          return (e) => openMblNav(e);
+                          openMblNav(e);
                         case "link":
-                          return () => {
-                            router.push({
-                              pathname: menuItem.path,
-                            });
-                          };
+                          router.push({
+                            pathname: menuItem.path,
+                          });
                       }
                       console.log({ menuItem });
-                    })()}
+                    }}
                   >
                     {" "}
                     {translation(menuItem.title)}

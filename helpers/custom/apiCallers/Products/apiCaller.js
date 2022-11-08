@@ -15,8 +15,9 @@ import {
 import { _allProducts } from "./dummyData";
 
 const callAPI = {
-  getProductsByCategory: async (category) => {
-    return getFromCachedProducts(category) || [];
+  getProductsByCategory: async (category, from, to) => {
+    const _data = getFromCachedProducts(category) || [];
+    return _data.slice(from, to);
     // TODO: Replace with your own API call
     const { data } = await axios.get(
       // Random API
@@ -24,8 +25,8 @@ const callAPI = {
     );
     return data;
   },
-  getAllProducts: async () => {
-    return _allProducts;
+  getAllProducts: async (from, to) => {
+    return _allProducts.slice(from, to);
     // TODO: Replace with your own API call
     const { data } = await axios.get(
       // Random API
@@ -35,22 +36,24 @@ const callAPI = {
   },
 };
 
-const getProductsByCategory = async (category) => {
-  const cachedProducts = getFromCachedProducts(category);
-
+const getProductsByCategory = async (category, from, to) => {
+  const cachedProducts = getFromCachedProducts(category, from, to);
+  
+  console.log({ category, cachedProducts });
+  
   if (!!cachedProducts) {
     return cachedProducts;
   }
 
   if (category === "all") {
-    const data = await callAPI["getAllProducts"]();
+    const data = await callAPI.getAllProducts(from, to);
     makeCachedProducts(data);
     makeProductCategories(data);
     return data;
   }
 
   // TODO: Replace with your own API call
-  const data = await callAPI["getProductsByCategory"](category);
+  const data = await callAPI.getProductsByCategory(category, from, to);
 
   setCategoryInCachedProducts(category, data);
 

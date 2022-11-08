@@ -12,6 +12,11 @@ import CartContext from "../../../helpers/cart";
 import { WishlistContext } from "../../../helpers/wishlist/WishlistContext";
 import { CompareContext } from "../../../helpers/Compare/CompareContext";
 
+import {
+  getProductCategories,
+  getProductsByCategory,
+} from "../../../helpers/custom/apiCallers/Products/apiCaller";
+
 const GET_PRODUCTS = gql`
   query products(
     $type: _CategoryType!
@@ -65,6 +70,13 @@ const GET_PRODUCTS = gql`
   }
 `;
 
+const useReloader = () => {
+  const [reload, setReload] = useState(false);
+  return () => {
+    setReload((_) => !_);
+  };
+};
+
 const ProductList = ({ colClass, layoutList, openSidebar, noSidebar }) => {
   const cartContext = useContext(CartContext);
   const quantity = cartContext.quantity;
@@ -86,6 +98,8 @@ const ProductList = ({ colClass, layoutList, openSidebar, noSidebar }) => {
   const [layout, setLayout] = useState(layoutList);
   const [url, setUrl] = useState();
 
+  const reload = useReloader();
+
   useEffect(() => {
     const pathname = window.location.pathname;
     setUrl(pathname);
@@ -106,6 +120,24 @@ const ProductList = ({ colClass, layoutList, openSidebar, noSidebar }) => {
       limit: limit,
     },
   });
+
+  useEffect(() => {
+    const getProductsData = async () => {
+      const products =
+        (await getProductsByCategory(selectedCategory, 0, limit)) || [];
+      console.log({ products });
+      data = {
+        products: {
+          total: products.length,
+          hasMore: products.length > limit,
+          items: products,
+        },
+      };
+      console.log({ data });
+      reload();
+    };
+    getProductsData();
+  }, [selectedCategory]);
 
   const handlePagination = () => {
     setIsLoading(true);
@@ -156,7 +188,7 @@ const ProductList = ({ colClass, layoutList, openSidebar, noSidebar }) => {
       <div className="page-main-content">
         <Row>
           <Col sm="12">
-            <div className="top-banner-wrapper">
+            {/* <div className="top-banner-wrapper">
               <a href={null}>
                 <Media
                   src={Menu2.src}
@@ -183,7 +215,7 @@ const ProductList = ({ colClass, layoutList, openSidebar, noSidebar }) => {
                   like Aldus PageMaker including versions of Lorem Ipsum.
                 </p>
               </div>
-            </div>
+            </div> */}
             <Row>
               <Col xs="12">
                 <ul className="product-filter-tags">
