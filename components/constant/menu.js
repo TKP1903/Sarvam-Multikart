@@ -55,12 +55,14 @@ export const MENUITEMS = [
     type: "sub",
     children: [
       {
+        path: "/partner/Regional",
         title: "Regional Channel Partners",
-        type: "sub",
+        type: "link",
       },
       {
+        path: "/partner/International",
         title: "international Channel Partners",
-        type: "sub",
+        type: "link",
       },
     ],
   },
