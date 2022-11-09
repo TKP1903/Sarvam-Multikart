@@ -126,7 +126,7 @@ const NavBar = () => {
       event.target.nextElementSibling.classList.add("opensubmenu");
     }
   };
-
+  
   return (
     <div>
       <div className="main-navbar">
@@ -149,192 +149,186 @@ const NavBar = () => {
                 >
                   <a
                     className="nav-link"
-                    onClick={(e) => openMblNav(e)}
-                      // ((menuItem) => {
-                      // switch (menuItem.type) {
-                      //   default:
-                      //   case "sub":
-                      //     return (e) => openMblNav(e);
-                      //   case "link":
-                      //     return (e) =>
-                      //       router.push({
-                      //         pathname: menuItem.path || "",
-                      //       });
-                      // }
-                      // console.log({ menuItem });
-                    // })(menuItem)}
+                    onClick={((menuItem) => {
+                      switch (menuItem.type) {
+                        default:
+                        case "sub":
+                          return (e) => openMblNav(e);
+                        case "link":
+                          return (e) =>
+                            router.push({
+                              pathname: menuItem.path || "",
+                            });
+                      }
+                      console.log({ menuItem });
+                    })(menuItem)}
                   >
                     {" "}
-                    {translation(menuItem.title)}
+                    {t(menuItem.title)}
                     {menuItem.type === "sub" && (
                       <span className="sub-arrow"></span>
                     )}
                   </a>
-                  {menuItem.type === "sub" ? (
-                    menuItem.children && !menuItem.megaMenu ? (
-                      <ul className="nav-submenu">
-                        {menuItem.children.map((childrenItem, index) => {
-                          return (
-                            <li
-                              key={index}
-                              className={`${
-                                childrenItem.children ? "sub-menu " : ""
-                              }`}
-                            >
-                              {childrenItem.type === "sub" ? (
-                                <a
-                                  href={null}
-                                  onClick={() => toggletNavActive(childrenItem)}
-                                >
+                  {menuItem.children && !menuItem.megaMenu ? (
+                    <ul className="nav-submenu">
+                      {menuItem.children.map((childrenItem, index) => {
+                        return (
+                          <li
+                            key={index}
+                            className={`${
+                              childrenItem.children ? "sub-menu " : ""
+                            }`}
+                          >
+                            {childrenItem.type === "sub" ? (
+                              <a
+                                href={null}
+                                onClick={() => toggletNavActive(childrenItem)}
+                              >
+                                {childrenItem.title}
+                                {childrenItem.tag === "new" ? (
+                                  <span className="new-tag">new</span>
+                                ) : (
+                                  ""
+                                )}
+                                <i className="fa fa-angle-right ps-2"></i>
+                              </a>
+                            ) : (
+                              ""
+                            )}
+                            {childrenItem.type === "link" ? (
+                              <Link href={`${childrenItem.path}`}>
+                                <a>
                                   {childrenItem.title}
                                   {childrenItem.tag === "new" ? (
                                     <span className="new-tag">new</span>
                                   ) : (
                                     ""
                                   )}
-                                  <i className="fa fa-angle-right ps-2"></i>
                                 </a>
-                              ) : (
-                                ""
-                              )}
-                              {childrenItem.type === "link" ? (
-                                <Link href={`${childrenItem.path}`}>
-                                  <a>
-                                    {childrenItem.title}
-                                    {childrenItem.tag === "new" ? (
-                                      <span className="new-tag">new</span>
-                                    ) : (
-                                      ""
-                                    )}
-                                  </a>
-                                </Link>
-                              ) : (
-                                ""
-                              )}
-                              {childrenItem.children ? (
-                                <ul
-                                  className={`nav-sub-childmenu ${
-                                    childrenItem.active
-                                      ? "menu-open "
-                                      : "active"
-                                  }`}
+                              </Link>
+                            ) : (
+                              ""
+                            )}
+                            {childrenItem.children ? (
+                              <ul
+                                className={`nav-sub-childmenu ${
+                                  childrenItem.active ? "menu-open " : "active"
+                                }`}
+                              >
+                                {childrenItem.children.map(
+                                  (childrenSubItem, key) => (
+                                    <li key={key}>
+                                      {childrenSubItem.type === "link" ? (
+                                        <Link href={childrenSubItem.path}>
+                                          <a className="sub-menu-title">
+                                            {childrenSubItem.title}
+                                            {childrenSubItem.tag === "new" ? (
+                                              <span className="new-tag">
+                                                new
+                                              </span>
+                                            ) : (
+                                              ""
+                                            )}
+                                          </a>
+                                        </Link>
+                                      ) : (
+                                        ""
+                                      )}
+                                    </li>
+                                  )
+                                )}
+                              </ul>
+                            ) : (
+                              ""
+                            )}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  ) : (
+                    <div
+                      className={`mega-menu-container  ${
+                        menuItem.megaMenu ? "" : "opensubmenu"
+                      }`}
+                      style={{
+                        display: `${
+                          menuItem.type === "sub" ? "block" : "none"
+                        }`,
+                      }}
+                    >
+                      {menuItem.megaMenu === true ? (
+                        <Container>
+                          <Row>
+                            {menuItem.children.map((megaMenuItem, i) => {
+                              return (
+                                <div
+                                  className={`${
+                                    menuItem.megaMenuType == "small"
+                                      ? "col mega-box"
+                                      : menuItem.megaMenuType == "medium"
+                                      ? "col-lg-3"
+                                      : menuItem.megaMenuType == "large"
+                                      ? "col"
+                                      : ""
+                                  } `}
+                                  key={i}
                                 >
-                                  {childrenItem.children.map(
-                                    (childrenSubItem, key) => (
-                                      <li key={key}>
-                                        {childrenSubItem.type === "link" ? (
-                                          <Link href={childrenSubItem.path}>
-                                            <a className="sub-menu-title">
-                                              {childrenSubItem.title}
-                                              {childrenSubItem.tag === "new" ? (
-                                                <span className="new-tag">
-                                                  new
-                                                </span>
-                                              ) : (
-                                                ""
-                                              )}
-                                            </a>
-                                          </Link>
-                                        ) : (
-                                          ""
-                                        )}
-                                      </li>
-                                    )
-                                  )}
-                                </ul>
-                              ) : (
-                                ""
-                              )}
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    ) : (
-                      <div
-                        className={`mega-menu-container  ${
-                          menuItem.megaMenu ? "" : "opensubmenu"
-                        }`}
-                      >
-                        {menuItem.megaMenu === true ? (
-                          <Container>
-                            <Row>
-                              {menuItem.children.map((megaMenuItem, i) => {
-                                return (
-                                  <div
-                                    className={`${
-                                      menuItem.megaMenuType == "small"
-                                        ? "col mega-box"
-                                        : menuItem.megaMenuType == "medium"
-                                        ? "col-lg-3"
-                                        : menuItem.megaMenuType == "large"
-                                        ? "col"
-                                        : ""
-                                    } `}
-                                    key={i}
-                                  >
-                                    <div className="link-section">
-                                      <div className="menu-title">
-                                        <h5
-                                          onClick={(e) => handleMegaSubmenu(e)}
-                                        >
-                                          {megaMenuItem.title}
-                                        </h5>
-                                      </div>
-                                      <div className="menu-content">
-                                        <ul>
-                                          {menuItem.title === "Elements"
-                                            ? megaMenuItem.children.map(
-                                                (subMegaMenuItem, i) => {
-                                                  return (
-                                                    <li key={i}>
-                                                      <Link
-                                                        href={
-                                                          subMegaMenuItem.path
-                                                        }
-                                                      >
-                                                        <>
-                                                          <i
-                                                            className={`icon-${subMegaMenuItem.icon}`}
-                                                          ></i>
-                                                          {
-                                                            subMegaMenuItem.title
-                                                          }
-                                                        </>
-                                                      </Link>
-                                                    </li>
-                                                  );
-                                                }
-                                              )
-                                            : megaMenuItem.children.map(
-                                                (subMegaMenuItem, i) => {
-                                                  return (
-                                                    <li key={i}>
-                                                      <Link
-                                                        href={
-                                                          subMegaMenuItem.path
-                                                        }
-                                                      >
+                                  <div className="link-section">
+                                    <div className="menu-title">
+                                      <h5 onClick={(e) => handleMegaSubmenu(e)}>
+                                        {megaMenuItem.title}
+                                      </h5>
+                                    </div>
+                                    <div className="menu-content">
+                                      <ul>
+                                        {menuItem.title === "Elements"
+                                          ? megaMenuItem.children.map(
+                                              (subMegaMenuItem, i) => {
+                                                return (
+                                                  <li key={i}>
+                                                    <Link
+                                                      href={
+                                                        subMegaMenuItem.path
+                                                      }
+                                                    >
+                                                      <>
+                                                        <i
+                                                          className={`icon-${subMegaMenuItem.icon}`}
+                                                        ></i>
                                                         {subMegaMenuItem.title}
-                                                      </Link>
-                                                    </li>
-                                                  );
-                                                }
-                                              )}
-                                        </ul>
-                                      </div>
+                                                      </>
+                                                    </Link>
+                                                  </li>
+                                                );
+                                              }
+                                            )
+                                          : megaMenuItem.children.map(
+                                              (subMegaMenuItem, i) => {
+                                                return (
+                                                  <li key={i}>
+                                                    <Link
+                                                      href={
+                                                        subMegaMenuItem.path
+                                                      }
+                                                    >
+                                                      {subMegaMenuItem.title}
+                                                    </Link>
+                                                  </li>
+                                                );
+                                              }
+                                            )}
+                                      </ul>
                                     </div>
                                   </div>
-                                );
-                              })}
-                            </Row>
-                          </Container>
-                        ) : (
-                          ""
-                        )}
-                      </div>
-                    )
-                  ) : (
-                    ""
+                                </div>
+                              );
+                            })}
+                          </Row>
+                        </Container>
+                      ) : (
+                        ""
+                      )}
+                    </div>
                   )}
                 </li>
               );
