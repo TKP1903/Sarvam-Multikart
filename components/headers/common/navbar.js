@@ -149,17 +149,20 @@ const NavBar = () => {
                 >
                   <a
                     className="nav-link"
-                    onClick={(e) => {
-                      switch (menuItem.type) {
-                        case "sub":
-                          openMblNav(e);
-                        case "link":
-                          router.push({
-                            pathname: menuItem.path,
-                          });
-                      }
-                      console.log({ menuItem });
-                    }}
+                    onClick={(e) => openMblNav(e)}
+                      // ((menuItem) => {
+                      // switch (menuItem.type) {
+                      //   default:
+                      //   case "sub":
+                      //     return (e) => openMblNav(e);
+                      //   case "link":
+                      //     return (e) =>
+                      //       router.push({
+                      //         pathname: menuItem.path || "",
+                      //       });
+                      // }
+                      // console.log({ menuItem });
+                    // })(menuItem)}
                   >
                     {" "}
                     {translation(menuItem.title)}
@@ -167,8 +170,8 @@ const NavBar = () => {
                       <span className="sub-arrow"></span>
                     )}
                   </a>
-                  {menuItem.type === "sub" &&
-                    (menuItem.children && !menuItem.megaMenu ? (
+                  {menuItem.type === "sub" ? (
+                    menuItem.children && !menuItem.megaMenu ? (
                       <ul className="nav-submenu">
                         {menuItem.children.map((childrenItem, index) => {
                           return (
@@ -329,7 +332,10 @@ const NavBar = () => {
                           ""
                         )}
                       </div>
-                    ))}
+                    )
+                  ) : (
+                    ""
+                  )}
                 </li>
               );
             })}

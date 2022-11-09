@@ -39,12 +39,66 @@ const GET_SINGLE_PRODUCTS = gql`
   }
 `;
 
+const data = {
+  product: {
+    id: 1,
+    title: "Product Title",
+    description: "Product Description",
+    type: "Product Type",
+    brand: "Product Brand",
+    category: "Product Category",
+    price: 100,
+    new: true,
+    sale: true,
+    discount: 10,
+    stock: 10,
+    variants: [
+      {
+        id: 1,
+        sku: "SKU",
+        size: "S",
+        color: "Red",
+        image_id: 1,
+      },
+      {
+        id: 2,
+        sku: "SKU",
+        size: "M",
+        color: "Red",
+        image_id: 2,
+      },
+      {
+        id: 3,
+        sku: "SKU",
+        size: "L",
+        color: "Red",
+        image_id: 3,
+      },
+    ],
+    images: [
+      {
+        alt: "Product Image",
+        src: "/assets/images/pro3/1.jpg",
+      },
+      {
+        alt: "Product Image",
+        src: "/assets/images/pro3/2.jpg",
+      },
+      {
+        alt: "Product Image",
+        src: "/assets/images/pro3/3.jpg",
+      },
+    ],
+  },
+};
+const loading = false;
+
 const LeftSidebarPage = ({ pathId }) => {
-  var { loading, data } = useQuery(GET_SINGLE_PRODUCTS, {
-    variables: {
-      id: parseInt(pathId),
-    },
-  });
+  // var { loading, data } = useQuery(GET_SINGLE_PRODUCTS, {
+  //   variables: {
+  //     id: parseInt(pathId),
+  //   },
+  // });
 
   const [state, setState] = useState({ nav1: null, nav2: null });
   const slider1 = useRef();
@@ -75,7 +129,7 @@ const LeftSidebarPage = ({ pathId }) => {
   const { nav1, nav2 } = state;
 
   const filterClick = () => {
-    document.getElementById("filter").style.left = "-15px"
+    document.getElementById("filter").style.left = "-15px";
   };
 
   const changeColorVar = (img_id) => {
