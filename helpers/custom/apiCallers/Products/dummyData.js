@@ -171,15 +171,31 @@ for (let product of _allProducts) {
   }
   product.variants = variants;
   const images = [];
-  // use the same image 3 times
-  for (let i = 0; i < 3; i++) {
-    images.push({
-      image_id: "",
-      id: "",
-      alt: "",
-      src: product.img,
-    });
-  }
+  let random = () => {
+    // random element from the _allProducts array
+    return _allProducts[Math.floor(Math.random() * _allProducts.length)];
+  };
+  // use random image for 2 and 3 images
+  images.length = 3;
+  images[0] = {
+    image_id: "",
+    id: "",
+    alt: "",
+    src: product.img || random().img,
+  };
+  images[1] = {
+    image_id: "",
+    id: "",
+    alt: "",
+    src: random().img,
+  };
+  
+  images[2] = {
+    image_id: "",
+    id: "",
+    alt: "",
+    src: random().img,
+  };
   product.images = images;
 }
 

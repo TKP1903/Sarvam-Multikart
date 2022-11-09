@@ -2,6 +2,49 @@ import React, { useState, useContext } from "react";
 import { Collapse } from "reactstrap";
 import FilterContext from "../../../helpers/filter/FilterContext";
 
+const categories = [
+  {
+    name: "Head Protection",
+    url: "head-protection",
+  },
+  {
+    name: "Eye Protection",
+    url: "eye-protection",
+  },
+  {
+    name: "Hand Protection",
+    url: "hand-protection",
+  },
+  {
+    name: "Feet Protection",
+    url: "feet-protection",
+  },
+  {
+    name: "Fire Protection",
+    url: "fire-protection",
+  },
+  {
+    name: "Road Safety",
+    url: "road-safety",
+  },
+  {
+    name: "Fall Protection",
+    url: "fall-protection",
+  },
+  {
+    name: "Respiratory Protection",
+    url: "respiratory-protection",
+  },
+  {
+    name: "Hearing Protection",
+    url: "hearing-protection",
+  },
+  {
+    name: "General Safety",
+    url: "general-safety",
+  },
+];
+
 const Category = () => {
   const context = useContext(FilterContext);
   const [isCategoryOpen, setIsCategoryOpen] = useState(true);
@@ -28,111 +71,20 @@ const Category = () => {
                     all products
                   </a>
                 </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("fashion")}>
-                    fashion
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("electronics")}>
-                    electronics
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("vegetables")}>
-                    vegetables
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("furniture")}>
-                    furniture
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("jewellery")}>
-                    jewellery
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("beauty")}>
-                    beauty
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("flower")}>
-                    flower
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("tools")}>
-                    tools
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("watch")}>
-                    watch
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("metro")}>
-                    metro
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("shoes")}>
-                    shoes
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("bags")}>
-                    bags
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("kids")}>
-                    kids
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("pets")}>
-                    PETS
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("goggles")}>
-                    goggles
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("game")}>
-                    game
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("gym")}>
-                    gym
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("nursery")}>
-                    nursery
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("videoslider")}>
-                    videoslider
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("marketplace")}>
-                    marketplace
-                  </a>
-                </li>
-                <li>
-                  <a href={null} onClick={() => updateCategory("marijuana")}>
-                    marijuana
-                  </a>
-                </li>
+                {
+                  categories.map((category, index) => {
+                    return (
+                      <li key={index}>
+                        <a
+                          href={null}
+                          onClick={() => updateCategory(category.url)}
+                        >
+                          {category.name}
+                        </a>
+                      </li>
+                    );
+                  })
+                }
               </ul>
             </div>
           </div>

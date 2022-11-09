@@ -77,6 +77,37 @@ const useReloader = () => {
   };
 };
 
+const data = {
+  products: {
+    total: 0,
+    hasMore: false,
+    items: []
+  }
+};
+const loading = false;
+const fetchMore = ({
+  varibles: {
+    type,
+    priceMax,
+    priceMin,
+    color,
+    brand,
+    sortBy,
+    indexFrom,
+    limit,
+  },
+  updateQuery,
+}) => {
+  const { products } = data;
+  const { items } = products;
+  const newItems = items.concat(items);
+  const newProducts = {
+    ...products,
+    items: newItems,
+  };
+  updateQuery(data, { fetchMoreResult: { products: newProducts } });
+};
+
 const ProductList = ({ colClass, layoutList, openSidebar, noSidebar }) => {
   const cartContext = useContext(CartContext);
   const quantity = cartContext.quantity;
@@ -108,18 +139,18 @@ const ProductList = ({ colClass, layoutList, openSidebar, noSidebar }) => {
     );
   }, [selectedBrands, selectedColor, selectedSize, selectedPrice]);
 
-  var { loading, data, fetchMore } = useQuery(GET_PRODUCTS, {
-    variables: {
-      type: selectedCategory,
-      priceMax: selectedPrice.max,
-      priceMin: selectedPrice.min,
-      color: selectedColor,
-      brand: selectedBrands,
-      sortBy: sortBy,
-      indexFrom: 0,
-      limit: limit,
-    },
-  });
+  // var { loading, data, fetchMore } = useQuery(GET_PRODUCTS, {
+  //   variables: {
+  //     type: selectedCategory,
+  //     priceMax: selectedPrice.max,
+  //     priceMin: selectedPrice.min,
+  //     color: selectedColor,
+  //     brand: selectedBrands,
+  //     sortBy: sortBy,
+  //     indexFrom: 0,
+  //     limit: limit,
+  //   },
+  // });
 
   useEffect(() => {
     const getProductsData = async () => {
@@ -182,7 +213,7 @@ const ProductList = ({ colClass, layoutList, openSidebar, noSidebar }) => {
   const removeColor = () => {
     filterContext.setSelectedColor("");
   };
-
+  console.log({ data, loading });
   return (
     <Col className="collection-content">
       <div className="page-main-content">

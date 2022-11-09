@@ -38,9 +38,9 @@ const callAPI = {
 
 const getProductsByCategory = async (category, from, to) => {
   const cachedProducts = getFromCachedProducts(category, from, to);
-  
+
   console.log({ category, cachedProducts });
-  
+
   if (!!cachedProducts) {
     return cachedProducts;
   }
@@ -54,8 +54,9 @@ const getProductsByCategory = async (category, from, to) => {
 
   // TODO: Replace with your own API call
   const data = await callAPI.getProductsByCategory(category, from, to);
-
-  setCategoryInCachedProducts(category, data);
+  if (!!data && !!data.length) {
+    setCategoryInCachedProducts(category, data);
+  }
 
   return data;
 };
