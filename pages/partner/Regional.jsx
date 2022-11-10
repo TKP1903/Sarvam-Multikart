@@ -42,10 +42,10 @@ export default function Regionalpartner() {
   //      </div>
   //   );
   // };
-   
+
 
   return (
-    <CommonLayout parent="home" title="regional-partner">
+    <CommonLayout parent="home" title="BUSSINESS partner">
       <Container>
         {/* <Row>
           <Col lg="12">
@@ -70,10 +70,45 @@ export default function Regionalpartner() {
               })}
             </section>
           </Col>
-        </Row>        */}
+        </Row> */}
         
       <div class="section">
         <h1>Regional Partner</h1>
+        <div class="grid">
+          <div class="item item--medium">
+            <div class="item__details">
+            3M India Ltd
+            </div>
+          </div>
+          <div class="item item--medium">
+            <div class="item__details">
+              Acme Fabrik Plast
+            </div>
+          </div>
+          <div class="item item--medium">
+            <div class="item__details">
+              Karam Industries
+            </div>
+          </div>
+          <div class="item item--medium">
+            <div class="item__details">
+              Superhouse Limited
+            </div>
+          </div>
+          <div class="item item--medium">
+            <div class="item__details">
+              E.I. Dupont India Pvt Limited
+            </div>
+          </div>
+          <div class="item item--medium">
+            <div class="item__details">
+              Honeywell International India Pvt Ltd
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <h1>International Partner</h1>
         <div class="grid">
           <div class="item item--medium">
             <div class="item__details">
