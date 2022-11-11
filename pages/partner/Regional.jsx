@@ -3,6 +3,7 @@ import CommonLayout from "../../components/shop/common-layout";
 import { Container, Row, Col, Media } from "reactstrap";
 import bannerimg from "../../Assets/collection banner/Banner-img-template.png";
 
+
 export default function Regionalpartner() {
 
   // const RegDetailData = [
@@ -45,7 +46,7 @@ export default function Regionalpartner() {
 
 
   return (
-    <CommonLayout parent="home" title="BUSSINESS partner">
+    <CommonLayout parent="home" title="BUSSINESS PARTNER">
       <Container>
         {/* <Row>
           <Col lg="12">
@@ -107,12 +108,13 @@ export default function Regionalpartner() {
           </div>
         </div>
       </div>
+      
       <div class="section">
         <h1>International Partner</h1>
         <div class="grid">
           <div class="item item--medium">
             <div class="item__details">
-            3M India Ltd
+              3M India Ltd
             </div>
           </div>
           <div class="item item--medium">
