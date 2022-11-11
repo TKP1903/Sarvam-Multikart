@@ -112,36 +112,27 @@ export default function Regionalpartner() {
       <div class="section">
         <h1>International Partner</h1>
         <div class="grid">
-          <div class="item item--medium">
+          <div class="item2 item--medium">
             <div class="item__details">
               3M India Ltd
             </div>
           </div>
-          <div class="item item--medium">
+          <div class="item2 item--medium">
             <div class="item__details">
               Acme Fabrik Plast
             </div>
           </div>
-          <div class="item item--medium">
+          <div class="item2 item--medium">
             <div class="item__details">
               Karam Industries
             </div>
           </div>
-          <div class="item item--medium">
+          <div class="item2 item--medium">
             <div class="item__details">
               Superhouse Limited
             </div>
           </div>
-          <div class="item item--medium">
-            <div class="item__details">
-              E.I. Dupont India Pvt Limited
-            </div>
-          </div>
-          <div class="item item--medium">
-            <div class="item__details">
-              Honeywell International India Pvt Ltd
-            </div>
-          </div>
+          
         </div>
       </div>
       </Container>
