@@ -8,6 +8,7 @@ import ProductItem from "../../../components/common/product-box/ProductBox1";
 import { CurrencyContext } from "../../../helpers/Currency/CurrencyContext";
 import { useRouter } from "next/router";
 import PostLoader from "../../../components/common/PostLoader";
+
 import CartContext from "../../../helpers/cart";
 import { WishlistContext } from "../../../helpers/wishlist/WishlistContext";
 import { CompareContext } from "../../../helpers/Compare/CompareContext";
@@ -303,7 +304,7 @@ const ProductList = ({ colClass, layoutList, openSidebar, noSidebar }) => {
                       >
                         <span className="filter-btn btn btn-theme">
                           <i className="fa fa-filter" aria-hidden="true"></i>{" "}
-                          Filter
+                            Filter
                         </span>
                       </div>
                     </Col>

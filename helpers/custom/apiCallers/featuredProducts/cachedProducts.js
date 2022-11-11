@@ -8,18 +8,26 @@ const clearCachedProducts = () => {
   });
 };
 
-const makeCachedProducts = (allProducts) => {
-  const _cachedProducts = {};
-  _cachedProducts["all"] = allProducts;
-  allProducts.forEach((product) => {
-    if (!_cachedProducts[product.category]) {
-      _cachedProducts[product.category] = [];
+const makeCachedProducts = (() => {
+  let isCalled = false;
+  return (allProducts) => {
+    console.log ("makeCachedProducts called", { allProducts });
+    if (isCalled) {
+      return;
     }
-    _cachedProducts[product.category].push(product);
-  });
-  cachedProducts = _cachedProducts;
-  return _cachedProducts;
-};
+    isCalled = true;
+    const _cachedProducts = {};
+    _cachedProducts["all"] = allProducts;
+    for (const product of allProducts) {
+      if (!Array.isArray(_cachedProducts[product.category])) {
+        _cachedProducts[product.category] = [];
+      }
+      _cachedProducts[product.category].push(product);
+    }
+    cachedProducts = _cachedProducts;
+    return _cachedProducts;
+  };
+})();
 
 const setCategoryInCachedProducts = (category, data) => {
   if (!cachedProducts[category]) {

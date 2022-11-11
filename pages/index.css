@@ -1,5 +1,5 @@
 a {
-  cursor: pointer!important;
+  cursor: pointer !important;
 }
 
 .brand-title {
@@ -61,4 +61,38 @@ a {
   }
 }
 
+img.front {
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  /* animation: fadeIn 0.2s ease-in-out 0s 1 normal forwards; */
+
+  /* animation: fadeOut 0.2s ease-in-out 0s 1 normal forwards; */
+}
+
+img.back {
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: slideIn 0.5s ease-in-out 0s 1 normal forwards;
+  width: 100%;
+}
+
+@keyframes slideOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 /* Path: pages\index.css */

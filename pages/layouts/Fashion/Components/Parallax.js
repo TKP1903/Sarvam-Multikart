@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Container, Row, Col } from "reactstrap";
 import MasterParallaxBanner from "./MasterParallaxBanner";
 
-import "../../../styles/parallax.module.css";
+import "../../../../styles/parallax.module.css";
 
 const Parallax = () => {
   return (

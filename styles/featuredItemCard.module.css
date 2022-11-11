@@ -1,0 +1,14 @@
+img.front:hover {
+  opacity: 0.05;
+  transition: all 0.5s;
+  display: none;
+}
+
+img.back {
+  display: none;
+  transition: all 0.5s;
+}
+
+img.back:hover {
+  display: block;
+}

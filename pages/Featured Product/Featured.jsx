@@ -22,6 +22,7 @@ import Img8 from "../../Assets/head protection/Untitled-1.png";
 import Img from "../../components/custom/MediaImage";
 
 import FeaturedItem from "../../components/custom/FeaturedItemCard";
+import ProductItem from "../../components/common/product-box/ProductBox1";
 
 import {
   getProductsByCategory,
@@ -73,7 +74,11 @@ const Featured = () => {
       const data = await getProductsByCategory(filterSelected || "all");
       let categories = productCategories;
       if (filterSelected === "all") {
-        categories = await getProductCategories();
+        const categoriesSet = new Set();
+        for (let product of data) {
+          categoriesSet.add(product.category);
+        }
+        categories = [...categoriesSet];
       }
       setProductCategories(categories);
       setFeaturedItems(data || []);
@@ -82,8 +87,9 @@ const Featured = () => {
     getFeaturedItems();
   }, [filterSelected]);
 
-  return (
+  console.log({ featuredItems }, { productCategories });
 
+  return (
     <div>
       <section className="featured spad">
         <div className="container">
@@ -122,15 +128,27 @@ const Featured = () => {
                 <div className="loading">Loading...</div>
               </div>
             ) : (
-              featuredItems.map((item) => (
-                <FeaturedItem
-                  key={"featured-item-" + item.id}
-                  item={{
-                    ...item,
-                    img: item.img || Img1.src,
-                    link: "/product/" + item.id,
-                  }}
-                />
+              featuredItems.map((item, index) => (
+                // <ProductItem
+                //   des={true}
+                //   product={item}
+                //   symbol={symbol}
+                //   cartClass="cart-info cart-wrap"
+                //   addCompare={() => {}}
+                //   addWishlist={() => {}}
+                //   addCart={() => {}}
+                // />
+
+                <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                  <FeaturedItem
+                    key={"featured-item-" + item.id}
+                    item={{
+                      ...item,
+                      img: item.img || Img1.src,
+                      link: "/product/" + item.id,
+                    }}
+                  />
+                </div>
               ))
             )}
             {/* <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">

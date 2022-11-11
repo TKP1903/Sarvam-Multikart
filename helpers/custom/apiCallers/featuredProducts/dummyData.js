@@ -1,166 +1,3 @@
-// import Img1 from "../../../Assets/head protection/Untitled-1.png";
-// import Img2 from "../../../Assets/head protection/Untitled-1.png";
-// import Img3 from "../../../Assets/head protection/Untitled-1.png";
-// import Img4 from "../../../Assets/head protection/Untitled-1.png";
-// import Img5 from "../../../Assets/head protection/Untitled-1.png";
-// import Img6 from "../../../Assets/head protection/Untitled-1.png";
-// import Img7 from "../../../Assets/head protection/Untitled-1.png";
-// import Img8 from "../../../Assets/head protection/Untitled-1.png";
-
-// import { cache } from "responsive-loader/lib/cache";
-
-// const img1 = require("../../../Assets/head protection/Untitled-1.png");
-
-/**
- * _categories
- * 2. Head Protection
- * 3. Eye Protection
- * 4. Hearing Protection
- * 5. Respiratory Protection
- * 6. Hand Protection
- * 7. Foot Protection
- * 8. Fire Protection
- * 9. Genereal Safety
- */
-// const _allProducts = [
-//   {
-//     id: 1,
-//     title: "Product 1",
-//     description: "Product 1 description",
-//     price: 100,
-//     img: "https://picsum.photos/id/1/300/300",
-//     category: "Head Protection",
-//   },
-//   {
-//     id: 2,
-//     title: "Product 2",
-//     description: "Product 2 description",
-//     price: 200,
-//     img: "https://picsum.photos/id/1/300/300",
-//     category: "Head Protection",
-//   },
-//   {
-//     id: 3,
-//     title: "Product 3",
-//     description: "Product 3 description",
-//     price: 300,
-//     img: "https://picsum.photos/id/1/300/300",
-//     category: "Head Protection",
-//   },
-//   {
-//     id: 4,
-//     title: "Product 4",
-//     description: "Product 4 description",
-//     price: 400,
-//     img: "https://picsum.photos/id/1/300/300",
-//     category: "Fire Protection",
-//   },
-//   {
-//     id: 5,
-//     title: "Product 5",
-//     description: "Product 5 description",
-//     price: 500,
-//     img: "https://picsum.photos/id/1/300/300",
-//     category: "Fire Protection",
-//   },
-//   {
-//     id: 6,
-//     title: "Product 6",
-//     description: "Product 6 description",
-//     price: 600,
-//     img: "https://picsum.photos/id/1/300/300",
-//     category: "Eye Protection",
-//   },
-//   {
-//     id: 7,
-//     title: "Product 7",
-//     description: "Product 7 description",
-//     price: 700,
-//     img: "https://picsum.photos/id/1/300/300",
-//     category: "Eye Protection",
-//   },
-//   {
-//     id: 8,
-//     title: "Product 8",
-//     description: "Product 8 description",
-//     price: 800,
-//     img: "https://picsum.photos/id/1/300/300",
-//     category: "Hearing Protection",
-//   },
-//   {
-//     id: 9,
-//     title: "Product 9",
-//     description: "Product 9 description",
-//     price: 900,
-//     img: "https://picsum.photos/id/1/300/300",
-//     category: "Hearing Protection",
-//   },
-//   {
-//     id: 10,
-//     title: "Product 10",
-//     description: "Product 10 description",
-//     price: 1000,
-//     img: "https://picsum.photos/id/1/300/300",
-//     category: "Respiratory Protection",
-//   },
-//   {
-//     id: 11,
-//     title: "Product 11",
-//     description: "Product 11 description",
-//     price: 1100,
-//     img: "https://picsum.photos/id/1/300/300",
-//     category: "Respiratory Protection",
-//   },
-//   {
-//     id: 12,
-//     title: "Product 12",
-//     description: "Product 12 description",
-//     price: 1200,
-//     img: "https://picsum.photos/id/1/300/300",
-//     category: "Hand Protection",
-//   },
-//   {
-//     id: 13,
-//     title: "Product 13",
-//     description: "Product 13 description",
-//     price: 1300,
-//     img: "https://picsum.photos/id/1/300/300",
-//     category: "Hand Protection",
-//   },
-//   {
-//     id: 14,
-//     title: "Product 14",
-//     description: "Product 14 description",
-//     price: 1400,
-//     img: "https://picsum.photos/id/1/300/300",
-//     category: "Foot Protection",
-//   },
-//   {
-//     id: 15,
-//     title: "Product 15",
-//     description: "Product 15 description",
-//     price: 1500,
-//     img: "https://picsum.photos/id/1/300/300",
-//     category: "Foot Protection",
-//   },
-//   {
-//     id: 16,
-//     title: "Product 16",
-//     description: "Product 16 description",
-//     price: 1600,
-//     img: "https://picsum.photos/id/1/300/300",
-//     category: "General Safety",
-//   },
-//   {
-//     id: 17,
-//     title: "Product 17",
-//     description: "Product 17 description",
-//     price: 1700,
-//     img: "https://picsum.photos/id/1/300/300",
-//     category: "General Safety",
-//   },
-// ];
-
 const _allProducts = [
   // Only 2 _categories ( hand and foot protection )
   {
@@ -252,36 +89,117 @@ const _allProducts = [
 
 const _categories = (() => {
   // make categies array form the products
-  const categoriesSet = new Set ();
+  const categoriesSet = new Set();
   for (let product of _allProducts) {
-    categoriesSet.add (product?.category);
+    categoriesSet.add(product?.category);
   }
   return [...categoriesSet];
 })();
-const shuffleArray = array => {
+
+function _makeCachedProducts(allProducts) {
+  const cachedProducts = {};
+  cachedProducts["all"] = allProducts;
+  for (const product of allProducts) {
+    if (!Array.isArray(cachedProducts[product.category])) {
+      cachedProducts[product.category] = [];
+    }
+    cachedProducts[product.category].push(product);
+  }
+  return cachedProducts;
+}
+const _cachedProducts = _makeCachedProducts(_allProducts) || {};
+
+// add additional feild as empty string in the  array acc. to the gql query syntax
+for (let product of _allProducts) {
+  /**
+   * this is the syntax of the gql query
+   * items {
+        id
+        title
+        description
+        type
+        brand
+        category
+        price
+        new
+        sale
+        stock
+        discount
+        variants {
+          id
+          sku
+          size
+          color
+          image_id
+        }
+        images {
+          image_id
+          id
+          alt
+          src
+        }
+      }
+   */
+  // modify all the products acc the above syntax
+  product.type = "";
+  product.brand = "";
+  product.new = "";
+  product.sale = "";
+  product.stock = "";
+  product.discount = "";
+
+  const variants = [];
+  // add 3 variants with emtpy feilds
+  for (let i = 0; i < 3; i++) {
+    variants.push({
+      id: "",
+      sku: "",
+      size: "",
+      color: "",
+      image_id: "",
+    });
+  }
+  product.variants = variants;
+  const images = [];
+
+  const randomProduct = () => {
+    return _allProducts[0];
+  };
+
+  // use random image for 2 and 3 images
+  images[0] = {
+    image_id: "",
+    id: "",
+    alt: "",
+    src: product.img || randomProduct().img || "",
+  };
+  for (let i = 0; i < 2; i++) {
+    images.push({
+      image_id: "",
+      id: "",
+      alt: "",
+      src: randomProduct().img || "",
+    });
+  }
+
+  product.images = images;
+}
+
+const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     const temp = array[i];
     array[i] = array[j];
     array[j] = temp;
   }
-}
-shuffleArray (_allProducts);
+};
+shuffleArray(_allProducts);
 
-// // put random image id in the img url
+// ! // put random image id in the img url
 // for (let i = 0; i < _allProducts.length; i++) {
 //   const random = Math.floor(Math.random() * 1000);
 //   _allProducts[i].img = `https://picsum.photos/id/${random}/736/1000`;
 // }
-
-const _cachedProducts = (() => {
-  // make cached products
-  const __cachedProducts = {};
-  for (let product of _allProducts) {
-    __cachedProducts[product.category] = product;
-  }
-  return __cachedProducts;
-})();
 
 export default _allProducts;
 export { _allProducts, _cachedProducts };

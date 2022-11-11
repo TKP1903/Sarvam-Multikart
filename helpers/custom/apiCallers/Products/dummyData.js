@@ -1,36 +1,3 @@
-/**
- * {
-      total
-      hasMore
-      items {
-        id
-        title
-        description
-        type
-        brand
-        category
-        price
-        new
-        sale
-        stock
-        discount
-        variants {
-          id
-          sku
-          size
-          color
-          image_id
-        }
-        images {
-          image_id
-          id
-          alt
-          src
-        }
-      }
-    }
- */
-
 const _allProducts = [
   // Only 2 _categories ( hand and foot protection )
   {
@@ -120,6 +87,27 @@ const _allProducts = [
   },
 ];
 
+const _categories = (() => {
+  // make categies array form the products
+  const categoriesSet = new Set();
+  for (let product of _allProducts) {
+    categoriesSet.add(product?.category);
+  }
+  return [...categoriesSet];
+})();
+
+function _makeCachedProducts(allProducts) {
+  const cachedProducts = {};
+  cachedProducts["all"] = allProducts;
+  for (const product of allProducts) {
+    if (!Array.isArray(cachedProducts[product.category])) {
+      cachedProducts[product.category] = [];
+    }
+    cachedProducts[product.category].push(product);
+  }
+}
+const _cachedProducts = _makeCachedProducts(_allProducts) || {};
+
 // add additional feild as empty string in the  array acc. to the gql query syntax
 for (let product of _allProducts) {
   /**
@@ -158,6 +146,7 @@ for (let product of _allProducts) {
   product.sale = "";
   product.stock = "";
   product.discount = "";
+
   const variants = [];
   // add 3 variants with emtpy feilds
   for (let i = 0; i < 3; i++) {
@@ -171,9 +160,9 @@ for (let product of _allProducts) {
   }
   product.variants = variants;
   const images = [];
-  let random = () => {
-    // random element from the _allProducts array
-    return _allProducts[Math.floor(Math.random() * _allProducts.length)];
+
+  const randomProduct = (_ = null) => {
+    return Math.floor(Math.random() * _allProducts.length || 0);
   };
   // use random image for 2 and 3 images
   images.length = 3;
@@ -181,32 +170,24 @@ for (let product of _allProducts) {
     image_id: "",
     id: "",
     alt: "",
-    src: product.img || random().img,
+    src: product.img || randomProduct().img || "",
   };
   images[1] = {
     image_id: "",
     id: "",
     alt: "",
-    src: random().img,
+    src: randomProduct().img || "",
   };
-  
+
   images[2] = {
     image_id: "",
     id: "",
     alt: "",
-    src: random().img,
+    src: randomProduct().img || "",
   };
+
   product.images = images;
 }
-
-const _categories = (() => {
-  // make categies array form the products
-  const categoriesSet = new Set();
-  for (let product of _allProducts) {
-    categoriesSet.add(product?.category);
-  }
-  return [...categoriesSet];
-})();
 
 const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
@@ -218,25 +199,11 @@ const shuffleArray = (array) => {
 };
 shuffleArray(_allProducts);
 
-// // put random image id in the img url
+// ! // put random image id in the img url
 // for (let i = 0; i < _allProducts.length; i++) {
 //   const random = Math.floor(Math.random() * 1000);
 //   _allProducts[i].img = `https://picsum.photos/id/${random}/736/1000`;
 // }
-
-const _cachedProducts = (() => {
-  // make cached products
-  const allProducts = _allProducts;
-  const _cachedProducts = {};
-  _cachedProducts["all"] = allProducts;
-  allProducts.forEach((product) => {
-    if (!_cachedProducts[product.category]) {
-      _cachedProducts[product.category] = [];
-    }
-    _cachedProducts[product.category].push(product);
-  });
-  return _cachedProducts; 
-})();
 
 export default _allProducts;
 export { _allProducts, _cachedProducts };
