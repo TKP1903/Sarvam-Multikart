@@ -114,22 +114,27 @@ export default function Regionalpartner() {
         <div class="grid">
           <div class="item2 item--medium">
             <div class="item__details">
-              3M India Ltd
+            Justrite India
             </div>
           </div>
           <div class="item2 item--medium">
             <div class="item__details">
-              Acme Fabrik Plast
+            ESCA Tech, Inc.
             </div>
           </div>
           <div class="item2 item--medium">
             <div class="item__details">
-              Karam Industries
+            Auburn Manufacturing
             </div>
           </div>
           <div class="item2 item--medium">
             <div class="item__details">
-              Superhouse Limited
+            Tempshield
+            </div>
+          </div>
+          <div class="item2 item--medium">
+            <div class="item__details">
+            New Pig
             </div>
           </div>
           
