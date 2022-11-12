@@ -68,11 +68,11 @@ img.front {
   /* animation: fadeOut 0.2s ease-in-out 0s 1 normal forwards; */
 }
 
-img.back {
-  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+/* img.back {
+  animation: name duration timing-function delay iteration-count direction fill-mode;
   animation: slideIn 0.5s ease-in-out 0s 1 normal forwards;
   width: 100%;
-}
+} */
 
 @keyframes slideOut {
   0% {

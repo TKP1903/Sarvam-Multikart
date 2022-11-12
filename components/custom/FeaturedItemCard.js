@@ -24,7 +24,6 @@ const animations = {
 
 const FeaturedItem = ({ item = emptyItem }) => {
   // replace all the empty/undefined values with the emptyItem in the item object
-
   const {
     id,
     title,
@@ -38,14 +37,32 @@ const FeaturedItem = ({ item = emptyItem }) => {
     ...emptyItem,
     ...item,
   };
+  
   const [isHovering, setIsHovering] = useState(false);
+  const frontImageRef = useRef(null);
+  const backImageRef = useRef(null);
 
-  const [frontImageAnimtion, setFrontImageAnimtion] = useState("");
-  const [backImageAnimtion, setBackImageAnimtion] = useState(
-    animations.slideIn
-  );
-  const [frontImageDisplay, setFrontImageDisplay] = useState("block");
-  const [backImageDisplay, setBackImageDisplay] = useState("none");
+  useEffect(() => {
+    const frontImage = frontImageRef.current;
+    const backImage = backImageRef.current;
+    if (isHovering) {
+      frontImage.style.animation = animations.fadeOut;
+      setTimeout(() => {
+        frontImage.style.display = "none";
+        backImage.style.display = "block";
+        backImage.style.animation = animations.slideIn;
+      }, ANIMATION_DELAY * 1000);
+      return;
+    } else {
+      backImage.style.animation = animations.slideOut;
+      setTimeout(() => {
+        backImage.style.display = "none";
+        frontImage.style.display = "block";
+        frontImage.style.animation = animations.fadeIn;
+      }, ANIMATION_DELAY * 1000);
+      return;
+    }
+  }, [isHovering]);
 
   console.log({ item });
 
@@ -53,51 +70,32 @@ const FeaturedItem = ({ item = emptyItem }) => {
     <div className="featured__item" id={`featured-item-${id}`}>
       <div
         className="featured__item__pic set-bg"
-        // onMouseOver={
-        //   () => setIsHovering(false)
-        // }
         onPointerOver={() => {
           setIsHovering(true);
-          setFrontImageAnimtion(animations.fadeOut);
-          setBackImageAnimtion(animations.slideIn);
-          setFrontImageDisplay("none");
-          setBackImageDisplay("block");
         }}
         onPointerLeave={() => {
           setIsHovering(false);
-          setFrontImageAnimtion(animations.fadeIn);
-          setBackImageAnimtion(animations.slideOut);
-          setFrontImageDisplay("block");
-          setBackImageDisplay("none");
         }}
         style={{
           transition: "all 0.5s ease",
         }}
       >
         <Img
-          // ref={frontImageRef}
+          ref={frontImageRef}
           className="front"
           src={images[0].src}
           alt={title}
           height={736}
           width={1000}
-          style={{
-            display: frontImageDisplay,
-            animation: frontImageAnimtion,
-          }}
         />
-        
+
         <Img
-          // ref={backImageRef}
+          ref={backImageRef}
           className="back"
           src={images[1].src}
           alt={title}
           height={736}
           width={1000}
-          style={{
-            display: backImageDisplay,
-            animation: backImageAnimtion,
-          }}
         />
 
         <ul className="featured__item__pic__hover">
