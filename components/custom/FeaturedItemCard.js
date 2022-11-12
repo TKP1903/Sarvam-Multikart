@@ -86,7 +86,7 @@ const FeaturedItem = ({ item = emptyItem }) => {
             animation: frontImageAnimtion,
           }}
         />
-
+        
         <Img
           // ref={backImageRef}
           className="back"
