@@ -1,5 +1,6 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Img from "../custom/MediaImage";
+import Image from "next/image";
 
 import "../../styles/featuredItemCard.module.css";
 
@@ -13,13 +14,13 @@ const emptyItem = {
   handleRetweet: () => {},
   handleHeart: () => {},
 };
-const ANIMATION_DELAY = 0.5;
+const ANIMATION_DELAY = 1;
 
 const animations = {
-  fadeIn: "fadeIn 0.5s ease",
-  fadeOut: "fadeOut 0.5s ease",
+  fadeIn: "fadeIn 0.2s ease",
+  fadeOut: "fadeOut 0.2s ease",
   slideIn: "slideIn 0.5s ease-in-out 0s 1 normal forwards",
-  slideOut: "slideOut 0.5s ease-in-out 0s 1 normal backwards",
+  slideOut: "slideOut 0.5s ease-in-out 0s 1 normal forwards",
 };
 
 const FeaturedItem = ({ item = emptyItem }) => {
@@ -37,30 +38,51 @@ const FeaturedItem = ({ item = emptyItem }) => {
     ...emptyItem,
     ...item,
   };
-  
+
   const [isHovering, setIsHovering] = useState(false);
-  const frontImageRef = useRef(null);
-  const backImageRef = useRef(null);
+  const [frontImageStyle, setFrontImageStyle] = useState({});
+  const [backImageStyle, setBackImageStyle] = useState({});
 
   useEffect(() => {
-    const frontImage = frontImageRef.current;
-    const backImage = backImageRef.current;
     if (isHovering) {
-      frontImage.style.animation = animations.fadeOut;
-      setTimeout(() => {
-        frontImage.style.display = "none";
-        backImage.style.display = "block";
-        backImage.style.animation = animations.slideIn;
+      setFrontImageStyle({
+        display: "none",
+        animation: animations.fadeOut,
+      });
+      setBackImageStyle({
+        display: "block",
+        animation: animations.slideIn,
+      });
+      const timeout = setTimeout(() => {
+        // setFrontImageStyle({
+        //   display: "none",
+        // });
       }, ANIMATION_DELAY * 1000);
-      return;
+      return () => {
+        clearTimeout(timeout);
+      };
     } else {
-      backImage.style.animation = animations.slideOut;
-      setTimeout(() => {
-        backImage.style.display = "none";
-        frontImage.style.display = "block";
-        frontImage.style.animation = animations.fadeIn;
-      }, ANIMATION_DELAY * 1000);
-      return;
+      setBackImageStyle({
+        display: "block",
+        animation: animations.slideOut,
+      });
+      setFrontImageStyle({
+        display: "block",
+        animation: animations.fadeIn,
+      });
+      const timeout = setTimeout(() => {
+        setBackImageStyle((prev) => ({
+          ...prev,
+          display: "none",
+        }));
+        setFrontImageStyle((prev) => ({
+          ...prev,
+          display: "block",
+        }));
+      }, ANIMATION_DELAY * 20000);
+      return () => {
+        clearTimeout(timeout);
+      };
     }
   }, [isHovering]);
 
@@ -81,21 +103,21 @@ const FeaturedItem = ({ item = emptyItem }) => {
         }}
       >
         <Img
-          ref={frontImageRef}
           className="front"
           src={images[0].src}
           alt={title}
           height={736}
           width={1000}
+          style={frontImageStyle}
         />
 
         <Img
-          ref={backImageRef}
           className="back"
           src={images[1].src}
           alt={title}
           height={736}
           width={1000}
+          style={backImageStyle}
         />
 
         <ul className="featured__item__pic__hover">

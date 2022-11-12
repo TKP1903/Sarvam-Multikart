@@ -1,5 +1,6 @@
 const withImages = require("next-images");
 const { withPlugins } = require("next-compose-plugins");
+const { default: next } = require("next");
 
 // const nextConfig = {
 //   env: {
@@ -25,12 +26,11 @@ const { withPlugins } = require("next-compose-plugins");
 
 // module.exports = {swcMinify: true}, withPlugins([withImages], nextConfig);
 
-
 const nextConfig = {
   env: {
     API_URL: "http://localhost:4000/graphql",
   },
-  reactStrictMode:true,
+  reactStrictMode: true,
   webpack(config, options) {
     config.module.rules.push({
       test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
@@ -44,4 +44,9 @@ const nextConfig = {
 
     return config;
   },
+};
+module.exports = {
+  images: {
+    domains: ["picsum.photos", "localhost", "sarvamsafety.com"],
+  }
 };
