@@ -621,11 +621,10 @@ h1 {
   color: #fff;
   grid-column-start: auto;
   grid-row-start: auto;
-  color: #fff;
   background: url("../../../Assets/partner/national/1.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  object-fit: contain;
+  object-fit: fill;
   box-shadow: -2px 2px 10px 0px rgba(#444, 0.4);
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
@@ -646,8 +645,6 @@ h1 {
   &:nth-of-type(5n) {
     background-image: url("../../../Assets/partner/national/5.png");
   }
-
-  
 
   &:after {
     content: "";

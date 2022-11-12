@@ -22,6 +22,7 @@ const Data = [
     desc1: "sarvam@sarvamsafety.com",
   },
   
+  
 ];
 
 const ContactDetail = ({ img, title, desc1, desc2 }) => {
