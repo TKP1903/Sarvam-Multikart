@@ -25,6 +25,108 @@ const Data = [
   
 ];
 
+const Data2 = [
+  {
+    img: "fa-phone",
+    title: "Contact us",
+    desc1: "0422-6690460"
+  },
+  {
+    img: "fa-map-marker",
+    title: "ADDRESS",
+    desc1: "No: 168, Thirunagar, Vilankurichi Road,Saravanampatti PO,Coimbatore – 641035",
+    desc2: "TamilNadu",
+  },
+  {
+    img: "fa-envelope-o",
+    title: "ADDRESS",
+    desc1: "cbesarvam@sarvamsafety.com",
+  },
+  
+  
+];
+
+const Data3 = [
+  {
+    img: "fa-phone",
+    title: "Contact us",
+    desc1: "044 – 4555 3337",
+    desc2: "044 – 4555 2227",
+  },
+  {
+    img: "fa-map-marker",
+    title: "ADDRESS",
+    desc1: "Plot no:180/10-A,Lake Area,Near Meenakshi Mission Hospital,Uttangudi Post, Madurai – 625107",
+    desc2: "TamilNadu",
+  },
+  {
+    img: "fa-envelope-o",
+    title: "ADDRESS",
+    desc1: "mdusarvam@sarvamsafety.com",
+  },
+];
+
+const Data4 = [
+  {
+    img: "fa-phone",
+    title: "Contact us",
+    desc1: "0413-2200722 ",
+    desc2: "9840967520",
+  },
+  {
+    img: "fa-map-marker",
+    title: "ADDRESS",
+    desc1: "No:C-20, 6th Cross, Jawahar Nagar, Boomiyanpet. Pondicherry – 605 005",
+    desc2: "TamilNadu",
+  },
+  {
+    img: "fa-envelope-o",
+    title: "ADDRESS",
+    desc1: "pdysarvam@sarvamsafety.com",
+  },
+];
+
+const Data5 = [
+  {
+    img: "fa-phone",
+    title: "Contact us",
+    desc1: "04172-270365",
+    desc2: "9840967522",
+  },
+  {
+    img: "fa-map-marker",
+    title: "ADDRESS",
+    desc1: "No:10, VMC Road,Ranipet – 632401.",
+    desc2: "TamilNadu",
+  },
+  {
+    img: "fa-envelope-o",
+    title: "ADDRESS",
+    desc1: "rptsarvam@sarvamsafety.com",
+  },
+];
+
+const Data6 = [
+  {
+    img: "fa-phone",
+    title: "Contact us",
+    desc1: "0484-2425719",
+    desc2: "9349767507",
+  },
+  {
+    img: "fa-map-marker",
+    title: "ADDRESS",
+    desc1: "X / 225 Peace Cottage,Seaport – Airport Road, North Chittethukkara, CSEZ (Po), kakkanad, Kochi – 682037",
+    desc2: "TamilNadu",
+  },
+  {
+    img: "fa-envelope-o",
+    title: "ADDRESS",
+    desc1: " kochisarvam@sarvamsafety.com",
+  },
+];
+
+
 const ContactDetail = ({ img, title, desc1, desc2 }) => {
   return (
     <li>
@@ -39,18 +141,24 @@ const ContactDetail = ({ img, title, desc1, desc2 }) => {
     </li>
   );
 };
+
 const Contact = () => {
   return (
     <CommonLayout parent="home" title="Contact">
       <section className="contact-page section-b-space">
-        <Container>
+        <Container className="contactus-page">
+
+          {/* corporate office detail */}
+
           <Row className="section-b-space">
-            <Col lg="7" className="map">
+           <h1 style={{textAlign:"center",fontSize:"25px"}}>CORPORATE OFFICE</h1>
+            <Col lg="5" className="map" sstyle={{paddingTop:"1px",height:"70vh"}}>
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9331.67176431221!2d80.19904277619314!3d13.105880752778257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xadd2786bcce9a4be!2sSarvam%20Safety%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1667865878644!5m2!1sen!2sin">
             </iframe>
             </Col>
-            <Col lg="5">
+            <Col lg="5" style={{border:"2px solid grey" }}>
               <div className="contact-right">
+                
                 <ul>
                   {Data.map((data, i) => {
                     return (
@@ -66,7 +174,122 @@ const Contact = () => {
                 </ul>
               </div>
             </Col>
+
+            {/* Branch address */}
+
+            <h1 style={{textAlign:"center",fontSize:"25px" ,paddingTop:"50px"}}>BRANCH OFFICE</h1>
+            <Col lg="5" className="map" style={{paddingTop:"1px",height:"65vh"}}>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9331.67176431221!2d80.19904277619314!3d13.105880752778257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xadd2786bcce9a4be!2sSarvam%20Safety%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1667865878644!5m2!1sen!2sin">
+            </iframe>
+            </Col>
+            <Col lg="3" style={{border:"1px solid grey" ,width:"400px",margin:"1px"}}>
+              <div className="contact-right">
+                
+                <ul>
+                  <h1 style={{textAlign:"center"}}>COIMBATORE BRANCH OFFICE</h1>
+                  {Data2.map((data, i) => {
+                    return (
+                      <ContactDetail
+                        key={i}
+                        img={data.img}
+                        title={data.title}
+                        desc1={data.desc1}
+                        desc2={data.desc2}
+                      />
+                    );
+                  })}
+                </ul>
+              </div>
+            </Col>
+            <Col lg="5" className="map" style={{paddingTop:"30px",height:"65vh"}}>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9331.67176431221!2d80.19904277619314!3d13.105880752778257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xadd2786bcce9a4be!2sSarvam%20Safety%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1667865878644!5m2!1sen!2sin">
+                </iframe>
+              </Col>
+            <Col lg="5" style={{border:"1px solid grey" ,width:"380",marginTop:"30px"}}>
+                <div className="contact-right">
+                  <ul>
+                    <h1 style={{textAlign:"center"}}>MADURAI BRANCH OFFICE</h1>
+                    {Data3.map((data, i) => {
+                      return (
+                        <ContactDetail
+                          key={i}
+                          img={data.img}
+                          title={data.title}
+                          desc1={data.desc1}
+                          desc2={data.desc2}
+                        />
+                      );
+                    })}
+                  </ul>
+                </div>
+            </Col>
+            
+            <div style={{display:"flex", flexDirection:"row",height:"70vh"}}>
+            <div style={{padding:"10px"}}>
+              <Col lg="1" style={{border:"1px solid grey" ,width:"380px",overflow:"visible"}}>
+                  <div className="contact-right">
+                    <ul>
+                      <h1 style={{textAlign:"center"}}>PONDICHERRY OFFICE</h1>
+                      {Data4.map((data, i) => {
+                        return (
+                          <ContactDetail
+                            key={i}
+                            img={data.img}
+                            title={data.title}
+                            desc1={data.desc1}
+                            desc2={data.desc2}
+                          />
+                        );
+                      })}
+                    </ul>
+                  </div>
+              </Col>
+            </div>
+
+          <div style={{padding:"10px"}}>
+            <Col lg="1" style={{border:"1px solid grey" ,width:"380px"}}>
+                  <div className="contact-right">
+                    <ul>
+                      <h1 style={{textAlign:"center"}}>RANIPET</h1>
+                      {Data5.map((data, i) => {
+                        return (
+                          <ContactDetail
+                            key={i}
+                            img={data.img}
+                            title={data.title}
+                            desc1={data.desc1}
+                            desc2={data.desc2}
+                          />
+                        );
+                      })}
+                    </ul>
+                  </div>
+            </Col>
+          </div>
+          <div style={{padding:"10px"}}>
+              <Col lg="1" style={{border:"1px solid grey" ,width:"380px", }}>
+                  <div className="contact-right">
+                    <ul>
+                      <h1 style={{textAlign:"center"}}>COCHIN</h1>
+                      {Data6.map((data, i) => {
+                        return (
+                          <ContactDetail
+                            key={i}
+                            img={data.img}
+                            title={data.title}
+                            desc1={data.desc1}
+                            desc2={data.desc2}
+                          />
+                        );
+                      })}
+                    </ul>
+                  </div>
+              </Col>
+          </div>
+            </div>
           </Row>
+
+          {/* Form */}
           <Row>
             <h1 className="request_form_tittle">Request Form </h1>
             <Col sm="12">
