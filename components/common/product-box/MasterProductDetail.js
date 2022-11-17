@@ -26,7 +26,7 @@ const MasterProductDetail = ({
         )}
         <h6>{product.title}</h6>
         {des ? <p>{product.description}</p> : ""}
-        <h4>
+        {/* <h4>
           {currency.symbol}
           {(
             (product.price - (product.price * product.discount) / 100) *
@@ -38,7 +38,7 @@ const MasterProductDetail = ({
               {(product.price * currency.value).toFixed(2)}
             </span>
           </del>
-        </h4>
+        </h4> */}
 
         {product.variants.map((vari) => {
           var findItem = uniqueTags.find((x) => x.color === vari.color);

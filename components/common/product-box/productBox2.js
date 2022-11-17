@@ -193,10 +193,10 @@ const ProductItem = ({
             <Col lg="6" className="rtl-text">
               <div className="product-right">
                 <h2> {product.title} </h2>
-                <h3>
+                {/* <h3>
                   {currency.symbol}
                   {(product.price * currency.value).toFixed(2)}
-                </h3>
+                </h3> */}
                 {product.variants ? (
                   <ul className="color-variant">
                     {uniqueTags ? (
