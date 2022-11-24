@@ -19,6 +19,11 @@ export const MENUITEMS = [
         path: "/shop/all",
       },
       {
+        title: "Calibration",
+        type: "link",
+        path: "",
+      },
+      {
         title: "Head Protection",
         type: "link",
         path: "/shop/head-protection",
@@ -34,7 +39,7 @@ export const MENUITEMS = [
         path: "/shop/hand-protection",
       },
       {
-        title: "Feet Protection",
+        title: "Leg Protection",
         type: "link",
         path: "/shop/feet-protection",
       },
@@ -44,7 +49,17 @@ export const MENUITEMS = [
         path: "/shop/fire-protection",
       },
       {
-        title: "Road safety",
+        title: "Traffic safety",
+        type: "link",
+        path: "/shop/road-safety",
+      },
+      {
+        title: "Face Shield",
+        type: "link",
+        path: "/shop/road-safety",
+      },
+      {
+        title: "Safety Cans and Cabinates",
         type: "link",
         path: "/shop/road-safety",
       },
