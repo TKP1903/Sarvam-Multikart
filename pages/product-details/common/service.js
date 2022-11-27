@@ -19,8 +19,8 @@ const Data = [
   },
   {
     link: svgoffer,
-    title: "festival offer",
-    service: "new online special festival offer",
+    title: "Money back guarantee",
+    service: "new online special Money back guarantee",
   },
   {
     link: svgpayment,

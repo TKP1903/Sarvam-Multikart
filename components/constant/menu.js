@@ -21,7 +21,7 @@ export const MENUITEMS = [
       {
         title: "Calibration",
         type: "link",
-        path: "",
+        path: "/shop/calibration",
       },
       {
         title: "Head Protection",

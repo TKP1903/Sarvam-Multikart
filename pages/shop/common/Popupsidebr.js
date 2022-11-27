@@ -66,7 +66,7 @@ const GET_PRODUCTS = gql`
   }
 `;
 
-const Popupsidebar = ({ colClass, layoutList }) => {
+  const Popupsidebar = ({ colClass, layoutList }) => {
   const cartContext = useContext(CartContext);
   const quantity = cartContext.quantity;
   const wishlistContext = useContext(WishlistContext);

@@ -10,14 +10,14 @@ import {
 } from "reactstrap";
 
 // product Images
-import Img1 from "../../Assets/head protection/Untitled-1.png";
-import Img2 from "../../Assets/head protection/Untitled-1.png";
-import Img3 from "../../Assets/head protection/Untitled-1.png";
-import Img4 from "../../Assets/head protection/Untitled-1.png";
-import Img5 from "../../Assets/head protection/Untitled-1.png";
-import Img6 from "../../Assets/head protection/Untitled-1.png";
-import Img7 from "../../Assets/head protection/Untitled-1.png";
-import Img8 from "../../Assets/head protection/Untitled-1.png";
+import Img1 from "../../Assets/Product/EYE PROTECTION/3M/11818.jpg";
+import Img2 from "../../Assets/Product/EYE PROTECTION/3M/12166 ox clear anti fog.png";
+import Img3 from "../../Assets/Product/EYE PROTECTION/3M/13250.png";
+import Img4 from "../../Assets/Product/EYE PROTECTION/3M/11818.jpg";
+import Img5 from "../../Assets/Product/EYE PROTECTION/3M/11818.jpg";
+import Img6 from "../../Assets/Product/EYE PROTECTION/3M/11818.jpg";
+import Img7 from "../../Assets/Product/EYE PROTECTION/3M/11818.jpg";
+import Img8 from "../../Assets/Product/EYE PROTECTION/3M/11818.jpg";
 
 import Img from "../../components/custom/MediaImage";
 
