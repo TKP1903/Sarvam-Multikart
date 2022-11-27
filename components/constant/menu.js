@@ -72,15 +72,14 @@ export const MENUITEMS = [
   },
   {
     title: "Business Partners",
-    type: "sub",
+    path: "/partner/Partner",
+    type: "link",
     children: [
       {
-        path: "/partner/Partner",
         title: "Regional Channel Partners",
         type: "link",
       },
       {
-        path: "/partner/Partner",
         title: "international Channel Partners",
         type: "link",
       },

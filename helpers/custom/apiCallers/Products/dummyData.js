@@ -95,96 +95,96 @@ const _allProducts = [
     img: "../../../../Assets/Product/EYE PROTECTION/3M/12166 ox clear anti fog.png",
     category: "Eye Protection",
   },
-  // {
-  //   id: 12,
-  //   title:
-  //     "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-  //   description:
-  //     "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-  //   price: 1625.0,
-  //   img: "#",
-  //   category: "Foot Protection",
-  // },
-  // {
-  //   id: 13,
-  //   title:
-  //     "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-  //   description:
-  //     "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-  //   price: 1625.0,
-  //   img: "#",
-  //   category: "Foot Protection",
-  // },
-  // {
-  //   id: 14,
-  //   title:
-  //     "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-  //   description:
-  //     "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-  //   price: 1625.0,
-  //   img: "#",
-  //   category: "Foot Protection",
-  // },
-  // {
-  //   id: 15,
-  //   title:
-  //     "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-  //   description:
-  //     "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-  //   price: 1625.0,
-  //   img: "#",
-  //   category: "Foot Protection",
-  // },
-  // {
-  //   id: 16,
-  //   title:
-  //     "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-  //   description:
-  //     "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-  //   price: 1625.0,
-  //   img: "#",
-  //   category: "Foot Protection",
-  // },
-  // {
-  //   id: 17,
-  //   title:
-  //     "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-  //   description:
-  //     "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-  //   price: 1625.0,
-  //   img: "#",
-  //   category: "Foot Protection",
-  // },
-  // {
-  //   id: 18,
-  //   title:
-  //     "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-  //   description:
-  //     "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-  //   price: 1625.0,
-  //   img: "#",
-  //   category: "Foot Protection",
-  // },
-  // {
-  //   id: 19,
-  //   title:
-  //     "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-  //   description:
-  //     "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-  //   price: 1625.0,
-  //   img: "#",
-  //   category: "Foot Protection",
-  // },
-  // {
-  //   id: 20,
-  //   title:
-  //     "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-  //   description:
-  //     "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-  //   price: 1625.0,
-  //   img: "#",
-  //   category: "Foot Protection",
-  // },
+  {
+    id: 12,
+    title:
+      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
+    description:
+      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
+    price: 1625.0,
+    img: "#",
+    category: "Foot Protection",
+  },
+  {
+    id: 13,
+    title:
+      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
+    description:
+      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
+    price: 1625.0,
+    img: "#",
+    category: "Foot Protection",
+  },
+  {
+    id: 14,
+    title:
+      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
+    description:
+      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
+    price: 1625.0,
+    img: "#",
+    category: "Foot Protection",
+  },
+  {
+    id: 15,
+    title:
+      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
+    description:
+      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
+    price: 1625.0,
+    img: "#",
+    category: "Foot Protection",
+  },
+  {
+    id: 16,
+    title:
+      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
+    description:
+      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
+    price: 1625.0,
+    img: "#",
+    category: "Foot Protection",
+  },
+  {
+    id: 17,
+    title:
+      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
+    description:
+      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
+    price: 1625.0,
+    img: "#",
+    category: "Foot Protection",
+  },
+  {
+    id: 18,
+    title:
+      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
+    description:
+      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
+    price: 1625.0,
+    img: "#",
+    category: "Foot Protection",
+  },
+  {
+    id: 19,
+    title:
+      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
+    description:
+      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
+    price: 1625.0,
+    img: "#",
+    category: "Foot Protection",
+  },
+  {
+    id: 20,
+    title:
+      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
+    description:
+      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
+    price: 1625.0,
+    img: "#",
+    category: "Foot Protection",
+  },
 ];
 
 const _categories = (() => {
