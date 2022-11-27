@@ -34,6 +34,11 @@ export const MENUITEMS = [
         path: "/shop/eye-protection",
       },
       {
+        title: "Ear Protection",
+        type: "link",
+        path: "/shop/ear-protection",
+      },
+      {
         title: "Hand Protection",
         type: "link",
         path: "/shop/hand-protection",
@@ -51,17 +56,17 @@ export const MENUITEMS = [
       {
         title: "Traffic safety",
         type: "link",
-        path: "/shop/road-safety",
+        path: "/shop/traffic-safety",
       },
       {
         title: "Face Shield",
         type: "link",
-        path: "/shop/road-safety",
+        path: "/shop/face-shield",
       },
       {
         title: "Safety Cans and Cabinates",
         type: "link",
-        path: "/shop/road-safety",
+        path: "/shop/safety-cans-and-cabinates",
       },
     ],
   },
