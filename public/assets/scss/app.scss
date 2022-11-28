@@ -6,6 +6,7 @@
   }
 
 
+
 @import '~bootstrap-scss/bootstrap.scss';
 @import '../scss/landing_page.scss';
 @import '../scss/animate.scss';
@@ -22,6 +23,10 @@
 @import "./slick-theme.scss";
 @import "../../../pages/Awards/Award.css";
 
+
+html{
+  font-size: 80%
+}
 
 .Award__para{
   color: rgb(159, 159, 159);

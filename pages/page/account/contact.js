@@ -178,7 +178,7 @@ const Contact = () => {
             {/* Branch address */}
 
             <h1 style={{textAlign:"center",fontSize:"25px" ,paddingTop:"50px"}}>BRANCH OFFICE</h1>
-            <Col lg="5" className="map" style={{paddingTop:"1px",height:"65vh"}}>
+            <Col lg="6" className="map" style={{paddingTop:"1px",height:"vh"}}>
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9331.67176431221!2d80.19904277619314!3d13.105880752778257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xadd2786bcce9a4be!2sSarvam%20Safety%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1667865878644!5m2!1sen!2sin">
             </iframe>
             </Col>
@@ -289,7 +289,7 @@ const Contact = () => {
             </div>
           </Row>
 
-          {/* Form */}
+          {/* Form
           <Row>
             <h1 className="request_form_tittle">Request Form </h1>
             <Col sm="12">
@@ -352,7 +352,52 @@ const Contact = () => {
                 </Row>
               </Form>
             </Col>
-          </Row>
+          </Row> */}
+
+          {/* form  */}
+        <form class="row g-2" style={{margin:"60px", display:"flex"}}>
+          <div><h1 style={{textAlgin:"center",color:"#96b357"}}>Request Form</h1></div>
+          <div class="col-md-4">
+            <input type="text" class="form-control " id="validationServer01"  required placeholder="First Name" />
+            
+          </div>
+          <div class="col-md-4">
+            <input type="text" class="form-control " id="validationServer02"  required placeholder="Last Name" />
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <input type="text" class="form-control " id="validationServer03" aria-describedby="validationServer03Feedback" required placeholder="City" />
+            <div id="validationServer03Feedback" class="invalid-feedback">
+              Please provide a valid city.
+            </div>
+          </div>
+          
+          <div class="col-mb-">
+              <textarea class="form-control " id="validationTextarea" placeholder="Your Message Here" required></textarea>
+              <div class="invalid-feedback">
+                Please enter a message in the textarea.
+              </div>
+            </div>
+          <div class="col-10">
+            <div class="form-check">
+              <input class="form-check-input " type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required />
+              <label class="form-check-label" for="invalidCheck3">
+                Agree to terms and conditions
+              </label>
+              <div id="invalidCheck3Feedback" class="invalid-feedback">
+                You must agree before submitting.
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-primary " type="submit">Submit form</button>
+          </div>
+        </form>
+          {/* Form End */}
+
         </Container>
         <Blog
         type="fashion"
