@@ -47,13 +47,13 @@ const Team = ({ img, name, post }) => {
 
 const TeamDetailData = [
   {
-    name: "Vision",
+    name: "VISION",
     post: "",
     about:
       "SARVAM SAFETY is your one stop solution provider for in lifeand industrial safety equipment by catering to various segments.",
   },
   {
-    name: "Mission",
+    name: "MISSION",
     post: "",
     about:
       "SARVAM SAFETY is your one stop solution provider for in lifeand industrial safety equipment by catering to various segments .",
@@ -66,7 +66,7 @@ const TeamDetail = ({ img, name, post, about }) => {
       <div className="media">
         <div className="text-center">
           <Media src={img} alt="#" />
-          <h5>{name}</h5>
+          <h5 style={{fontSize:"23px",fontWeight:"bold"}} >{name}</h5>
           <h6>{post}</h6>
         </div>
         <div className="media-body">
@@ -76,6 +76,7 @@ const TeamDetail = ({ img, name, post, about }) => {
     </div>
   );
 };
+
 const AboutUs = () => {
   return (
     <>
@@ -177,7 +178,7 @@ const AboutUs = () => {
                   <Slider
                     className="slide-1 home-slider"
                     autoplay={true}
-                    accessibility={true}
+                    // accessibility={true}
                   >
                     {TeamData.map((data, i) => {
                       return (

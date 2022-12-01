@@ -151,65 +151,17 @@ const Contact = () => {
           {/* corporate office detail */}
 
           <Row className="section-b-space">
-           <h1 style={{textAlign:"center",fontSize:"25px"}}>CORPORATE OFFICE</h1>
-            <Col lg="5" className="map" sstyle={{paddingTop:"1px",height:"70vh"}}>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9331.67176431221!2d80.19904277619314!3d13.105880752778257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xadd2786bcce9a4be!2sSarvam%20Safety%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1667865878644!5m2!1sen!2sin">
-            </iframe>
-            </Col>
-            <Col lg="5" style={{border:"2px solid grey" }}>
-              <div className="contact-right">
-                
-                <ul>
-                  {Data.map((data, i) => {
-                    return (
-                      <ContactDetail
-                        key={i}
-                        img={data.img}
-                        title={data.title}
-                        desc1={data.desc1}
-                        desc2={data.desc2}
-                      />
-                    );
-                  })}
-                </ul>
-              </div>
-            </Col>
-
-            {/* Branch address */}
-
-            <h1 style={{textAlign:"center",fontSize:"25px" ,paddingTop:"50px"}}>BRANCH OFFICE</h1>
-            <Col lg="6" className="map" style={{paddingTop:"1px",height:"vh"}}>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9331.67176431221!2d80.19904277619314!3d13.105880752778257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xadd2786bcce9a4be!2sSarvam%20Safety%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1667865878644!5m2!1sen!2sin">
-            </iframe>
-            </Col>
-            <Col lg="3" style={{border:"1px solid grey" ,width:"400px",margin:"1px"}}>
-              <div className="contact-right">
-                
-                <ul>
-                  <h1 style={{textAlign:"center"}}>COIMBATORE BRANCH OFFICE</h1>
-                  {Data2.map((data, i) => {
-                    return (
-                      <ContactDetail
-                        key={i}
-                        img={data.img}
-                        title={data.title}
-                        desc1={data.desc1}
-                        desc2={data.desc2}
-                      />
-                    );
-                  })}
-                </ul>
-              </div>
-            </Col>
-            <Col lg="5" className="map" style={{paddingTop:"30px",height:"65vh"}}>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9331.67176431221!2d80.19904277619314!3d13.105880752778257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xadd2786bcce9a4be!2sSarvam%20Safety%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1667865878644!5m2!1sen!2sin">
-                </iframe>
+             <h1 style={{textAlign:"center",fontSize:"25px"}}>CORPORATE OFFICE</h1>
+            <div className="d-flex justify-content-center">
+              <Col lg="5" className="map" style={{paddingTop:"11px",height:"95%"}}>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9331.67176431221!2d80.19904277619314!3d13.105880752778257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xadd2786bcce9a4be!2sSarvam%20Safety%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1667865878644!5m2!1sen!2sin">
+              </iframe>
               </Col>
-            <Col lg="5" style={{border:"1px solid grey" ,width:"380",marginTop:"30px"}}>
+              <Col lg="5" style={{border:"1px solid grey",textAlign:"left", margin:"10px"}}>
                 <div className="contact-right">
+                  
                   <ul>
-                    <h1 style={{textAlign:"center"}}>MADURAI BRANCH OFFICE</h1>
-                    {Data3.map((data, i) => {
+                    {Data.map((data, i) => {
                       return (
                         <ContactDetail
                           key={i}
@@ -222,9 +174,39 @@ const Contact = () => {
                     })}
                   </ul>
                 </div>
-            </Col>
+              </Col>
+            </div>
+
+            {/* Branch address */}
+
+            <h1 style={{padding:"30px", margin:"10px"}}>BRANCH OFFICE</h1>
             
-            <div style={{display:"flex", flexDirection:"row",height:"70vh"}}>
+            <div className="d-flex justify-content-center">
+              <Col lg="5" className="map" style={{height:"95%" , margin:"10px"}}>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9331.67176431221!2d80.19904277619314!3d13.105880752778257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xadd2786bcce9a4be!2sSarvam%20Safety%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1667865878644!5m2!1sen!2sin">
+                  </iframe>
+                </Col>
+              <Col lg="5" style={{border:"1px solid grey" ,width:"380",margin:"10px"}}>
+                  <div className="contact-right">
+                    <ul>
+                      <h1 style={{textAlign:"center"}}>MADURAI BRANCH OFFICE</h1>
+                      {Data3.map((data, i) => {
+                        return (
+                          <ContactDetail
+                            key={i}
+                            img={data.img}
+                            title={data.title}
+                            desc1={data.desc1}
+                            desc2={data.desc2}
+                          />
+                        );
+                      })}
+                    </ul>
+                  </div> 
+              </Col>
+            </div>
+            
+            <div className="d-flex justify-content-center">
             <div style={{padding:"10px"}}>
               <Col lg="1" style={{border:"1px solid grey" ,width:"380px",overflow:"visible"}}>
                   <div className="contact-right">
@@ -245,9 +227,7 @@ const Contact = () => {
                   </div>
               </Col>
             </div>
-
-          <div style={{padding:"10px"}}>
-            <Col lg="1" style={{border:"1px solid grey" ,width:"380px"}}>
+            <Col className="row align-items-center" style={{border:"1px solid grey" }}>
                   <div className="contact-right">
                     <ul>
                       <h1 style={{textAlign:"center"}}>RANIPET</h1>
@@ -265,8 +245,9 @@ const Contact = () => {
                     </ul>
                   </div>
             </Col>
-          </div>
-          <div style={{padding:"10px"}}>
+          
+
+          <div style={{margin:"10px"}}>
               <Col lg="1" style={{border:"1px solid grey" ,width:"380px", }}>
                   <div className="contact-right">
                     <ul>
@@ -307,7 +288,7 @@ const Contact = () => {
                   </Col>
                   <Col md="6">
                     <Label className="form-label" for="email">Last Name</Label>
-                    <Input
+                    <Input 
                       type="text"
                       className="form-control"
                       id="last-name"
@@ -355,47 +336,45 @@ const Contact = () => {
           </Row> */}
 
           {/* form  */}
-        <form class="row g-2" style={{margin:"60px", display:"flex"}}>
-          <div><h1 style={{textAlgin:"center",color:"#96b357"}}>Request Form</h1></div>
-          <div class="col-md-4">
-            <input type="text" class="form-control " id="validationServer01"  required placeholder="First Name" />
-            
-          </div>
-          <div class="col-md-4">
-            <input type="text" class="form-control " id="validationServer02"  required placeholder="Last Name" />
-            <div class="valid-feedback">
-              Looks good!
+
+          <form class="row g-2" style={{margin:"0px 120px 10px 120px", display:"flex"}}>
+            <div><h1 style={{textAlgin:"center",color:"#96b357"}}>Request Form</h1></div>
+            <div class="col-md-4">
+              <input type="text" class="form-control " id="validationServer01"  required placeholder="First Name" />
             </div>
-          </div>
-          
-          <div class="col-md-4">
-            <input type="text" class="form-control " id="validationServer03" aria-describedby="validationServer03Feedback" required placeholder="City" />
-            <div id="validationServer03Feedback" class="invalid-feedback">
-              Please provide a valid city.
-            </div>
-          </div>
-          
-          <div class="col-mb-">
-              <textarea class="form-control " id="validationTextarea" placeholder="Your Message Here" required></textarea>
-              <div class="invalid-feedback">
-                Please enter a message in the textarea.
+            <div class="col-md-4">
+              <input type="text" class="form-control " id="validationServer02"  required placeholder="Last Name" />
+              <div class="valid-feedback">
+                Looks good!
               </div>
             </div>
-          <div class="col-10">
-            <div class="form-check">
-              <input class="form-check-input " type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required />
-              <label class="form-check-label" for="invalidCheck3">
-                Agree to terms and conditions
-              </label>
-              <div id="invalidCheck3Feedback" class="invalid-feedback">
-                You must agree before submitting.
+            <div class="col-md-4">
+              <input type="text" class="form-control " id="validationServer03" aria-describedby="validationServer03Feedback" required placeholder="City" />
+              <div id="validationServer03Feedback" class="invalid-feedback">
+                Please provide a valid city.
+              </div>
+            </div>        
+            <div class="col-mb">
+                <textarea class="form-control " id="validationTextarea" placeholder="Your Message Here" required></textarea>
+                <div class="invalid-feedback">
+                  Please enter a message in the textarea.
+                </div>
+              </div>
+            <div class="col-10">
+              <div class="form-check">
+                <input class="form-check-input " type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required />
+                <label class="form-check-label" for="invalidCheck3">
+                  Agree to terms and conditions
+                </label>
+                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                  You must agree before submitting.
+                </div>
               </div>
             </div>
-          </div>
-          <div class="mb-3">
-            <button class="btn btn-primary " type="submit">Submit form</button>
-          </div>
-        </form>
+            <div class="mb-3">
+              <button class="btn btn-primary " type="submit">Submit form</button>
+            </div>
+          </form>
           {/* Form End */}
 
         </Container>
