@@ -207,14 +207,14 @@ const Contact = () => {
             </div>
             
             <div className="d-flex justify-content-center">
-            <div style={{padding:"10px"}}>
-              <Col lg="1" style={{border:"1px solid grey" ,width:"380px",overflow:"visible"}}>
+            
+              <Col lg="20" style={{border:"1px solid grey",margin:"5px" }}>
                   <div className="contact-right">
                     <ul>
                       <h1 style={{textAlign:"center"}}>PONDICHERRY OFFICE</h1>
                       {Data4.map((data, i) => {
                         return (
-                          <ContactDetail
+                          <ContactDetail 
                             key={i}
                             img={data.img}
                             title={data.title}
@@ -226,8 +226,8 @@ const Contact = () => {
                     </ul>
                   </div>
               </Col>
-            </div>
-            <Col className="row align-items-center" style={{border:"1px solid grey" }}>
+            
+            <Col lg="40" className="row " style={{border:"1px solid grey",margin:"5px"}}>
                   <div className="contact-right">
                     <ul>
                       <h1 style={{textAlign:"center"}}>RANIPET</h1>
@@ -245,10 +245,8 @@ const Contact = () => {
                     </ul>
                   </div>
             </Col>
-          
-
-          <div style={{margin:"10px"}}>
-              <Col lg="1" style={{border:"1px solid grey" ,width:"380px", }}>
+        
+            <Col lg="30" style={{border:"1px solid grey" ,width:"380px",margin:"5px"}}>
                   <div className="contact-right">
                     <ul>
                       <h1 style={{textAlign:"center"}}>COCHIN</h1>
@@ -265,8 +263,8 @@ const Contact = () => {
                       })}
                     </ul>
                   </div>
-              </Col>
-          </div>
+            </Col>
+          
             </div>
           </Row>
 
@@ -337,7 +335,7 @@ const Contact = () => {
 
           {/* form  */}
 
-          <form class="row g-2" style={{margin:"0px 120px 10px 120px", display:"flex"}}>
+          <form class="row g-2" style={{margin:"0px 120px 10px 120px", display:"flex"}} method>
             <div><h1 style={{textAlgin:"center",color:"#96b357"}}>Request Form</h1></div>
             <div class="col-md-4">
               <input type="text" class="form-control " id="validationServer01"  required placeholder="First Name" />
@@ -372,7 +370,7 @@ const Contact = () => {
               </div>
             </div>
             <div class="mb-3">
-              <button class="btn btn-primary " type="submit">Submit form</button>
+              <button class="btn btn-success" style={{fontSize:"10px"}} type="submit">Submit form</button>
             </div>
           </form>
           {/* Form End */}

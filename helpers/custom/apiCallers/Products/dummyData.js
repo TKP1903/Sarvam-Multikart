@@ -83,16 +83,16 @@ const _allProducts = [
       "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
     price: 1625.0,
     img: "https://sarvamsafety.com/image/cache/catalog/products/2-100x100-270x270.jpeg",
-    category: "Foot Protection",
+    category: "Feet Protection",
   },
   {
     id: 11,
     title:
-      "Gloves Cotton Knitted - 3 GAUGE - KNP",
+      "Eye",
     description:
       "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
     price: 1625.0,
-    img: "../../../../Assets/Product/EYE PROTECTION/3M/12166 ox clear anti fog.png",
+    img: "../../../../Assets/Product/EYE PROTECTION/3M/3m 1710.png",
     category: "Eye Protection",
   },
   {
