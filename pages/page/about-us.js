@@ -84,23 +84,25 @@ const AboutUs = () => {
         <section className="about-page section-b-space">
           <Container>
             <Row>
-              <Col lg="12">
-                <div className="banner-section">
-                  <Media
+              <Col lg="12" style={{alignContent:"center"}}>
+                <div className="banner-section" >
+                  <center>
+                  <Media 
                     src={aboutus.src}
                     className="img-fluid blur-up lazyload"
                     alt=""
                   />
+                  </center>
                 </div>
               </Col>
-             <Col></Col>
+             
               <Col sm="12">
                 <h4 className="aboutus-title">Who we are?</h4>
-                <iframe width="100%" height="400" src="https://www.youtube.com/embed/YoXTO60j91g" title="Sarvam" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+               <center><iframe width="80%" height="500" src="https://www.youtube.com/embed/YoXTO60j91g" title="Sarvam" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style={{alignContent:"center"}}></iframe></center>
                 <p
                   style={{
                     display: "flex",
-                    fontSize: "1.2rem",textAlign:"center"
+                    fontSize: "1.3rem",textAlign:"center"
                   }}
                 >
                   The word "SARVAM" a Sanskrit word that stands for "Everything"

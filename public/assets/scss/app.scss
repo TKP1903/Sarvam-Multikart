@@ -515,10 +515,11 @@ h1 {
 
 .grid {
   display: grid;
-  grid-gap: 30px;
+  // grid-gap: 30px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 150px;
   grid-auto-flow: row dense;
+  border-radius: 50%;
 }
 
 .item {
@@ -528,12 +529,13 @@ h1 {
   justify-content: flex-end;
   box-sizing: border-box;
   background: #0c9a9a;
+  border-radius: 50%;
   color: #fff;
   align-content: center;
   grid-column-start: auto;
   grid-row-start: auto;
-  color: #fff;
-  background: url("../../../Assets/partner/regional/1.png");
+  color: rgb(247, 51, 51);
+  background: url("https://www.sarvamsafety.com/wp-content/uploads/2014/12/3m.png");
   background-repeat: no-repeat;
   background-size: contain;
   object-fit: contain;
