@@ -1,12 +1,11 @@
 import React from "react";
 import CommonLayout from "../../components/shop/common-layout";
 import { Container, Row, Col, Media } from "reactstrap";
-import aboutus from "../../public/assets/images/about/aboutus.png";
+import aboutus from "../../public/assets/images/about/ab2.png";
 import Slider from "react-slick";
 import { Slider2, Slider4 } from "../../services/script";
 import ServiceLayout from "../../components/common/Service/service1";
 import Award from "../Awards/Award";
-import CustomCarsousel from "../../components/custom/CustomCarousel";
 
 const TeamData = [
   {
@@ -99,7 +98,7 @@ const AboutUs = () => {
                 <p
                   style={{
                     display: "flex",
-                    fontSize: "1.3rem",textAlign:"center"
+                    fontSize: "1.2rem",textAlign:"center"
                   }}
                 >
                   The word "SARVAM" a Sanskrit word that stands for "Everything"
@@ -121,7 +120,7 @@ const AboutUs = () => {
           </Container>
         </section>
 
-        {/* <!--Testimonial start--> */}
+        {/* <!-- vision and mission start--> */}
         <section className="testimonial small-section">
           <Container>
             <Row>
@@ -146,7 +145,7 @@ const AboutUs = () => {
             </Row>
           </Container>
         </section>
-        {/* <!--Testimonial ends--> */}
+        {/* <!-- vision and mission ends--> */}
 
         <Award />
 

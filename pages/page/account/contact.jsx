@@ -335,7 +335,7 @@ const Contact = () => {
 
           {/* form  */}
 
-          <form class="row g-2" style={{margin:"0px 120px 10px 120px", display:"flex"}} method>
+          <form action="mailto:sarvam@sarvamsafety.com" method="post" class="row g-2" style={{margin:"0px 120px 10px 120px", display:"flex"}} enctype="text/plain" >
             <div><h1 style={{textAlgin:"center",color:"#96b357"}}>Request Form</h1></div>
             <div class="col-md-4">
               <input type="text" class="form-control " id="validationServer01"  required placeholder="First Name" />
@@ -358,19 +358,9 @@ const Contact = () => {
                   Please enter a message in the textarea.
                 </div>
               </div>
-            <div class="col-10">
-              <div class="form-check">
-                <input class="form-check-input " type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required />
-                <label class="form-check-label" for="invalidCheck3">
-                  Agree to terms and conditions
-                </label>
-                <div id="invalidCheck3Feedback" class="invalid-feedback">
-                  You must agree before submitting.
-                </div>
-              </div>
-            </div>
+           
             <div class="mb-3">
-              <button class="btn btn-success" style={{fontSize:"10px"}} type="submit">Submit form</button>
+              <input class="btn btn-success" style={{fontSize:"10px"}} type="submit" value="submit here"/>
             </div>
           </form>
           {/* Form End */}
