@@ -3,83 +3,96 @@ import CommonLayout from "../../components/shop/common-layout";
 import { Container, Row, Col, Media } from "reactstrap";
 import bannerimg from "../../Assets/collection banner/Banner-img-template.png";
 
+// img of logos
 
 export default function Regionalpartner() {
-
-  // const RegDetailData = [
-  //   {
-  //     img:"https://s3-us-west-2.amazonaws.com/s.cdpn.io/451895/010.jpg",
-  //     title:"3M India Ltd"
-  //   },
-  //   {
-  //     img:"https://s3-us-west-2.amazonaws.com/s.cdpn.io/451895/010.jpg",
-  //     title:"3M India Ltd"
-  //   },
-  //   {
-  //     img:"https://s3-us-west-2.amazonaws.com/s.cdpn.io/451895/010.jpg",
-  //     title:"3M India Ltd"
-  //   },
-  //   {
-  //     img:"https://s3-us-west-2.amazonaws.com/s.cdpn.io/451895/010.jpg",
-  //     title:"3M India Ltd"
-  //   },
-  //   {
-  //     img:"https://s3-us-west-2.amazonaws.com/s.cdpn.io/451895/010.jpg",
-  //     title:"3M India Ltd"
-  //   },
-  //   {
-  //     img:"https://s3-us-west-2.amazonaws.com/s.cdpn.io/451895/010.jpg",
-  //     title:"3M India Ltd"
-  //   },
-  // ];
-
-  // const RegDetail = ({img, title}) => {
-  //   return (
-  //      <div>
-  //       <ul class="img-list col-grid-box">
-  //         <li><Media src={img} /></li>
-  //         <h6>{title}</h6>
-  //       </ul>
-  //      </div>
-  //   );
-  // };
+  const imgData = [
+    "/assets/images/logos/1.png",
+    // "/assets/images/logos/2.png",
+    // "/assets/images/logos/3.png",
+    // "/assets/images/logos/4.png",
+    // "/assets/images/logos/5.png",
+    // "/assets/images/logos/6.png",
+    // "/assets/images/logos/7.png",
+  ];
+  
+  
 
   return (
       <CommonLayout parent="home" title="BUSSINESS PARTNER">
         <Container>
-          {/* <Row>
-            <Col lg="12">
-              <div className="banner-section">
-                <Media
-                  src={bannerimg.src}
-                  className="img-fluid blur-up lazyload"
-                  alt=""
-                />
-              </div>
-            </Col>
-            <Col sm="12">
-              <section className='regional-img'>
-                {RegDetailData.map((data, i) => {
-                  return(
-                    <RegDetail
-                    key={i}
-                    img={data.img} 
-                    title={data.title}
-                    />
-                  );
-                })}
-              </section>
-            </Col>
-          </Row> */}
-          
+       
+          {/* <Col md="12">
+              {imgData.map((imgSrc, i) => {
+                return (
+                  <div key={i}> 
+                    <div className="logo-block" >
+                      <a href={null}>
+                        <Media src={imgSrc} alt="" style={{FlexDirection:"row"}}/>
+                      </a>
+                    </div>
+                  </div>
+                );
+              })}
+          </Col> */}
+
+          {/* new style  */}
+          <div class="gallery-image">
+    <div class="img-box">
+      <img src="http://www.sarvamsafety.com/wp-content/uploads/2014/12/3m.png" alt="" /> 
+      <div class="caption">
+          <p>3M India Ltd</p>
+          <p class="opacity-low">personal safety division</p>
+        </div>
+    </div>
+    <div class="img-box">
+      <img src="http://www.sarvamsafety.com/wp-content/uploads/2014/12/dupoint.png" alt="" />
+        <div class="caption">
+          <p>E.I. Dupont India Pvt Limited</p>
+          <p class="opacity-low">Chemical Protective clothings</p>
+        </div>
+    </div>
+    <div class="img-box">
+      <img src="http://www.sarvamsafety.com/wp-content/uploads/2015/03/honeywell_02.png" alt="" />     
+        <div class="caption">
+          <p>Honeywell Analytics</p>
+          <p class="opacity-low">Gas Detectors (Portable & Fixed)</p>
+        </div>
+    </div>
+    <div class="img-box">
+      <img src="http://www.sarvamsafety.com/wp-content/uploads/2014/12/acme.png" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>Acme Fabrik Plast</p>
+          <p class="opacity-low">Safety Shoes & Rain wears</p>
+        </div>
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>Sea</p>
+          <p class="opacity-low">Cityscape</p>
+        </div>
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>Vintage</p>
+          <p class="opacity-low">Cinematic</p>
+        </div>
+      </div> 
+    </div>
+  </div>
+          {/* new style end  */}
+
         <div class="section">
           <h1>Regional Partner</h1>
           <div class="grid">
-            <div class="item item--medium">
-              <div class="item__details">
-              3M India Ltd
-              </div>
-            </div>
+            
             <div class="item item--medium">
               <div class="item__details">
                 Acme Fabrik Plast
