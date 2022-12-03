@@ -725,25 +725,17 @@ h1 {
 }
 
 .img-box {
-  box-sizing: content-box;
-  margin: 5px;
-  height: 150px;
-  width: 150px;
-  overflow: hidden;
-  border-radius: 50%;
-  object-fit: fill;
-  display: inline-block;
-  color: white;
-  position: relative;
-  background-color: white;
+ padding: 5px;
+ text-align: center;
+ margin: 20px;
 }
 
 .caption {
-  position: absolute;
-  bottom: 5px;
-  left: 20px;
-  opacity: 0.0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+ text-align: center;
+}
+
+.caption > h1 {
+  font-size: 15px;
 }
 
 .transparent-box {
@@ -757,17 +749,10 @@ h1 {
 }
 
 .img-box:hover img { 
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
-.img-box:hover .transparent-box {
-  background-color:rgba(0, 0, 0, 0.5);
-}
 
-.img-box:hover .caption {
-  transform: translateY(-20px);
-  opacity: 1.0;
-}
 
 .img-box:hover {
   cursor: pointer;
@@ -778,5 +763,5 @@ h1 {
 }
 
 .opacity-low {
-  opacity: 0.5;
+  opacity: 0.7;
 }
