@@ -18,55 +18,55 @@ export const MENUITEMS = [
         type: "link",
         path: "/shop/all",
       },
-      {
-        title: "Calibration",
-        type: "link",
-        path: "/shop/calibration",
-      },
-      {
-        title: "Head Protection",
-        type: "link",
-        path: "/shop/head-protection",
-      },
-      {
-        title: "Eye Protection",
-        type: "link",
-        path: "/shop/eye-protection",
-      },
-      {
-        title: "Ear Protection",
-        type: "link",
-        path: "/shop/ear-protection",
-      },
+      /**
+       * hand-protection
+       * feet-protection
+       * calbration
+       * coverall
+       * fall-arrest
+       * safety-cans-and-carbinates
+       * shoe
+       * traffic-safety
+       */
       {
         title: "Hand Protection",
         type: "link",
         path: "/shop/hand-protection",
       },
       {
-        title: "Leg Protection",
+        title: "Feet Protection",
         type: "link",
         path: "/shop/feet-protection",
       },
       {
-        title: "Fire Protection",
+        title: "Calibration",
         type: "link",
-        path: "/shop/fire-protection",
+        path: "/shop/calibration",
       },
       {
-        title: "Traffic safety",
+        title: "Coverall",
+        type: "link",
+        path: "/shop/coverall",
+      },
+      {
+        title: "Fall Arrest",
+        type: "link",
+        path: "/shop/fall-arrest",
+      },
+      {
+        title: "Safety Cans and Carbinates",
+        type: "link",
+        path: "/shop/safety-cans-and-carbinates",
+      },
+      {
+        title: "Shoe",
+        type: "link",
+        path: "/shop/shoe",
+      },
+      {
+        title: "Traffic Safety",
         type: "link",
         path: "/shop/traffic-safety",
-      },
-      {
-        title: "Face Shield",
-        type: "link",
-        path: "/shop/face-shield",
-      },
-      {
-        title: "Safety Cans and Cabinates",
-        type: "link",
-        path: "/shop/safety-cans-and-cabinates",
       },
     ],
   },
@@ -85,7 +85,7 @@ export const MENUITEMS = [
       },
     ],
   },
-  { 
+  {
     path: "/page/account/contact",
     title: "Contact",
     type: "link",

@@ -61,11 +61,22 @@ const ProductItem = ({
           {product.new === true ? <span className="lable3">new</span> : ""}
           {product.sale === true ? <span className="lable4">on sale</span> : ""}
         </div>
-        <div className="front" onClick={clickProductDetail}>
+        <div
+          className="front"
+          onClick={clickProductDetail}
+          style={{ height: "300px" }}
+        >
           <Media
             src={`${image ? image : product.images[0].src}`}
             className="img-fluid"
             alt=""
+            style={{
+              objectFit: "contain",
+              height: "100%",
+              width: "100%",
+              objectPosition: "center",
+              loading: "lazy",
+            }}
           />
         </div>
         {backImage ? (
@@ -191,7 +202,17 @@ const ProductItem = ({
                 />
               </div>
             </Col>
-            <Col lg="6" className="rtl-text">
+            <Col
+              lg="6"
+              className="rtl-text"
+              style={{
+                direction: "rtl",
+                // break the text into multiple lines
+                minHeight: "fit-content",
+                // align the text to the right
+                textAlign: "right",
+              }}
+            >
               <div className="product-right">
                 <h2> {product.title} </h2>
                 <h3>

@@ -11,7 +11,6 @@ const clearCachedProducts = () => {
 const makeCachedProducts = (() => {
   let isCalled = false;
   return (allProducts) => {
-    console.log ("makeCachedProducts called", { allProducts });
     if (isCalled) {
       return;
     }

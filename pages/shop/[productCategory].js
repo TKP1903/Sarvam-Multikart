@@ -23,15 +23,16 @@ const LeftSidebar = () => {
 
   useEffect(() => {
     // convert head-protection like string to Head Protection
-    const category =
-      productCategory === "all"
-        ? "all"
-        : productCategory
-            .split("-")
-            .map((word) => {
-              return word.charAt(0).toUpperCase() + word.slice(1);
-            })
-            .join(" ");
+    const category = productCategory;
+    console.log({ productCategory });
+    // productCategory === "all"
+    //   ? "all"
+    //   : productCategory
+    //       .split("-")
+    //       .map((word) => {
+    //         return word.charAt(0).toUpperCase() + word.slice(1);
+    //       })
+    //       .join(" ");
     setSelectedCategory(category);
   }, [productCategory]);
 

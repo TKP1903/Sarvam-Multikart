@@ -163,7 +163,7 @@ for (let product of _allProducts) {
   const images = [];
 
   const randomProduct = () => {
-    return _allProducts[0];
+    return _allProducts[Math.floor(Math.random() * _allProducts.length)];
   };
 
   // use random image for 2 and 3 images

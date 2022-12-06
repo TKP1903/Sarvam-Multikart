@@ -39,8 +39,6 @@ const callAPI = {
 const getProductsByCategory = async (category, from, to) => {
   const cachedProducts = getFromCachedProducts(category, from, to);
 
-  console.log({ category, cachedProducts });
-
   if (!!cachedProducts) {
     return cachedProducts;
   }

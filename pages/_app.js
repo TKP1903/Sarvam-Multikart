@@ -50,10 +50,12 @@ export default function MyApp({ Component, pageProps }) {
                 name="viewport"
                 content="width=device-width, initial-scale=1"
               />
-            
-              <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-            
-              <title>Sarvam Safety</title>
+              <link
+                href="/assets/images/favicon/favicon.ico"
+                rel="icon"
+                type="image/x-icon"
+              />
+              <title>Sarvam Safety Equipment(p) Ltd.</title>
             </Helmet>
             <div>
               <>

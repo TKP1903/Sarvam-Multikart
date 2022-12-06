@@ -3,14 +3,16 @@ import { Collapse } from "reactstrap";
 import FilterContext from "../../../helpers/filter/FilterContext";
 
 const categories = [
-  {
-    name: "Head Protection",
-    url: "head-protection",
-  },
-  {
-    name: "Eye Protection",
-    url: "eye-protection",
-  },
+  /**
+   * hand-protection
+   * feet-protection
+   * calbration
+   * coverall
+   * fall-arrest
+   * safety-cans-and-carbinates
+   * shoe
+   * traffic-safety
+   */
   {
     name: "Hand Protection",
     url: "hand-protection",
@@ -20,30 +22,72 @@ const categories = [
     url: "feet-protection",
   },
   {
-    name: "Fire Protection",
-    url: "fire-protection",
+    name: "Calibration",
+    url: "calibration",
   },
   {
-    name: "Road Safety",
-    url: "road-safety",
+    name: "Coverall",
+    url: "coverall",
   },
   {
-    name: "Fall Protection",
-    url: "fall-protection",
+    name: "Fall Arrest",
+    url: "fall-arrest",
   },
   {
-    name: "Respiratory Protection",
-    url: "respiratory-protection",
+    name: "Safety Cans and Carbinates",
+    url: "safety-cans-and-carbinates",
   },
   {
-    name: "Hearing Protection",
-    url: "hearing-protection",
+    name: "Shoe",
+    url: "shoe",
   },
   {
-    name: "General Safety",
-    url: "general-safety",
+    name: "Traffic Safety",
+    url: "traffic-safety",
   },
-];
+]
+// const categories = [
+//   {
+//     name: "Head Protection",
+//     url: "head-protection",
+//   },
+//   {
+//     name: "Eye Protection",
+//     url: "eye-protection",
+//   },
+//   {
+//     name: "Hand Protection",
+//     url: "hand-protection",
+//   },
+//   {
+//     name: "Feet Protection",
+//     url: "feet-protection",
+//   },
+//   {
+//     name: "Fire Protection",
+//     url: "fire-protection",
+//   },
+//   {
+//     name: "Road Safety",
+//     url: "road-safety",
+//   },
+//   {
+//     name: "Fall Protection",
+//     url: "fall-protection",
+//   },
+//   {
+//     name: "Respiratory Protection",
+//     url: "respiratory-protection",
+//   },
+//   {
+//     name: "Hearing Protection",
+//     url: "hearing-protection",
+//   },
+//   {
+//     name: "General Safety",
+//     url: "general-safety",
+//   },
+// ];
 
 const Category = () => {
   const context = useContext(FilterContext);

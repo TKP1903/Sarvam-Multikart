@@ -19,8 +19,8 @@ const ANIMATION_DELAY = 1;
 const animations = {
   fadeIn: "fadeIn 0.2s ease",
   fadeOut: "fadeOut 0.2s ease",
-  slideIn: "slideIn 0.5s ease-in-out 0s 1 normal forwards",
-  slideOut: "slideOut 0.5s ease-in-out 0s 1 normal forwards",
+  slideIn: "slideIn 1s ease-in-out 0s 1 normal forwards",
+  slideOut: "slideOut 1s ease-in-out 0s 1 normal forwards",
 };
 
 const FeaturedItem = ({ item = emptyItem }) => {
@@ -53,14 +53,6 @@ const FeaturedItem = ({ item = emptyItem }) => {
         display: "block",
         animation: animations.slideIn,
       });
-      const timeout = setTimeout(() => {
-        // setFrontImageStyle({
-        //   display: "none",
-        // });
-      }, ANIMATION_DELAY * 1000);
-      return () => {
-        clearTimeout(timeout);
-      };
     } else {
       setBackImageStyle({
         display: "block",
@@ -85,8 +77,6 @@ const FeaturedItem = ({ item = emptyItem }) => {
       };
     }
   }, [isHovering]);
-
-  console.log({ item });
 
   return (
     <div className="featured__item" id={`featured-item-${id}`}>

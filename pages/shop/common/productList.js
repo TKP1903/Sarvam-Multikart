@@ -82,9 +82,10 @@ const data = {
   products: {
     total: 0,
     hasMore: false,
-    items: []
-  }
+    items: [],
+  },
 };
+
 const loading = false;
 const fetchMore = ({
   varibles: {
@@ -157,7 +158,7 @@ const ProductList = ({ colClass, layoutList, openSidebar, noSidebar }) => {
     const getProductsData = async () => {
       const products =
         (await getProductsByCategory(selectedCategory, 0, limit)) || [];
-      console.log({ products });
+      console.log({ products, limit });
       data = {
         products: {
           total: products.length,
@@ -304,7 +305,7 @@ const ProductList = ({ colClass, layoutList, openSidebar, noSidebar }) => {
                       >
                         <span className="filter-btn btn btn-theme">
                           <i className="fa fa-filter" aria-hidden="true"></i>{" "}
-                            Filter
+                          Filter
                         </span>
                       </div>
                     </Col>

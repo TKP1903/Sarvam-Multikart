@@ -17,9 +17,9 @@ const makeCachedProducts = (allProducts) => {
     }
     _cachedProducts[product.category].push(product);
   });
+
   cachedProducts = _cachedProducts;
-  console.log({ cachedProducts, allProducts });
-  return _cachedProducts;
+  // return _cachedProducts;
 };
 
 const setCategoryInCachedProducts = (category, data) => {
@@ -33,7 +33,7 @@ const getFromCachedProducts = (category, from, to) => {
   if (!cachedProducts || !cachedProducts[category]) {
     return null;
   }
-  return cachedProducts[category].slice (from, to);
+  return cachedProducts[category].slice(from, to);
 };
 
 export {
