@@ -360,7 +360,7 @@ const Contact = () => {
               </div>
            
             <div class="mb-3">
-              <input class="btn btn-success" style={{fontSize:"10px"}} type="submit" value="submit here"/>
+              <input class="btn " style={{fontSize:"10px", color:"white" ,backgroundColor:"#96b357"}} type="submit" value="submit here"/>
             </div>
           </form>
           {/* Form End */}

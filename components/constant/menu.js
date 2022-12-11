@@ -27,6 +27,7 @@ export const MENUITEMS = [
        * safety-cans-and-carbinates
        * shoe
        * traffic-safety
+       * respiratory-protection
        */
       {
         title: "Hand Protection",
@@ -67,6 +68,11 @@ export const MENUITEMS = [
         title: "Traffic Safety",
         type: "link",
         path: "/shop/traffic-safety",
+      },
+      {
+        title: "Respiratory Protection",
+        type: "link",
+        path: "/shop/respiratory-protection",
       },
     ],
   },

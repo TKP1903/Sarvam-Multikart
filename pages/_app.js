@@ -30,7 +30,7 @@ export default function MyApp({ Component, pageProps }) {
       return () => {
         clearTimeout(timer);
       };
-    } catch (er) {}
+    } catch (er) { }
   }, []);
 
   return (
