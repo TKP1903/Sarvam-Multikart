@@ -26,11 +26,11 @@ def getParentName():
     return os.path.basename(parentPath)
 
 
-def files_in_dir(dir, type='image'):
+def files_in_dir(dir, type='image', ext='.webp'):
     currDir = os.getcwd()
     path = currDir + '\\' + dir
     files = []
-    allowed_extensions = get_extensions_for_type(type)
+    allowed_extensions = ext if ext != None else get_extensions_for_type(type)
     for file in os.listdir(path):
         # is file and is of allowed type
         if (

@@ -9,7 +9,15 @@ ASSETS_PATH = '/assets/images/sarvam/products/feet-protection'
 DIR_INIT = ''
 CATEGORY = ''
 
+
 def get_extensions_for_type(general_type):
+    '''
+    * Function to get all extensions for a general type
+    * : general_type: string
+    * : return: string[]
+    * example: get_extensions_for_type('image') will return
+     ['.bmp', '.dib', '.gif', '.jfif', '.jpe', '.jpeg', '.jpg', '.pbm', '.pgm', '.png', '.ppm', '.ras', '.tiff', '.tif', '.xbm', '.xpm']
+    '''
     general_type = general_type.lower()
     extensions = []
     for ext in mimetypes.types_map:
@@ -19,21 +27,39 @@ def get_extensions_for_type(general_type):
 
 
 def getParentName(path):
+    """
+    * get name of parent directory for the given path
+    * : path {string}
+    * : return {string}
+    """
     parentPath = os.path.abspath(os.path.join(path, os.pardir))
     return os.path.basename(parentPath)
 
 
-def files_in_dir(dir, type='image'):
+def files_in_dir(dir, type='image', ext=['.webp']):
+    """
+    * get all files in a sub-directory of cwd
+    * : dir {string}
+    * : type: {string}
+    * : ext: {string[]}
+    * : return: {string[]}
+    """
     currDir = os.getcwd()
     path = currDir + '\\' + dir
     files = []
-    allowed_extensions = get_extensions_for_type(type)
-    for file in os.listdir(path):
-        if (True
-                and os.path.isfile(os.path.join(path, file))
-                and os.path.splitext(file)[1] in allowed_extensions
-            ):
-            files.append(file)
+    allowed_extensions = ext if ext != None else get_extensions_for_type(type)
+
+    # list of files in the directory with extension
+    listDir = os.listdir(path)
+
+    for file in listDir:
+        file_ext = os.path.splitext(file)[1]
+        if (
+            not (os.path.isfile(os.path.join(path, file))) or
+            not (file_ext in allowed_extensions)
+        ):
+            continue
+        files.append(file)
     return files
 
 
@@ -70,9 +96,6 @@ def json_of_shoes(path, startingId):
         for shoe in shoe_names:
             if (shoe.find('.') != -1):
                 continue
-            # go into shoe directory
-            os.chdir(shoe)
-            shoe_imgs = os.listdir(os.getcwd())
 
             shoe_name = '''{brand} {fileName}'''.format(
                 brand=brand, fileName=shoe.split(".")[0]
@@ -88,6 +111,7 @@ def json_of_shoes(path, startingId):
                 "category": CATEGORY
             }
 
+            shoe_imgs = files_in_dir(shoe, ext=['.webp'])
             for img in shoe_imgs:
                 # add images to shoe
                 obj.get("images").append({
@@ -99,7 +123,6 @@ def json_of_shoes(path, startingId):
 
             id += 1
             shoes.append(obj)
-            os.chdir('..')
 
         os.chdir('..')
         imgs_whithout_shoe = addImagesInDir(brand, id)
