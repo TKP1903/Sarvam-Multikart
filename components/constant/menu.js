@@ -1,3 +1,12 @@
+const categories = [
+  "head-protection",
+  "eye-protection",
+  "hand-protection",
+  "feet-protection",
+  "fire-protection",
+  "road-safety",
+  "general-protection"
+];
 export const MENUITEMS = [
   {
     path: "/",
@@ -29,67 +38,78 @@ export const MENUITEMS = [
        * traffic-safety
        * respiratory-protection
        */
-      {
-        title: "Hand Protection",
-        type: "link",
-        path: "/shop/hand-protection",
-      },
-      {
-        title: "Feet Protection",
-        type: "link",
-        path: "/shop/feet-protection",
-      },
-      {
-        title: "Calibration",
-        type: "link",
-        path: "/shop/calibration",
-      },
-      {
-        title: "Coverall",
-        type: "link",
-        path: "/shop/coverall",
-      },
-      {
-        title: "Fall Arrest",
-        type: "link",
-        path: "/shop/fall-arrest",
-      },
-      {
-        title: "Safety Cans and Carbinates",
-        type: "link",
-        path: "/shop/safety-cans-and-carbinates",
-      },
-      {
-        title: "Shoe",
-        type: "link",
-        path: "/shop/shoe",
-      },
-      {
-        title: "Traffic Safety",
-        type: "link",
-        path: "/shop/traffic-safety",
-      },
-      {
-        title: "Respiratory Protection",
-        type: "link",
-        path: "/shop/respiratory-protection",
-      },
+      ...(() => {
+        const menuItems = [];
+        for (const category of categories) {
+          menuItems.push({
+            title: category,
+            type: "link",
+            path: `/shop/${category}`,
+          });
+        }
+        return menuItems;
+      })()
+      // {
+      //   title: "Hand Protection",
+      //   type: "link",
+      //   path: "/shop/hand-protection",
+      // },
+      // {
+      //   title: "Feet Protection",
+      //   type: "link",
+      //   path: "/shop/feet-protection",
+      // },
+      // {
+      //   title: "Calibration",
+      //   type: "link",
+      //   path: "/shop/calibration",
+      // },
+      // {
+      //   title: "Coverall",
+      //   type: "link",
+      //   path: "/shop/coverall",
+      // },
+      // {
+      //   title: "Fall Arrest",
+      //   type: "link",
+      //   path: "/shop/fall-arrest",
+      // },
+      // {
+      //   title: "Safety Cans and Carbinates",
+      //   type: "link",
+      //   path: "/shop/safety-cans-and-carbinates",
+      // },
+      // {
+      //   title: "Shoe",
+      //   type: "link",
+      //   path: "/shop/shoe",
+      // },
+      // {
+      //   title: "Traffic Safety",
+      //   type: "link",
+      //   path: "/shop/traffic-safety",
+      // },
+      // {
+      //   title: "Respiratory Protection",
+      //   type: "link",
+      //   path: "/shop/respiratory-protection",
+      // },
     ],
   },
   {
     title: "Business Partners",
     path: "/partner/Partner",
     type: "link",
-    children: [
-      {
-        title: "Regional Channel Partners",
-        type: "link",
-      },
-      {
-        title: "international Channel Partners",
-        type: "link",
-      },
-    ],
+    // children: [
+    //   {
+    //     title: "Regional Channel Partners",
+    //     type: "link",
+    //   },
+    //   {
+    //     title: "international Channel Partners",
+    //     type: "link",
+    //   },
+    // ],
   },
   {
     path: "/page/account/contact",

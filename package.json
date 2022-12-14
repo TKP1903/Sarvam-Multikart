@@ -64,6 +64,7 @@
     "react-sticky-el": "^2.0.9",
     "react-tabs": "4.2.1",
     "react-toastify": "^9.0.4",
+    "reactjs-popup": "^2.0.5",
     "reactstrap": "^8.10.0",
     "responsive-loader": "^3.0.4",
     "rxjs-compat": "^6.6.7",

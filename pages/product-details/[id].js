@@ -6,14 +6,18 @@ import ProductSection from './common/product_section';
 import LeftSidebarPage from './product/leftSidebarPage';
 
 const LeftSidebar = () => {
-  
+
   const router = useRouter();
-  const id = router.query.id;
-  
+  const id_category = router.query.id;
+  const [id, category] = id_category.split('&');
+
+  console.log({
+    id, category
+  });
   return (
     <CommonLayout parent="Home" title="Product">
-        <LeftSidebarPage pathId={id} />
-      <ProductSection />
+      <LeftSidebarPage pathId={id} />
+      <ProductSection category={category} />
     </CommonLayout>
   );
 }

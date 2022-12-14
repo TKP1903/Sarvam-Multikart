@@ -10,6 +10,8 @@ import DetailsWithPrice from "../common/detail-price";
 import Filter from "../common/filter";
 import { Container, Row, Col, Media } from "reactstrap";
 
+import { getProductById } from "../../../helpers/custom/apiCallers/Products/apiCaller";
+
 const GET_SINGLE_PRODUCTS = gql`
   query product($id: Int!) {
     product(id: $id) {
@@ -39,7 +41,7 @@ const GET_SINGLE_PRODUCTS = gql`
   }
 `;
 
-const data = {
+const _data = {
   product: {
     id: 1,
     title: "Product Title",
@@ -91,7 +93,6 @@ const data = {
     ],
   },
 };
-const loading = false;
 
 const LeftSidebarPage = ({ pathId }) => {
   // var { loading, data } = useQuery(GET_SINGLE_PRODUCTS, {
@@ -99,6 +100,8 @@ const LeftSidebarPage = ({ pathId }) => {
   //     id: parseInt(pathId),
   //   },
   // });
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState(_data);
 
   const [state, setState] = useState({ nav1: null, nav2: null });
   const slider1 = useRef();
@@ -120,6 +123,15 @@ const LeftSidebarPage = ({ pathId }) => {
   };
 
   useEffect(() => {
+    const fetchProduct = async () => {
+      const response = await getProductById(pathId);
+      setData(response);
+      setLoading(false);
+    };
+    fetchProduct();
+  }, [pathId]);
+
+  useEffect(() => {
     setState({
       nav1: slider1.current,
       nav2: slider2.current,
@@ -135,18 +147,23 @@ const LeftSidebarPage = ({ pathId }) => {
   const changeColorVar = (img_id) => {
     slider2.current.slickGoTo(img_id);
   };
+  /**
+   * Keep these commented out for future reference
+   */
+  // <Filter />
+  // <Service />
+  // {/* <!-- side-bar single product slider start --> */}
+  // <NewProduct />
+  // {/* <!-- side-bar single product slider end --> */}
 
   return (
     <section className="">
       <div className="collection-wrapper">
         <Container>
           <Row>
-            <Col sm="3" className="collection-filter" id="filter">
-              <Filter />
-              <Service />
-              {/* <!-- side-bar single product slider start --> */}
-              <NewProduct />
-              {/* <!-- side-bar single product slider end --> */}
+            {/* original sm = 3
+             */}
+            <Col sm="0" className="collection-filter" id="filter">
             </Col>
             <Col lg="9" sm="12" xs="12">
               <Container fluid={true}>
@@ -161,10 +178,10 @@ const LeftSidebarPage = ({ pathId }) => {
                   </Col>
                 </Row>
                 {!data ||
-                !data.product ||
-                data.product.length === 0 ||
-                loading ? (
-                  "loading"
+                  !data.product ||
+                  data.product.length === 0 ||
+                  loading ? (
+                  "loading..."
                 ) : (
                   <Row>
                     <Col lg="6" className="product-thumbnail">
@@ -173,14 +190,26 @@ const LeftSidebarPage = ({ pathId }) => {
                         asNavFor={nav2}
                         ref={(slider) => (slider1.current = slider)}
                         className="product-slick"
+
                       >
                         {data.product.images.map((vari, index) => (
-                          <div key={index}>
-                            <ImageZoom image={vari} />
+                          <div
+                            key={index}
+                          >
+                            <div
+                              className="product-image"
+                              style={{
+                                width: "100%",
+                                display: "flex",
+                                paddingBlock: "2rem",
+                                justifyContent: "center",
+                              }}>
+                              <ImageZoom image={vari} />
+                            </div>
                           </div>
                         ))}
                       </Slider>
-                      <Slider
+                      {/* <Slider
                         className="slider-nav"
                         {...productsnav}
                         asNavFor={nav1}
@@ -188,17 +217,17 @@ const LeftSidebarPage = ({ pathId }) => {
                       >
                         {data.product.variants
                           ? data.product.images.map((vari, index) => (
-                              <div key={index}>
-                                <Media
-                                  src={`${vari.src}`}
-                                  key={index}
-                                  alt={vari.alt}
-                                  className="img-fluid"
-                                />
-                              </div>
-                            ))
+                            <div key={index}>
+                              <Media
+                                src={`${vari.src}`}
+                                key={index}
+                                alt={vari.alt}
+                                className="img-fluid"
+                              />
+                            </div>
+                          ))
                           : ""}
-                      </Slider>
+                      </Slider> */}
                     </Col>
                     <Col lg="6" className="rtl-text">
                       <DetailsWithPrice
@@ -209,12 +238,14 @@ const LeftSidebarPage = ({ pathId }) => {
                   </Row>
                 )}
               </Container>
-              <ProductTab />
+              <ProductTab
+                product={data.product}
+              />
             </Col>
           </Row>
         </Container>
       </div>
-    </section>
+    </section >
   );
 };
 

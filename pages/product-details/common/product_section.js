@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Container, Row, Col, Media, Modal, ModalBody } from "reactstrap";
 import { useQuery } from "@apollo/client";
 import { gql } from '@apollo/client';
@@ -7,41 +7,42 @@ import CartContext from "../../../helpers/cart";
 import { WishlistContext } from "../../../helpers/wishlist/WishlistContext";
 import { CompareContext } from "../../../helpers/Compare/CompareContext";
 import { useRouter } from "next/router";
+import { getPorodctsByCategory, getProductsByCategory } from "../../../helpers/custom/apiCallers/Products/apiCaller";
 
-const GET_PRODUCTS = gql`
-  query products($type: _CategoryType!, $indexFrom: Int!, $limit: Int!) {
-    products(type: $type, indexFrom: $indexFrom, limit: $limit) {
-      items {
-        id
-        title
-        description
-        type
-        brand
-        category
-        price
-        new
-        stock
-        sale
-        discount
-        variants {
-          id
-          sku
-          size
-          color
-          image_id
-        }
-        images {
-          image_id
-          id
-          alt
-          src
-        }
-      }
-    }
-  }
-`;
+// const GET_PRODUCTS = gql`
+//   query products($type: _CategoryType!, $indexFrom: Int!, $limit: Int!) {
+//     products(type: $type, indexFrom: $indexFrom, limit: $limit) {
+//       items {
+//         id
+//         title
+//         description
+//         type
+//         brand
+//         category
+//         price
+//         new
+//         stock
+//         sale
+//         discount
+//         variants {
+//           id
+//           sku
+//           size
+//           color
+//           image_id
+//         }
+//         images {
+//           image_id
+//           id
+//           alt
+//           src
+//         }
+//       }
+//     }
+//   }
+// `;
 
-const ProductSection = () => {
+const ProductSection = ({ category }) => {
   const router = useRouter();
   const curContext = useContext(CurrencyContext);
   const wishlistContext = useContext(WishlistContext);
@@ -65,21 +66,40 @@ const ProductSection = () => {
 
   const clickProductDetail = (product) => {
     const titleProps = product.title.split(" ").join("");
-    router.push(`/product-details/${product.id}` + "-" + `${titleProps}`);
+    router.push(`/product-details/${product.id}` + "&" + `${product.category}`);
   };
 
   const getSelectedProduct = (item) => {
     setSelectedProduct(item);
     toggle();
   };
-
-  var { loading, data } = useQuery(GET_PRODUCTS, {
-    variables: {
-      type: "fashion",
-      indexFrom: 0,
-      limit: 8,
-    },
-  });
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState();
+  useEffect(() => {
+    setLoading(true);
+    const fetchData = async () => {
+      const relatedProducts = await getProductsByCategory(category);
+      setData({
+        products: {
+          items: relatedProducts
+        }
+      });
+      setLoading(false);
+    }
+    fetchData();
+  }, [category]);
+  useEffect(() => {
+    console.log({
+      data, loading
+    })
+  }, [data, loading]);
+  // var { loading, data } = useQuery(GET_PRODUCTS, {
+  //   variables: {
+  //     type: "fashion",
+  //     indexFrom: 0,
+  //     limit: 8,
+  //   },
+  // });
 
   return (
     <section className="section-b-space ratio_asos">
@@ -92,7 +112,7 @@ const ProductSection = () => {
         <Row className="search-product">
           {!data ||
             !data.products ||
-            data.products.items.length === 0 ||
+            !data.products.items ||
             loading ? (
             "loading"
           ) : (
@@ -112,15 +132,17 @@ const ProductSection = () => {
                             />
                           </a>
                         </div>
-                        <div className="back">
-                          <a href={null}>
-                            <Media
-                              src={product.images[1].src}
-                              className="img-fluid blur-up lazyload bg-img"
-                              alt=""
-                            />
-                          </a>
-                        </div>
+                        {product.images.length > 1 && (
+                          <div className="back">
+                            <a href={null}>
+                              <Media
+                                src={product.images[1].src}
+                                className="img-fluid blur-up lazyload bg-img"
+                                alt=""
+                              />
+                            </a>
+                          </div>
+                        )}
                         <div className="cart-info cart-wrap">
                           <button
                             data-toggle="modal"

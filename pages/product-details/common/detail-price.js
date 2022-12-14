@@ -29,7 +29,7 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
     <>
       <div className={`product-right ${stickyClass}`}>
         <h2> {product.title} </h2>
-        <h4>
+        {/* <h4>
           <del>
             {symbol}
             {product.price}
@@ -39,7 +39,7 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
         <h3>
           {symbol}
           {product.price - (product.price * product.discount) / 100}
-        </h3>
+        </h3> */}
         {product.variants.map((vari) => {
           var findItem = uniqueColor.find((x) => x.color === vari.color);
           if (!findItem) uniqueColor.push(vari);
@@ -81,7 +81,7 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
           </>
         )}
         <div className="product-description border-product">
-          {product.variants ? (
+          {/* {product.variants ? (
             <div>
               <h6 className="product-title size-text">
                 select size
@@ -116,9 +116,9 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
             </div>
           ) : (
             ""
-          )}
+          )} */}
           <span className="instock-cls">{stock}</span>
-          <h6 className="product-title">quantity</h6>
+          {/* <h6 className="product-title">quantity</h6>
           <div className="qty-box">
             <div className="input-group">
               <span className="input-group-prepend">
@@ -151,9 +151,9 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
                 </button>
               </span>
             </div>
-          </div>
+          </div> */}
         </div>
-        <div className="product-buttons">
+        {/* <div className="product-buttons">
           <a
             href={null}
             className="btn btn-solid"
@@ -164,7 +164,7 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
           <Link href={`/page/account/checkout`}>
             <a className="btn btn-solid">buy now</a>
           </Link>
-        </div>
+        </div> */}
         <div className="border-product">
           <h6 className="product-title">product details</h6>
           <p>{product.description}</p>

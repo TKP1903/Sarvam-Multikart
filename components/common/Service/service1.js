@@ -21,7 +21,7 @@ const Data = [
     service: "online support 8/6",
   },
   {
-    link: svgoffer,
+    link: svgpayment,
     title: "Money Back Guarantee",
     service: "Get 100% money back if the product fails",
   },

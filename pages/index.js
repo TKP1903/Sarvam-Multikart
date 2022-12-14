@@ -9,7 +9,7 @@ import ModalComponent from "../components/common/Modal";
 import Helmet from "react-helmet";
 import MasterFooter from "../components/footers/common/MasterFooter";
 import Testimonials from "./Testimonial/Testimonial";
-import Featured from "../pages/Featured Product/Featured";
+import Featured from "./Featured Product/Featured.jsx";
 import Blog from "../components/common/Blog/blog1";
 
 const Fashion = () => {

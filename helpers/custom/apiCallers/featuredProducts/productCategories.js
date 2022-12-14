@@ -1,26 +1,31 @@
+import { urlFriendly2prettyName } from "../../../../functions";
+import { _allProducts } from "./dummyData";
+
 let categories = [];
 
-const getProductCategories = async () => {
-  if (!!categories.length) {
-    return categories;
-  }
-  return [];
-};
-
-const makeProductCategories = (() => {
+export const makeProductCategories = (() => {
   let isCalled = false;
   return (products) => {
-    console.log("makeProductCategories called", { products });
     if (isCalled) {
       return;
     }
     isCalled = true;
     const categoriesSet = new Set();
     for (let product of products) {
-      categoriesSet.add(product?.category);
+
+      const category = urlFriendly2prettyName(product?.category);
+      categoriesSet.add(category);
     }
     categories = [...categoriesSet];
   };
 })();
 
-export { makeProductCategories, getProductCategories };
+export const _getProductCategories = async () => {
+  if (!!categories.length) {
+    return categories;
+  }
+  makeProductCategories(_allProducts);
+  return [];
+};
+
+makeProductCategories(_allProducts);

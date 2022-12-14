@@ -18,6 +18,8 @@ import {
   getProductsByCategory,
 } from "../../../helpers/custom/apiCallers/Products/apiCaller";
 
+import { shuffleArray } from "../../../functions";
+
 const GET_PRODUCTS = gql`
   query products(
     $type: _CategoryType!
@@ -166,6 +168,7 @@ const ProductList = ({ colClass, layoutList, openSidebar, noSidebar }) => {
           items: products,
         },
       };
+      shuffleArray(data.products.items);
       console.log({ data });
       reload();
     };
@@ -416,14 +419,14 @@ const ProductList = ({ colClass, layoutList, openSidebar, noSidebar }) => {
                 <Row>
                   {/* Product Box */}
                   {!data ||
-                  !data.products ||
-                  !data.products.items ||
-                  data.products.items.length === 0 ||
-                  loading ? (
+                    !data.products ||
+                    !data.products.items ||
+                    data.products.items.length === 0 ||
+                    loading ? (
                     data &&
-                    data.products &&
-                    data.products.items &&
-                    data.products.items.length === 0 ? (
+                      data.products &&
+                      data.products.items &&
+                      data.products.items.length === 0 ? (
                       <Col xs="12">
                         <div>
                           <div className="col-sm-12 empty-cart-cls text-center">

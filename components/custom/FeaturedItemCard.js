@@ -134,7 +134,7 @@ const FeaturedItem = ({ item = emptyItem }) => {
             {title}
           </a>
         </h6>
-        <h5> Rs: {price} </h5>
+        {/* <h5> Rs: {price} </h5> */}
       </div>
     </div>
   );

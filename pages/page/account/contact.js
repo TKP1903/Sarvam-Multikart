@@ -14,15 +14,13 @@ const Data = [
     img: "fa-map-marker",
     title: "ADDRESS",
     desc1: "Address :#A6, SIDCO Industrial Estate, Villivakkam,Chennai – 600 049",
-    desc2: "TamilNadu",
+    desc2: "Tamil Nadu",
   },
   {
     img: "fa-envelope-o",
     title: "ADDRESS",
     desc1: "sarvam@sarvamsafety.com",
   },
-  
-  
 ];
 
 const Data2 = [
@@ -42,8 +40,6 @@ const Data2 = [
     title: "ADDRESS",
     desc1: "cbesarvam@sarvamsafety.com",
   },
-  
-  
 ];
 
 const Data3 = [
@@ -151,15 +147,15 @@ const Contact = () => {
           {/* corporate office detail */}
 
           <Row className="section-b-space">
-             <h1 style={{textAlign:"center",fontSize:"25px"}}>CORPORATE OFFICE</h1>
+            <h1 style={{ textAlign: "center", fontSize: "25px" }}>CORPORATE OFFICE</h1>
             <div className="d-flex justify-content-center">
-              <Col lg="5" className="map" style={{paddingTop:"11px",height:"95%"}}>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9331.67176431221!2d80.19904277619314!3d13.105880752778257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xadd2786bcce9a4be!2sSarvam%20Safety%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1667865878644!5m2!1sen!2sin">
-              </iframe>
+              <Col lg="5" className="map" style={{ paddingTop: "11px", height: "95%" }}>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9331.67176431221!2d80.19904277619314!3d13.105880752778257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xadd2786bcce9a4be!2sSarvam%20Safety%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1667865878644!5m2!1sen!2sin">
+                </iframe>
               </Col>
-              <Col lg="5" style={{border:"1px solid grey",textAlign:"left", margin:"10px"}}>
+              <Col lg="5" style={{ border: "1px solid grey", textAlign: "left", margin: "10px" }}>
                 <div className="contact-right">
-                  
+
                   <ul>
                     {Data.map((data, i) => {
                       return (
@@ -179,92 +175,92 @@ const Contact = () => {
 
             {/* Branch address */}
 
-            <h1 style={{padding:"30px", margin:"10px"}}>BRANCH OFFICE</h1>
-            
+            <h1 style={{ padding: "30px", margin: "10px" }}>BRANCH OFFICE</h1>
+
             <div className="d-flex justify-content-center">
-              <Col lg="5" className="map" style={{height:"95%" , margin:"10px"}}>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9331.67176431221!2d80.19904277619314!3d13.105880752778257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xadd2786bcce9a4be!2sSarvam%20Safety%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1667865878644!5m2!1sen!2sin">
-                  </iframe>
-                </Col>
-              <Col lg="5" style={{border:"1px solid grey" ,width:"380",margin:"10px"}}>
-                  <div className="contact-right">
-                    <ul>
-                      <h1 style={{textAlign:"center"}}>MADURAI BRANCH OFFICE</h1>
-                      {Data3.map((data, i) => {
-                        return (
-                          <ContactDetail
-                            key={i}
-                            img={data.img}
-                            title={data.title}
-                            desc1={data.desc1}
-                            desc2={data.desc2}
-                          />
-                        );
-                      })}
-                    </ul>
-                  </div> 
+              <Col lg="5" className="map" style={{ height: "95%", margin: "10px" }}>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9331.67176431221!2d80.19904277619314!3d13.105880752778257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xadd2786bcce9a4be!2sSarvam%20Safety%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1667865878644!5m2!1sen!2sin">
+                </iframe>
+              </Col>
+              <Col lg="5" style={{ border: "1px solid grey", width: "380", margin: "10px" }}>
+                <div className="contact-right">
+                  <ul>
+                    <h1 style={{ textAlign: "center" }}>MADURAI BRANCH OFFICE</h1>
+                    {Data3.map((data, i) => {
+                      return (
+                        <ContactDetail
+                          key={i}
+                          img={data.img}
+                          title={data.title}
+                          desc1={data.desc1}
+                          desc2={data.desc2}
+                        />
+                      );
+                    })}
+                  </ul>
+                </div>
               </Col>
             </div>
-            
+
             <div className="d-flex justify-content-center">
-            
-              <Col lg="20" style={{border:"1px solid grey",margin:"5px" }}>
-                  <div className="contact-right">
-                    <ul>
-                      <h1 style={{textAlign:"center"}}>PONDICHERRY OFFICE</h1>
-                      {Data4.map((data, i) => {
-                        return (
-                          <ContactDetail 
-                            key={i}
-                            img={data.img}
-                            title={data.title}
-                            desc1={data.desc1}
-                            desc2={data.desc2}
-                          />
-                        );
-                      })}
-                    </ul>
-                  </div>
+
+              <Col lg="20" style={{ border: "1px solid grey", margin: "5px" }}>
+                <div className="contact-right">
+                  <ul>
+                    <h1 style={{ textAlign: "center" }}>PONDICHERRY OFFICE</h1>
+                    {Data4.map((data, i) => {
+                      return (
+                        <ContactDetail
+                          key={i}
+                          img={data.img}
+                          title={data.title}
+                          desc1={data.desc1}
+                          desc2={data.desc2}
+                        />
+                      );
+                    })}
+                  </ul>
+                </div>
               </Col>
-            
-            <Col lg="40" className="row " style={{border:"1px solid grey",margin:"5px"}}>
-                  <div className="contact-right">
-                    <ul>
-                      <h1 style={{textAlign:"center"}}>RANIPET</h1>
-                      {Data5.map((data, i) => {
-                        return (
-                          <ContactDetail
-                            key={i}
-                            img={data.img}
-                            title={data.title}
-                            desc1={data.desc1}
-                            desc2={data.desc2}
-                          />
-                        );
-                      })}
-                    </ul>
-                  </div>
-            </Col>
-        
-            <Col lg="30" style={{border:"1px solid grey" ,width:"380px",margin:"5px"}}>
-                  <div className="contact-right">
-                    <ul>
-                      <h1 style={{textAlign:"center"}}>COCHIN</h1>
-                      {Data6.map((data, i) => {
-                        return (
-                          <ContactDetail
-                            key={i}
-                            img={data.img}
-                            title={data.title}
-                            desc1={data.desc1}
-                            desc2={data.desc2}
-                          />
-                        );
-                      })}
-                    </ul>
-                  </div>
-            </Col>
-          
+
+              <Col lg="40" className="row " style={{ border: "1px solid grey", margin: "5px" }}>
+                <div className="contact-right">
+                  <ul>
+                    <h1 style={{ textAlign: "center" }}>RANIPET</h1>
+                    {Data5.map((data, i) => {
+                      return (
+                        <ContactDetail
+                          key={i}
+                          img={data.img}
+                          title={data.title}
+                          desc1={data.desc1}
+                          desc2={data.desc2}
+                        />
+                      );
+                    })}
+                  </ul>
+                </div>
+              </Col>
+
+              <Col lg="30" style={{ border: "1px solid grey", width: "380px", margin: "5px" }}>
+                <div className="contact-right">
+                  <ul>
+                    <h1 style={{ textAlign: "center" }}>COCHIN</h1>
+                    {Data6.map((data, i) => {
+                      return (
+                        <ContactDetail
+                          key={i}
+                          img={data.img}
+                          title={data.title}
+                          desc1={data.desc1}
+                          desc2={data.desc2}
+                        />
+                      );
+                    })}
+                  </ul>
+                </div>
+              </Col>
+
             </div>
           </Row>
 
@@ -335,13 +331,13 @@ const Contact = () => {
 
           {/* form  */}
 
-          <form action="mailto:sarvam@sarvamsafety.com" method="post" class="row g-2" style={{margin:"0px 120px 10px 120px", display:"flex"}} enctype="text/plain" >
-            <div><h1 style={{textAlgin:"center",color:"#96b357"}}>Request Form</h1></div>
+          <form action="mailto:sarvam@sarvamsafety.com" method="post" class="row g-2" style={{ margin: "0px 120px 10px 120px", display: "flex" }} enctype="text/plain" >
+            <div><h1 style={{ textAlgin: "center", color: "#96b357" }}>Request Form</h1></div>
             <div class="col-md-4">
-              <input type="text" class="form-control " id="validationServer01"  required placeholder="First Name" />
+              <input type="text" class="form-control " id="validationServer01" required placeholder="First Name" />
             </div>
             <div class="col-md-4">
-              <input type="text" class="form-control " id="validationServer02"  required placeholder="Last Name" />
+              <input type="text" class="form-control " id="validationServer02" required placeholder="Last Name" />
               <div class="valid-feedback">
                 Looks good!
               </div>
@@ -351,27 +347,27 @@ const Contact = () => {
               <div id="validationServer03Feedback" class="invalid-feedback">
                 Please provide a valid city.
               </div>
-            </div>        
+            </div>
             <div class="col-mb">
-                <textarea class="form-control " id="validationTextarea" placeholder="Your Message Here" required></textarea>
-                <div class="invalid-feedback">
-                  Please enter a message in the textarea.
-                </div>
+              <textarea class="form-control " id="validationTextarea" placeholder="Your Message Here" required></textarea>
+              <div class="invalid-feedback">
+                Please enter a message in the textarea.
               </div>
-           
+            </div>
+
             <div class="mb-3">
-              <input class="btn " style={{fontSize:"10px", color:"white" ,backgroundColor:"#96b357"}} type="submit" value="submit here"/>
+              <input class="btn " style={{ fontSize: "10px", color: "white", backgroundColor: "#96b357" }} type="submit" value="submit here" />
             </div>
           </form>
           {/* Form End */}
 
         </Container>
         <Blog
-        type="fashion"
-        titleClass="title1"
-        inner="title-inner1"
-        smallHeading="Our Clients"
-        bigHeading="TOP CLIENTS"
+          type="fashion"
+          titleClass="title1"
+          inner="title-inner1"
+          smallHeading="Our Clients"
+          bigHeading="TOP CLIENTS"
         />
       </section>
     </CommonLayout>

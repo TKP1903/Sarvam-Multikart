@@ -3973,7 +3973,7 @@ header {
 ==========================*/
 .full-banner {
   position: relative;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   padding-top: 190px;
   padding-bottom: 190px;
@@ -8609,7 +8609,7 @@ footer {
 }
 .breadcrumb-section {
   background-color: $top-header;
-  padding: 30px 0;
+  padding: 0;
   .page-title {
     display: flex;
     height: 100%;

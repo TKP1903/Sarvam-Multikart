@@ -21212,7 +21212,7 @@ header.marketplace .top-header .header-dropdown li a i {
 ==========================*/
 .full-banner {
   position: relative;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   padding-top: 190px;
   padding-bottom: 190px;
@@ -25758,7 +25758,7 @@ footer p {
 
 .breadcrumb-section {
   background-color: #f8f8f8;
-  padding: 30px 0;
+  padding: 0;
 }
 .breadcrumb-section .page-title {
   display: flex;

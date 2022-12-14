@@ -25,7 +25,9 @@ const ModalComponent = () => {
       centered
     >
       <div>
-        <ModalBody className="modal1">
+        <ModalBody
+          className="modal1"
+        >
           <Row className="compare-modal">
             <Col lg="12">
               <div className="modal-bg">
@@ -37,14 +39,46 @@ const ModalComponent = () => {
                   onClick={toggle}
                 >
                 </Button>
-                <div className="offer-content">
-                  <Media
-                    src={offerBanner.src}
-                    className="img-fluid blur-up lazyload"
-                    alt=""
-                  />
-                  <h2>newsletter</h2>
-                  <Form
+                <div
+                  className="offer-content"
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    height: "100%"
+                  }}
+                >
+                  <div
+                    className="img-wrapper"
+                    style={{
+                      height: "40vh",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <img
+                      style={{
+                        marginTop: "1rem",
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                      }}
+                      src="/assets/images/sarvam/popup/logo.png"
+                      className="img-fluid blur-up lazyload"
+                      alt="Sarvam Safety"
+                    />
+                  </div>
+                  <center>
+                    <h3
+                      style={{
+                        fontSize: "2rem",
+                        color: "var(--theme-deafult)",
+                      }}
+                    > Thinking ahead for your safety </h3>
+                  </center>
+                  {/* <Form
                     action="#"
                     className="auth-form needs-validation"
                     method="post"
@@ -69,14 +103,14 @@ const ModalComponent = () => {
                         subscribe
                       </Button>
                     </div>
-                  </Form>
+                  </Form> */}
                 </div>
               </div>
             </Col>
           </Row>
         </ModalBody>
       </div>
-    </Modal>
+    </Modal >
   );
 };
 

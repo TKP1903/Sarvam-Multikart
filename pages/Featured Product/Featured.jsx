@@ -1,43 +1,21 @@
-import React from "react";
-
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Carousel,
-  CarouselItem,
+  CarouselCaption,
   CarouselControl,
   CarouselIndicators,
-  CarouselCaption,
+  CarouselItem,
 } from "reactstrap";
 
-// product Images
-// import Img1 from "../../Assets/Product/EYE PROTECTION/3M/11818.jpg";
-// import Img2 from "../../Assets/Product/EYE PROTECTION/3M/12166 ox clear anti fog.png";
-// import Img3 from "../../Assets/Product/EYE PROTECTION/3M/13250.png";
-// import Img4 from "../../Assets/Product/EYE PROTECTION/3M/11818.jpg";
-// import Img5 from "../../Assets/Product/EYE PROTECTION/3M/11818.jpg";
-// import Img6 from "../../Assets/Product/EYE PROTECTION/3M/11818.jpg";
-// import Img7 from "../../Assets/Product/EYE PROTECTION/3M/11818.jpg";
-// import Img8 from "../../Assets/Product/EYE PROTECTION/3M/11818.jpg";
-
-import Img from "../../components/custom/MediaImage";
-
-import FeaturedItem from "../../components/custom/FeaturedItemCard";
 import ProductItem from "../../components/common/product-box/ProductBox1";
-
+import FeaturedItem from "../../components/custom/FeaturedItemCard";
+import Img from "../../components/custom/MediaImage";
+import { shuffleArray } from "../../functions";
 import {
-  getProductsByCategory,
-  getProductCategories,
   clearCachedProducts,
+  getProductCategories,
+  getProductsByCategory,
 } from "../../helpers/custom/apiCallers/featuredProducts/apiCaller";
-
-// const img1 = Img1.src;
-// const img2 = Img2.src;
-// const img3 = Img3.src;
-// const img4 = Img4.src;
-// const img5 = Img5.src;
-// const img6 = Img6.src;
-// const img7 = Img7.src;
-// const img8 = Img8.src;
 
 // const productCategories = [
 //   "Head Protection",
@@ -69,18 +47,23 @@ const Featured = () => {
   const [filterSelected, setFilterSelected] = useState("all");
 
   useEffect(() => {
+    const getCategories = async () => {
+      const categories = await getProductCategories();
+      setProductCategories(categories);
+    };
+    getCategories();
+  }, []);
+
+  useEffect(() => {
     setLoading(true);
     const getFeaturedItems = async () => {
       const data = await getProductsByCategory(filterSelected || "all");
-      let categories = productCategories;
       if (filterSelected === "all") {
-        const categoriesSet = new Set();
-        for (let product of data) {
-          categoriesSet.add(product.category);
-        }
-        categories = [...categoriesSet];
+        // ! limit products to 8
+        data = data.slice(0, 8);
+        // ! shuffle products
+        shuffleArray(data);
       }
-      setProductCategories(categories);
       setFeaturedItems(data || []);
       setLoading(false);
     };
@@ -128,7 +111,7 @@ const Featured = () => {
                 <div className="loading">Loading...</div>
               </div>
             ) : (
-              featuredItems.map((item, index) => (
+              featuredItems.map((item, index) => {
                 // <ProductItem
                 //   des={true}
                 //   product={item}
@@ -138,18 +121,19 @@ const Featured = () => {
                 //   addWishlist={() => {}}
                 //   addCart={() => {}}
                 // />
-
-                <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
-                  <FeaturedItem
-                    key={"featured-item-" + item.id}
-                    item={{
-                      ...item,
-                      img: item.img || "",
-                      link: "/product/" + item.id,
-                    }}
-                  />
-                </div>
-              ))
+                return (
+                  <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                    <FeaturedItem
+                      key={"featured-item-" + item.id}
+                      item={{
+                        ...item,
+                        img: item.img || "",
+                        link: "/product/" + item.id,
+                      }}
+                    />
+                  </div>
+                );
+              })
             )}
             {/* <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
               <div className="featured__item">

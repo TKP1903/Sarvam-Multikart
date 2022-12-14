@@ -3,44 +3,43 @@ import CommonLayout from "../../components/shop/common-layout";
 import { Container, Row, Col, Media } from "reactstrap";
 import aboutus from "../../public/assets/images/about/ab2.png";
 import Slider from "react-slick";
-import { Slider2, Slider4 } from "../../services/script";
+import { Slider1, Slider2, Slider4 } from "../../services/script";
 import ServiceLayout from "../../components/common/Service/service1";
 import Award from "../Awards/Award";
 
-const TeamData = [
-  {
-    img: "/assets/images/team/1.png",
-  },
-  {
-    img: "/assets/images/team/2.png",
-  },
-  {
-    img: "/assets/images/team/3.png",
-  },
-  {
-    img: "/assets/images/team/4.png",
-  },
-];
+const TeamData = (() => {
+  const teamData = [];
+  for (let i = 1; i <= 4; i++) {
+    teamData.push({
+      img: `/assets/images/sarvam/team/${i}.webp`,
+    });
+  }
+  return teamData;
+})();
 
-const Team = ({ img, name, post }) => {
+const Team = ({ img, name = "", post = "" }) => {
   return (
-    <Container>
-      <Row>
-        <Col>
-          <Media
-            src={img}
-            className="img-fluid blur-up lazyload bg-img "
-            alt="Can't load image"
-            style={{
-              objectFit: "cover",
-              height: "400px",
-            }}
-          />
-          <h4>{name}</h4>
-          <h6>{post}</h6>
-        </Col>
-      </Row>
-    </Container>
+    <div
+      className="home text-center"
+      style={{
+        backgroundSize: "contain",
+        // height: "500px",
+        background: `url(${img}) center center no-repeat`
+      }}
+    >
+      <Container>
+        <Row>
+          <Col>
+            <div className="slider-contain">
+              <div>
+                <h4 style={{ color: "white" }}>{name}</h4>
+                <h6 style={{ color: "white" }}>{post}</h6>
+              </div>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 };
 
@@ -65,7 +64,7 @@ const TeamDetail = ({ img, name, post, about }) => {
       <div className="media">
         <div className="text-center">
           <Media src={img} alt="#" />
-          <h5 style={{fontSize:"23px",fontWeight:"bold"}} >{name}</h5>
+          <h5 style={{ fontSize: "23px", fontWeight: "bold" }} >{name}</h5>
           <h6>{post}</h6>
         </div>
         <div className="media-body">
@@ -81,10 +80,15 @@ const AboutUs = () => {
     <>
       <CommonLayout parent="home" title="About-us">
         {/* // <!-- about section start --> */}
-        <section className="about-page section-b-space">
+        <section
+          className="about-page section-b-space"
+          style={{
+            paddingTop: "0px",
+          }}
+        >
           <Container>
             <Row>
-              <Col lg="12" style={{alignContent:"center"}}>
+              {/* <Col lg="12" style={{alignContent:"center"}}>
                 <div className="banner-section" >
                   <center>
                   <Media 
@@ -94,18 +98,77 @@ const AboutUs = () => {
                   />
                   </center>
                 </div>
-              </Col>
-             
-              <Col sm="12">
-                <h4 className="aboutus-title">Who we are?</h4>
-               <center><iframe width="80%" height="500" src="https://www.youtube.com/embed/YoXTO60j91g" title="Sarvam" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style={{alignContent:"center"}}></iframe></center>
-                <p
+              </Col> */}
+
+              <Col sm="12" style={{
+                paddingTop: "0px",
+
+              }}>
+                <h4
                   style={{
-                    display: "flex",
-                    fontSize: "1.3rem",textAlign:"center"
+                    padding: 0,
+                    marginTop: 0,
+                    marginBottom: "20px",
+                  }}
+                  className="aboutus-title"
+                >
+                  Who we are?
+                </h4>
+                <center
+                  style={{
+                    background: "url(/assets/gifs/loader/1.gif) center center no-repeat",
+                    backgroundSize: "10%",
+                    backgroundRepeat: "no-repeat",
                   }}
                 >
-                  The word "SARVAM" a Sanskrit word that stands for "Everything"
+                  <div
+                    className="youtube-wrapper"
+                    style={{
+                      position: "relative",
+                      paddingBottom: "56.25%" /* 16:9 */,
+                      height: "0",
+                      overflow: "hidden",
+                      width: "100%",
+                    }}
+                  >
+                    <iframe
+                      frameborder="0"
+                      width="100%"
+                      height="100%"
+                      src="https://www.youtube.com/embed/YoXTO60j91g"
+                      title="Sarvam"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                      style={{
+                        position: "absolute",
+                        top: "0",
+                        left: "0",
+                        width: "100%",
+                        height: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    />
+                  </div>
+                </center>
+                <p
+                  className="text-secondary"
+                  style={{
+                    "fontSize": "1.4rem",
+                    "textAlign": "left",
+                    "padding-block": "1.7rem",
+                    "padding-inline": "1rem",
+                    "marginBlock": "0.5rem",
+                    "lineHeight": "179%",
+                    "letterSpacing": "3px",
+                    "fontWeight": "500",
+                    "fontFamily": "'Lato'",
+                  }}
+                >
+                  <strong>SARVAM</strong> translates to <u>Everything</u> or <u>Complete</u> in Sanskrit,
+                  represents all of our company's strengths, including our infrastructure, human capital, depth of knowledge, wide range of products, quality, and unshakable commitment to being ahead of the curve. Our talented and competent sales, marketing, back end supporting, service, and logistics teams provide assistance for all of these. SARVAM SAFETY Equipment (P) LTD serves the safety needs of many industrial segments, including automobiles, chemicals, engineering, pharmaceuticals, refineries, construction, power sectors, fire service, government sectors, IT, hotels, and various institutions. It is a channel partner for reputable national and international life saving equipment manufacturers.
+                  {/* The word "SARVAM" a Sanskrit word that stands for "Everything"
                   or "Complete", represents to the totality of our strengths as
                   a company - Infrastructure, Man power, Rich Experience,
                   Extensive Product Range, Quality and undying passion to remain
@@ -117,7 +180,7 @@ const AboutUs = () => {
                   segments such as Automobiles, Chemical, Engineering,
                   Pharmaceuticals, Refineries, Construction, power sectors, Fire
                   service, Government sectors, IT , Hotels and various
-                  Institutions.
+                  Institutions. */}
                 </p>
               </Col>
             </Row>
@@ -158,47 +221,40 @@ const AboutUs = () => {
           <Container>
             <Row>
               <Col sm="12">
-                <h2 style={{ textTransform: "none", fontSize: "2rem", textAlign:"center",color:"#7fad39" }}>
+                <h2 style={{ textTransform: "none", fontSize: "2rem", textAlign: "center", color: "#7fad39" }}>
                   PEOPLE BEHIND THE SCENE
                 </h2>
-                <h4 style={{color:"grey",fontWeight:"100"}}>
+                <h4 style={{ color: "grey", fontWeight: "100" }}>
                   Good teams incorporate teamwork into their culture, creating
                   the building blocks for success.
                 </h4>
+              </Col>
+            </Row>
+            <Row>
+              <Col sm="12">
                 <section className="p-4">
-                  {/* <CustomCarsousel
-                    items={TeamData.map((data, i) => {
-                      return (
-                        <Team
-                          key={"team-" + i}
-                          img={data.img}
-                          // name={data.name}
-                          // post={data.post}
-                        />
-                      );
-                    })}
-                  /> */}
                   <Slider
+                    {...Slider1}
                     className="slide-1 home-slider"
                     autoplay={true}
-                    // accessibility={true}
+                  // accessibility={true}
                   >
+
                     {TeamData.map((data, i) => {
                       return (
                         <Team
                           key={i}
                           img={data.img}
-                          name={data.name}
-                          post={data.post}
                         />
                       );
                     })}
                   </Slider>
                 </section>
-                
+
               </Col>
             </Row>
           </Container>
+
         </section>
         {/* <!--Team ends--> */}
 
@@ -206,7 +262,9 @@ const AboutUs = () => {
           <ServiceLayout
             sectionClass={"service border-section small-section"}
           />
+
         </div>
+
       </CommonLayout>
     </>
   );

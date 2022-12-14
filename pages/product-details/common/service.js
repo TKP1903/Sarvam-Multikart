@@ -5,28 +5,29 @@ import {
   svgservice,
   svgoffer,
   svgpayment,
+  svgLowCost
 } from "../../../services/script";
+
 const Data = [
   {
     link: svgFreeShipping,
-    title: "wordwide delivery",
-    service: "delivery all around the world",
+    title: "shipping worldwide",
+    service: "Delivery all around the world",
   },
   {
     link: svgservice,
     title: "24 X 7 service",
-    service: "online service for 24 x 7",
-  },
-  {
-    link: svgoffer,
-    title: "Money back guarantee",
-    service: "new online special Money back guarantee",
+    service: "online support 8/6",
   },
   {
     link: svgpayment,
-    title: "online payment",
-    service: "new online special festival offer",
-    lastChild: true,
+    title: "Money Back Guarantee",
+    service: "Get 100% money back if the product fails",
+  },
+  {
+    link: svgLowCost,
+    title: "Lowest Price Guarantee",
+    service: "You won't find lower price anywhere else",
   },
 ];
 

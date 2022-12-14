@@ -2,7 +2,7 @@ import axios from "axios";
 
 import {
   makeProductCategories,
-  getProductCategories,
+  _getProductCategories,
 } from "./productCategories";
 
 import {
@@ -13,6 +13,7 @@ import {
 } from "./cachedProducts";
 
 import { _allProducts } from "./dummyData";
+import { shuffleArray, pretty2urlFriendly } from "../../../../functions";
 
 const callAPI = {
   getProductsByCategory: async (category) => {
@@ -36,6 +37,7 @@ const callAPI = {
 };
 
 const getProductsByCategory = async (category) => {
+  category = pretty2urlFriendly(category);
   const cachedProducts = getFromCachedProducts(category);
 
   if (!!cachedProducts) {
@@ -45,7 +47,6 @@ const getProductsByCategory = async (category) => {
   if (category === "all") {
     const data = await callAPI["getAllProducts"]();
     makeCachedProducts(data);
-    makeProductCategories(data);
     return data;
   }
 
@@ -55,6 +56,10 @@ const getProductsByCategory = async (category) => {
   setCategoryInCachedProducts(category, data);
 
   return data;
+};
+
+const getProductCategories = async () => {
+  return _getProductCategories();
 };
 
 setTimeout(

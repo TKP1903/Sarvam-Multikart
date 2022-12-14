@@ -1,91 +1,4 @@
-const _allProducts = [
-  // Only 2 _categories ( hand and foot protection )
-  {
-    id: 1,
-    title: "Gloves Cotton Knitted - Colour : Blue",
-    description: "Product 1 description",
-    price: 14.5,
-    img: "https://sarvamsafety.com/image/cache/catalog/32%20Gloves%20Cotton%20Knitted%2090%20gms%20-%207%20Gauge%20-%20Blue-270x270.jpg",
-    category: "Hand Protection",
-  },
-  {
-    id: 2,
-    title: "Gloves Cotton Knitted - 7 GAUGE - KNP",
-    description: "Product 2 description",
-    price: 12.65,
-    img: "https://sarvamsafety.com/image/cache/catalog/28%20Gloves%20Cotton%20Knitted%2070%20gms%20-%207%20GAUGE%20%20-%20KNP-270x270.jpg",
-    category: "Hand Protection",
-  },
-  {
-    id: 3,
-    title: "Gloves Cotton Knitted - Colour: Dark Grey",
-    description: "Product 3 description",
-    price: 11.5,
-    img: "https://sarvamsafety.com/image/cache/catalog/8%20Gloves%20Cotton%20Knitted%2050gms%20-%20Colour%20Dark%20Grey-270x270.jpg",
-    category: "Hand Protection",
-  },
-  {
-    id: 4,
-    title: "Gloves Maxilite Nitrile Single Side Dipped",
-    description: "Product 4 description",
-    price: 130,
-    img: "https://sarvamsafety.com/image/cache/catalog/products/82%20Gloves%20Neoprene%20-%20HD%2027%20NEO-270x270.jpg",
-    category: "Hand Protection",
-  },
-  {
-    id: 5,
-    title: "Gloves Neoprene - HD 27 NEO",
-    description: "Product 5 description",
-    price: 130,
-    img: "https://sarvamsafety.com/image/cache/catalog/products/82%20Gloves%20Neoprene%20-%20HD%2027%20NEO-270x270.jpg",
-    category: "Hand Protection",
-  },
-  {
-    id: 6,
-    title: "Gloves Neoprene - NEO 400",
-    description: "Product 6 description",
-    price: 180,
-    img: "https://sarvamsafety.com/image/cache/catalog/products/93%20Gloves%20Neoprene%20-%20NEO%20400-270x270.jpg",
-    category: "Hand Protection",
-  },
-  {
-    id: 7,
-    title:
-      "Adjacent Safety Shoe - S.T. Grain Leather - DIP PU Sole - D.D ; D.C - Low Ankle",
-    description: "Product 7 description",
-    price: 1070.0,
-    img: "https://sarvamsafety.com/image/cache/catalog/3-270x270.jpg",
-    category: "Foot Protection",
-  },
-  {
-    id: 8,
-    title:
-      "Allen Cooper 1177 Safety Shoe - S.T- Upper BT Leather - PU D.D, D.C Sole - L.A",
-    description: "Product 8 description",
-    price: 1280.0,
-    img: "https://sarvamsafety.com/image/cache/catalog/products/147%20Safety%20Shoe%20-%20S.T-%20Upper%20BT%20Leather%20-%20PU%20D.D,%20D.C%20Sole%20-%20L.A%20-%20Size%208%20-%20AC%201177-270x270.jpg",
-    category: "Foot Protection",
-  },
-  {
-    id: 9,
-    title:
-      "Allen Cooper Safety Shoe - S.T- Upper Buff Barton Leather - PU D.D, D.C Sole - L.A - 1284",
-    description: "Product 9 description",
-    price: 1335.0,
-    img: "https://sarvamsafety.com/image/cache/catalog/1-270x270.jpg",
-    category: "Foot Protection",
-  },
-  {
-    id: 10,
-    title:
-      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-    description:
-      "Allen Cooper Safety Shoe S.T. Booty Print Leather - PU - D.D - D.C Sole - High Ankle",
-    price: 1625.0,
-    img: "https://sarvamsafety.com/image/cache/catalog/products/2-100x100-270x270.jpeg",
-    category: "Foot Protection",
-  },
-];
+import _allProducts from "./products.json";
 
 const _categories = (() => {
   // make categies array form the products
@@ -120,7 +33,7 @@ for (let product of _allProducts) {
         type
         brand
         category
-        price
+        _price
         new
         sale
         stock
@@ -163,7 +76,13 @@ for (let product of _allProducts) {
   const images = [];
 
   const randomProduct = () => {
-    return _allProducts[Math.floor(Math.random() * _allProducts.length)];
+    // return _allProducts[Math.floor(Math.random() * _allProducts.length)];
+    /**
+     * random product of the same category
+     */
+    const category = product.category;
+    const products = _cachedProducts[category];
+    return products[Math.floor(Math.random() * products.length)];
   };
 
   // use random image for 2 and 3 images
