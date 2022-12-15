@@ -311,12 +311,12 @@ const ProductItem = ({
                   </div>
                 </div>
                 <div className="product-buttons">
-                  <button
+                  {/* <button
                     className="btn btn-solid"
                     onClick={() => addCart(product)}
                   >
                     add to cart
-                  </button>
+                  </button> */}
                   <button
                     className="btn btn-solid"
                     onClick={clickProductDetail}

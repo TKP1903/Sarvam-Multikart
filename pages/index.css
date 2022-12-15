@@ -23,7 +23,7 @@ a {
   margin: 0;
   padding: 0;
   line-height: 1.5;
-  gap: 10px;
+  gap: 9px;
 }
 
 #logo-registered-text {
@@ -96,3 +96,39 @@ img.front {
   }
 }
 /* Path: pages\index.css */
+
+.featured__item__pic.set-bg:hover {
+  border-radius: 9px;
+  transition: border 0.1s ease-in-out !important;
+  /* border: var(--theme-deafult) 2px solid; */
+  box-shadow: black 0px 0px 72px 0px;
+  /* animation: slideOut 0.5s ease-in-out 0s 1 normal forwards; */
+  animation: rotateShadow linear 5s infinite forwards;
+}
+
+@keyframes rotateShadow {
+  0% {
+    box-shadow: var(--theme-deafult) 9px -9px 70px 0px;
+  }
+  25% {
+    box-shadow: var(--theme-deafult) -9px -9px 71px 1px;
+  }
+  50% {
+    box-shadow: var(--theme-deafult) -9px 9px 73px 0px;
+  }
+  75% {
+    box-shadow: var(--theme-deafult) 9px 9px 71px 5px;
+  }
+  100% {
+    box-shadow: var(--theme-deafult) 9px -9px 72px 0px;
+  }
+}
+
+/* 
+  q: check the code in the previous commit wihout losing uncomitted changes?
+  a: git stash
+  q: how to apply the stash?
+  a: git stash apply
+  q: how to apply the stash and remove it from the stash list?
+  a: git stash pop
+*/

@@ -14,14 +14,14 @@ const Data = [
     img: banner1,
     about: "Shoes",
     offer: "20% off",
-    link: "",
+    link: "/shop/feet-protection",
     class: "p-right text-center",
   },
   {
     img: banner2,
     about: "Helmet",
     offer: "10% off",
-    link: "",
+    link: "shop/head-protection",
     class: "p-right text-center",
   },
 ];

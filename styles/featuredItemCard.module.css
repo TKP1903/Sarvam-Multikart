@@ -1,3 +1,12 @@
+/* .featured__item__pic set-bg:hover {
+  border-radius: 49.25px;
+  box-shadow: var(--theme-deafult) 1px 1px 89px 12px;
+}
+
+img.front:hover{
+  visibility: none;
+}
+
 img.front:hover {
   opacity: 0.05;
   transition: all 0.5s;
@@ -11,4 +20,4 @@ img.back {
 
 img.back:hover {
   display: block;
-}
+} */

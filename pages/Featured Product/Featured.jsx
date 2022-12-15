@@ -122,13 +122,14 @@ const Featured = () => {
                 //   addCart={() => {}}
                 // />
                 return (
-                  <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                  <div
+                    key={"featured-item-" + item.id}
+                    className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat"
+                  >
                     <FeaturedItem
-                      key={"featured-item-" + item.id}
                       item={{
                         ...item,
-                        img: item.img || "",
-                        link: "/product/" + item.id,
+                        img: item.img || ""
                       }}
                     />
                   </div>

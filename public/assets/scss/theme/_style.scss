@@ -1870,6 +1870,9 @@ header {
         background-image: url("#{$assetspath}/home-banner/#{$i}.jpg");
       }
     }
+    &.home-head-safety {
+      background-image: url("#{$assetspath}/home-banner/sarvam-banner-head-safety.jpg");
+    }
   }
   .slider-details {
     position: absolute;
@@ -3973,7 +3976,7 @@ header {
 ==========================*/
 .full-banner {
   position: relative;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   padding-top: 190px;
   padding-bottom: 190px;

@@ -17,6 +17,10 @@ const Data = [
     link: "",
   },
   {
+    img: "home-head-safety",
+    link: "",
+  },
+  {
     img: "home2",
     // title: "Welcome to safety",
     // desc: "Fire Safety",
@@ -43,7 +47,7 @@ const Banner = () => {
           })}
         </Slider>
       </section>
-      
+
     </Fragment>
   );
 };
